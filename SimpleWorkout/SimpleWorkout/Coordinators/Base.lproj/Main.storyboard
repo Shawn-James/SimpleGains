@@ -62,21 +62,30 @@
         <!--Schedule-->
         <scene sceneID="53h-Px-Lpb">
             <objects>
-                <tableViewController id="HeY-gG-eKH" sceneMemberID="viewController">
+                <tableViewController id="HeY-gG-eKH" customClass="ScheduleTableViewController" customModule="SimpleWorkout" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="g69-KK-lYs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="DW3-eH-n3Q">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ScheduleTableViewCell" textLabel="EKj-Kh-15R" style="IBUITableViewCellStyleDefault" id="DW3-eH-n3Q">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DW3-eH-n3Q" id="eS5-1b-UD4">
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EKj-Kh-15R">
+                                            <rect key="frame" x="20" y="0.0" width="355" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="NOp-82-GsD" kind="show" id="GQF-RU-B3Z"/>
+                                    <segue destination="NOp-82-GsD" kind="show" identifier="ScheduleTableViewCellPressed" id="GQF-RU-B3Z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -91,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="1512" y="-275"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Day Table View Controller-->
         <scene sceneID="kM5-X2-Rhh">
             <objects>
-                <tableViewController id="NOp-82-GsD" sceneMemberID="viewController">
+                <tableViewController id="NOp-82-GsD" customClass="DayTableViewController" customModule="SimpleWorkout" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z3S-CX-AEs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +124,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="L94-Zd-AuG">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="bhh-WO-Cme"/>
                         <barButtonItem key="rightBarButtonItem" image="plus.circle.fill" catalog="system" id="f43-Rh-xCt">
                             <connections>
                                 <segue destination="ULr-hb-xoA" kind="show" id="rJg-dX-kz4"/>

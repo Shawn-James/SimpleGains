@@ -19,6 +19,12 @@
 		1D9FCD2F253B6C200081429F /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD2E253B6C200081429F /* ViewExtensions.swift */; };
 		1D9FCD37253B6C600081429F /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD36253B6C600081429F /* DateExtensions.swift */; };
 		1D9FCD4C253B81280081429F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD4B253B81280081429F /* TabBarViewController.swift */; };
+		1D9FCD74253D16AC0081429F /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD73253D16AC0081429F /* SettingsViewModel.swift */; };
+		1D9FCD7C253D1C3F0081429F /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD7B253D1C3F0081429F /* ScheduleViewModel.swift */; };
+		1D9FCD86253D1E9C0081429F /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD85253D1E9C0081429F /* ScheduleTableViewController.swift */; };
+		1D9FCDAD253D2B8C0081429F /* CellReuseId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCDAC253D2B8C0081429F /* CellReuseId.swift */; };
+		1D9FCDC3253D31F10081429F /* SegueId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCDC2253D31F10081429F /* SegueId.swift */; };
+		1D9FCDC8253D35D30081429F /* DayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCDC7253D35D30081429F /* DayTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +63,12 @@
 		1D9FCD2E253B6C200081429F /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		1D9FCD36253B6C600081429F /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		1D9FCD4B253B81280081429F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = "SimpleWorkout/View Controllers/TabBarViewController.swift"; sourceTree = SOURCE_ROOT; };
+		1D9FCD73253D16AC0081429F /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		1D9FCD7B253D1C3F0081429F /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		1D9FCD85253D1E9C0081429F /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		1D9FCDAC253D2B8C0081429F /* CellReuseId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuseId.swift; sourceTree = "<group>"; };
+		1D9FCDC2253D31F10081429F /* SegueId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueId.swift; sourceTree = "<group>"; };
+		1D9FCDC7253D35D30081429F /* DayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +122,7 @@
 			children = (
 				1D9FCD1B253B67670081429F /* Coordinators */,
 				1D9FCD1F253B67EF0081429F /* View Controllers */,
+				1D9FCD6F253D14C40081429F /* View Models */,
 				1D9FCD20253B68160081429F /* Library */,
 			);
 			path = SimpleWorkout;
@@ -159,6 +172,7 @@
 		1D9FCD20253B68160081429F /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				1D9FCDAB253D2B490081429F /* Namespacing */,
 				1D9FCD42253B7D4C0081429F /* Objects */,
 				1D9FCD41253B7D460081429F /* Types */,
 				1D9FCD2D253B6BF20081429F /* Extensions */,
@@ -202,6 +216,8 @@
 		1D9FCD69253D136E0081429F /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				1D9FCD85253D1E9C0081429F /* ScheduleTableViewController.swift */,
+				1D9FCDC7253D35D30081429F /* DayTableViewController.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -218,6 +234,48 @@
 			children = (
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		1D9FCD6F253D14C40081429F /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D9FCD72253D14E80081429F /* Schedule */,
+				1D9FCD71253D14DF0081429F /* Workout Log */,
+				1D9FCD70253D14DA0081429F /* Settings */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		1D9FCD70253D14DA0081429F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1D9FCD73253D16AC0081429F /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1D9FCD71253D14DF0081429F /* Workout Log */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Workout Log";
+			sourceTree = "<group>";
+		};
+		1D9FCD72253D14E80081429F /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				1D9FCD7B253D1C3F0081429F /* ScheduleViewModel.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		1D9FCDAB253D2B490081429F /* Namespacing */ = {
+			isa = PBXGroup;
+			children = (
+				1D9FCDAC253D2B8C0081429F /* CellReuseId.swift */,
+				1D9FCDC2253D31F10081429F /* SegueId.swift */,
+			);
+			path = Namespacing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,13 +409,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9FCD86253D1E9C0081429F /* ScheduleTableViewController.swift in Sources */,
 				1D9FCD4C253B81280081429F /* TabBarViewController.swift in Sources */,
+				1D9FCDC3253D31F10081429F /* SegueId.swift in Sources */,
 				1D9FCD37253B6C600081429F /* DateExtensions.swift in Sources */,
 				1D9FCD0D253B66E70081429F /* GuardDebugOperator.swift in Sources */,
 				1D9FCD22253B69900081429F /* AppCoordinator.swift in Sources */,
+				1D9FCD7C253D1C3F0081429F /* ScheduleViewModel.swift in Sources */,
+				1D9FCDAD253D2B8C0081429F /* CellReuseId.swift in Sources */,
 				1D9FCCD7253B66770081429F /* AppDelegate.swift in Sources */,
 				1D9FCD2F253B6C200081429F /* ViewExtensions.swift in Sources */,
 				1D9FCCD9253B66770081429F /* SceneDelegate.swift in Sources */,
+				1D9FCD74253D16AC0081429F /* SettingsViewModel.swift in Sources */,
+				1D9FCDC8253D35D30081429F /* DayTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
