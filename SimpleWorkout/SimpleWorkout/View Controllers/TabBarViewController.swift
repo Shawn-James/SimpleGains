@@ -1,12 +1,12 @@
 // Copyright © 2020 ShawnJames. All rights reserved.
 // Created by Shawn James
-// ViewController.swift
+// TabBarViewController.swift
 
 import UIKit
 
-class ViewController: UIViewController {
+class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        selectedIndex = 1
     }
 }

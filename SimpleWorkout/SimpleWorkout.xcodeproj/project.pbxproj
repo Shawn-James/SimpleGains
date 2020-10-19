@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1D9FCCD7253B66770081429F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCCD6253B66770081429F /* AppDelegate.swift */; };
 		1D9FCCD9253B66770081429F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCCD8253B66770081429F /* SceneDelegate.swift */; };
-		1D9FCCDB253B66770081429F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCCDA253B66770081429F /* ViewController.swift */; };
 		1D9FCCDE253B66770081429F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9FCCDC253B66770081429F /* Main.storyboard */; };
 		1D9FCCE0253B667A0081429F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D9FCCDF253B667A0081429F /* Assets.xcassets */; };
 		1D9FCCE3253B667A0081429F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9FCCE1253B667A0081429F /* LaunchScreen.storyboard */; };
@@ -19,6 +18,7 @@
 		1D9FCD22253B69900081429F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD21253B69900081429F /* AppCoordinator.swift */; };
 		1D9FCD2F253B6C200081429F /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD2E253B6C200081429F /* ViewExtensions.swift */; };
 		1D9FCD37253B6C600081429F /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD36253B6C600081429F /* DateExtensions.swift */; };
+		1D9FCD4C253B81280081429F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD4B253B81280081429F /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,6 @@
 		1D9FCCD3253B66770081429F /* SimpleWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9FCCD6253B66770081429F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D9FCCD8253B66770081429F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1D9FCCDA253B66770081429F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1D9FCCDD253B66770081429F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D9FCCDF253B667A0081429F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D9FCCE2253B667A0081429F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		1D9FCD21253B69900081429F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1D9FCD2E253B6C200081429F /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		1D9FCD36253B6C600081429F /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		1D9FCD4B253B81280081429F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = "SimpleWorkout/View Controllers/TabBarViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +139,8 @@
 				1D9FCCE1253B667A0081429F /* LaunchScreen.storyboard */,
 				1D9FCCD6253B66770081429F /* AppDelegate.swift */,
 				1D9FCCD8253B66770081429F /* SceneDelegate.swift */,
-				1D9FCD21253B69900081429F /* AppCoordinator.swift */,
 				1D9FCCDC253B66770081429F /* Main.storyboard */,
+				1D9FCD21253B69900081429F /* AppCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -148,7 +148,10 @@
 		1D9FCD1F253B67EF0081429F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1D9FCCDA253B66770081429F /* ViewController.swift */,
+				1D9FCD4B253B81280081429F /* TabBarViewController.swift */,
+				1D9FCD69253D136E0081429F /* Schedule */,
+				1D9FCD6A253D138B0081429F /* Workout Log */,
+				1D9FCD6B253D13920081429F /* Settings */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -156,9 +159,11 @@
 		1D9FCD20253B68160081429F /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				1D9FCCDF253B667A0081429F /* Assets.xcassets */,
+				1D9FCD42253B7D4C0081429F /* Objects */,
+				1D9FCD41253B7D460081429F /* Types */,
 				1D9FCD2D253B6BF20081429F /* Extensions */,
 				1D9FCD2C253B6B990081429F /* Operators */,
+				1D9FCCDF253B667A0081429F /* Assets.xcassets */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -178,6 +183,41 @@
 				1D9FCD36253B6C600081429F /* DateExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1D9FCD41253B7D460081429F /* Types */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		1D9FCD42253B7D4C0081429F /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		1D9FCD69253D136E0081429F /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		1D9FCD6A253D138B0081429F /* Workout Log */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Workout Log";
+			sourceTree = "<group>";
+		};
+		1D9FCD6B253D13920081429F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,8 +351,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9FCD4C253B81280081429F /* TabBarViewController.swift in Sources */,
 				1D9FCD37253B6C600081429F /* DateExtensions.swift in Sources */,
-				1D9FCCDB253B66770081429F /* ViewController.swift in Sources */,
 				1D9FCD0D253B66E70081429F /* GuardDebugOperator.swift in Sources */,
 				1D9FCD22253B69900081429F /* AppCoordinator.swift in Sources */,
 				1D9FCCD7253B66770081429F /* AppDelegate.swift in Sources */,
