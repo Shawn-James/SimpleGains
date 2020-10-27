@@ -132,7 +132,6 @@
 		1D9FCCD5253B66770081429F /* SimpleWorkout */ = {
 			isa = PBXGroup;
 			children = (
-				1D9FCCE1253B667A0081429F /* LaunchScreen.storyboard */,
 				1D9FCD1B253B67670081429F /* Coordination */,
 				1D9FCD1F253B67EF0081429F /* View Controllers */,
 				1D9FCD6F253D14C40081429F /* View Models */,
@@ -163,10 +162,11 @@
 		1D9FCD1B253B67670081429F /* Coordination */ = {
 			isa = PBXGroup;
 			children = (
-				1D9FCD21253B69900081429F /* AppNavigation.swift */,
-				1D9FCCDC253B66770081429F /* Main.storyboard */,
+				1D9FCCE1253B667A0081429F /* LaunchScreen.storyboard */,
 				1D9FCCD6253B66770081429F /* AppDelegate.swift */,
 				1D9FCCD8253B66770081429F /* SceneDelegate.swift */,
+				1D9FCCDC253B66770081429F /* Main.storyboard */,
+				1D9FCD21253B69900081429F /* AppNavigation.swift */,
 			);
 			path = Coordination;
 			sourceTree = "<group>";
