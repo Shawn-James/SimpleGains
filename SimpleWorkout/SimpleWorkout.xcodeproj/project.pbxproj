@@ -187,7 +187,6 @@
 			children = (
 				1D9FCCDF253B667A0081429F /* Assets.xcassets */,
 				1D9FCDAB253D2B490081429F /* Namespacing */,
-				1D9FCD42253B7D4C0081429F /* Objects */,
 				1D9FCD41253B7D460081429F /* Types */,
 				1D9FCD2D253B6BF20081429F /* Extensions */,
 				1D9FCD2C253B6B990081429F /* Operators */,
@@ -215,18 +214,11 @@
 		1D9FCD41253B7D460081429F /* Types */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Types;
-			sourceTree = "<group>";
-		};
-		1D9FCD42253B7D4C0081429F /* Objects */ = {
-			isa = PBXGroup;
-			children = (
 				1D51E8722544AB1400029560 /* SWButton.swift */,
 				1DD7821E25467FE5008A83A9 /* SWTextField.swift */,
 				1DD78204254660E8008A83A9 /* SuggestionsView.swift */,
 			);
-			path = Objects;
+			path = Types;
 			sourceTree = "<group>";
 		};
 		1D9FCD6F253D14C40081429F /* View Models */ = {
