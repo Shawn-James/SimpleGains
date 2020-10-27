@@ -5,6 +5,8 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedIndex = 1
