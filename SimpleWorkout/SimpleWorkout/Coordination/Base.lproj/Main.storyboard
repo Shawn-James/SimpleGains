@@ -95,7 +95,9 @@
                             <outlet property="delegate" destination="HeY-gG-eKH" id="Gzp-mM-tT8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Schedule" id="QM0-rW-cen"/>
+                    <navigationItem key="navigationItem" title="Schedule" id="QM0-rW-cen">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="m8K-6L-Pyl"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBB-1h-EpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4cT-t3-ZNX">
-                                <rect key="frame" x="8" y="96" width="398" height="44"/>
+                                <rect key="frame" x="8" y="148" width="398" height="44"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Exercise..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Udp-ea-Qty" customClass="SWTextField" customModule="SimpleWorkout" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="285" height="44"/>
@@ -137,7 +139,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="317" placeholderIntrinsicHeight="400" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hqk-bN-7ms" customClass="AutoCompleteSuggestionsView" customModule="SimpleWorkout" customModuleProvider="target">
-                                <rect key="frame" x="8.5" y="136" width="284" height="400"/>
+                                <rect key="frame" x="8.5" y="188" width="284" height="400"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SuggestionDropDown" textLabel="1YP-px-x7N" rowHeight="40" style="IBUITableViewCellStyleDefault" id="S4S-1W-6U2">
@@ -200,14 +202,14 @@
             </objects>
             <point key="canvasLocation" x="-661" y="581"/>
         </scene>
-        <!--Workout Log-->
+        <!--Workout Logs-->
         <scene sceneID="wbV-Y1-o4p">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SJU-6j-NdI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Workout Log" image="book.closed.fill" catalog="system" id="1n9-2e-kHr"/>
+                    <tabBarItem key="tabBarItem" title="Workout Logs" image="book.closed.fill" catalog="system" id="1n9-2e-kHr"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xhe-cq-H6r">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="xhe-cq-H6r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -219,7 +221,7 @@
             </objects>
             <point key="canvasLocation" x="638" y="581"/>
         </scene>
-        <!--Workout Log-->
+        <!--Workout Logs-->
         <scene sceneID="VWg-Ct-T83">
             <objects>
                 <viewController id="Z9Q-lI-9nB" sceneMemberID="viewController">
@@ -238,7 +240,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4dP-3n-XVp">
-                                <rect key="frame" x="0.0" y="88" width="414" height="655"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="603"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -254,7 +256,7 @@
                             <constraint firstItem="Yaq-XI-2iZ" firstAttribute="trailing" secondItem="ADC-nY-mjS" secondAttribute="trailing" id="wdM-0D-MxN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Workout Log" id="WLk-h1-8Cr">
+                    <navigationItem key="navigationItem" title="Workout Logs" id="WLk-h1-8Cr">
                         <barButtonItem key="backBarButtonItem" title=" " id="1wg-Lp-9OS"/>
                     </navigationItem>
                 </viewController>
@@ -285,7 +287,7 @@
                             <outlet property="delegate" destination="Zs8-5r-YhX" id="aiX-Um-aY5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Current Workout" id="ofK-Dr-Foa">
+                    <navigationItem key="navigationItem" title="Current Workout" largeTitleDisplayMode="never" id="ofK-Dr-Foa">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="c7A-FP-0CS"/>
                     </navigationItem>
                 </tableViewController>
@@ -299,8 +301,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MGL-g0-mEQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="gearshape.2.fill" catalog="system" id="L34-u4-V51"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cs8-BA-CVI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="cs8-BA-CVI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -318,8 +320,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pFx-lK-1rt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" id="IZ6-eq-Frj"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wpI-Er-WxG">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="wpI-Er-WxG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
