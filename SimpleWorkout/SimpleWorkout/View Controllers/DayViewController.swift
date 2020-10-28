@@ -17,7 +17,7 @@ class DayViewController: UIViewController, SuggestionsViewActionsDelegate {
     // MARK: - Outlets & Properties
 
     @IBOutlet var textField: UITextField!
-    @IBOutlet var dropDown: SuggestionsView!
+    @IBOutlet var dropDown: AutoCompleteSuggestionsView!
 
     // MARK: - Lifecycle
 

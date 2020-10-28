@@ -3,6 +3,7 @@
 // ExerciseSuggestionEngine.swift
 
 import Foundation
+import UIKit
 
 class ExerciseSuggestionEngine {
     // MARK: - Typealias
@@ -12,7 +13,7 @@ class ExerciseSuggestionEngine {
     // MARK: - Decodables
 
     struct Exercise: Codable, Hashable {
-        let name: String
+        var name: String
         let section: Section
     }
 
@@ -40,12 +41,15 @@ class ExerciseSuggestionEngine {
     // MARK: - Properties
 
     var suggestions: Exercises = []
+    var pattern: String? // searchTerm to become `bold`
 
     // MARK: -  Methods
 
     /// Get autocomplete suggestions for the given searchTerm
     /// - Parameter searchTerm: User Input
     func updateResults(for searchTerm: String) {
+        pattern = searchTerm
+
         let exercises: Exercises = decodeExercisesDataset()
 
         suggestions = autocompleteSuggestions(for: searchTerm, in: exercises, limit: 8)

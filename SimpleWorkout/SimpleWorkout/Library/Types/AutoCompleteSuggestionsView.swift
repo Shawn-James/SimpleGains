@@ -1,6 +1,6 @@
 // Copyright © 2020 ShawnJames. All rights reserved.
 // Created by Shawn James
-// SuggestionsView.swift
+// AutoCompleteSuggestionsView.swift
 
 import UIKit
 
@@ -8,7 +8,7 @@ protocol SuggestionsViewActionsDelegate {
     func replaceTextFieldText(with text: String)
 }
 
-class SuggestionsView: UITableView, UITableViewDelegate, UITextFieldDelegate {
+class AutoCompleteSuggestionsView: UITableView, UITableViewDelegate, UITextFieldDelegate {
     // MARK: - Typealias
 
     typealias SuggestionsData = UITableViewDiffableDataSource<ExerciseSuggestionEngine.Section, ExerciseSuggestionEngine.Exercise>
@@ -50,7 +50,7 @@ class SuggestionsView: UITableView, UITableViewDelegate, UITextFieldDelegate {
         cellForRowAt()
     }
 
-    // MARK: - Private Methods
+    // MARK: - Public Methods
 
     func showDropDown() {
         isHidden = false; alpha = 1
@@ -60,25 +60,37 @@ class SuggestionsView: UITableView, UITableViewDelegate, UITextFieldDelegate {
         isHidden = true; alpha = 0
     }
 
+    // MARK: - Private Methods
+
+    private func boldPatternMatchString(searchTerm: String, fullText: String) -> NSMutableAttributedString {
+        let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: fullText)
+        let patternMatch = (fullText as NSString).range(of: searchTerm, options: .caseInsensitive)
+        attributedString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 17), range: patternMatch)
+        attributedString.addAttribute(.foregroundColor, value: UIColor(named: "AccentColor")!, range: patternMatch)
+        return attributedString
+    }
+
     // MARK: - TableView
 
     func cellForRowAt() {
         autoCompleteTableView = SuggestionsData(tableView: self, cellProvider: { (tableView, indexPath, exercise) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: self.cellReuseId, for: indexPath)
 
-            cell.textLabel?.text = exercise.name.capitalized
-            cell.backgroundColor = .secondarySystemBackground
+//            cell.textLabel?.text = exercise.name.capitalized // no formatting
+            cell.textLabel?.attributedText = self.boldPatternMatchString(searchTerm: self.autoComplete.pattern ?? "",
+                                                                         fullText: exercise.name.capitalized)
 
-            let highlightColor = UIView(); highlightColor.backgroundColor = UIColor(named: "AccentColor")
-            cell.selectedBackgroundView = highlightColor
+            cell.backgroundColor = .secondarySystemBackground
+            
+//            highlight color:
+//            let highlightColor = UIView(); highlightColor.backgroundColor = UIColor(named: "AccentColor")
+//            cell.selectedBackgroundView = highlightColor
 
             return cell
         })
     }
 
     func updateTableView() {
-//        snapshotView(afterScreenUpdates: true) // FIXME: - How do I use this??
-
         var update = SuggestionsSnapshot()
 
         update.appendSections(ExerciseSuggestionEngine.Section.allCases) // FIXME: - Would this be faster with only one section?
@@ -101,7 +113,7 @@ class SuggestionsView: UITableView, UITableViewDelegate, UITextFieldDelegate {
     // MARK: - Textfield
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let first = visibleCells.first, let indexPath = indexPath(for: first) { // FIXME: - This is cool, but sometimes user just wants to exit. still okay??
+        if let first = visibleCells.first, let indexPath = indexPath(for: first) {
             tableView(self, didSelectRowAt: indexPath)
         }
 

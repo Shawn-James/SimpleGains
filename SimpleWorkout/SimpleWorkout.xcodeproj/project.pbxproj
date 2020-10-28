@@ -29,7 +29,7 @@
 		1DA49F3C2544C2FF00097F0D /* exercises.json in Resources */ = {isa = PBXBuildFile; fileRef = 1DA49F3B2544C2FF00097F0D /* exercises.json */; };
 		1DA49F442544CA6200097F0D /* ExerciseSuggestionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA49F432544CA6200097F0D /* ExerciseSuggestionEngine.swift */; };
 		1DA49F4C2544D05800097F0D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA49F4B2544D05800097F0D /* SearchViewController.swift */; };
-		1DD78205254660E8008A83A9 /* SuggestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD78204254660E8008A83A9 /* SuggestionsView.swift */; };
+		1DD78205254660E8008A83A9 /* AutoCompleteSuggestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD78204254660E8008A83A9 /* AutoCompleteSuggestionsView.swift */; };
 		1DD7821F25467FE5008A83A9 /* SWTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7821E25467FE5008A83A9 /* SWTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +79,7 @@
 		1DA49F3B2544C2FF00097F0D /* exercises.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = exercises.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		1DA49F432544CA6200097F0D /* ExerciseSuggestionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSuggestionEngine.swift; sourceTree = "<group>"; };
 		1DA49F4B2544D05800097F0D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		1DD78204254660E8008A83A9 /* SuggestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsView.swift; sourceTree = "<group>"; };
+		1DD78204254660E8008A83A9 /* AutoCompleteSuggestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteSuggestionsView.swift; sourceTree = "<group>"; };
 		1DD7821E25467FE5008A83A9 /* SWTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,7 +216,7 @@
 			children = (
 				1D51E8722544AB1400029560 /* SWButton.swift */,
 				1DD7821E25467FE5008A83A9 /* SWTextField.swift */,
-				1DD78204254660E8008A83A9 /* SuggestionsView.swift */,
+				1DD78204254660E8008A83A9 /* AutoCompleteSuggestionsView.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -392,7 +392,7 @@
 				1D9FCDAD253D2B8C0081429F /* CellReuseId.swift in Sources */,
 				1DA49F4C2544D05800097F0D /* SearchViewController.swift in Sources */,
 				1DD7821F25467FE5008A83A9 /* SWTextField.swift in Sources */,
-				1DD78205254660E8008A83A9 /* SuggestionsView.swift in Sources */,
+				1DD78205254660E8008A83A9 /* AutoCompleteSuggestionsView.swift in Sources */,
 				1D9FCCD7253B66770081429F /* AppDelegate.swift in Sources */,
 				1D9FCD2F253B6C200081429F /* ViewExtensions.swift in Sources */,
 				1D9FCCD9253B66770081429F /* SceneDelegate.swift in Sources */,

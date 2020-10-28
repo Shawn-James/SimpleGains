@@ -13,8 +13,9 @@ class SWButton: UIButton {
 
         backgroundColor = UIColor(named: "AccentColor")
         setTitleColor(.label, for: .normal)
-        layer.borderColor = UIColor.systemBackground.cgColor
-        layer.borderWidth = 2
-        layer.cornerRadius = 8
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+//        layer.borderColor = UIColor.systemBackground.cgColor
+//        layer.borderWidth = 2
+        layer.cornerRadius = 5
     }
 }
