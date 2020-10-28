@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D51E8732544AB1400029560 /* SWButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51E8722544AB1400029560 /* SWButton.swift */; };
+		1D685DB12549CC5A006F0E5E /* AddedExercisesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DB02549CC5A006F0E5E /* AddedExercisesTableViewCell.swift */; };
 		1D9FCCD7253B66770081429F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCCD6253B66770081429F /* AppDelegate.swift */; };
 		1D9FCCD9253B66770081429F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCCD8253B66770081429F /* SceneDelegate.swift */; };
 		1D9FCCDE253B66770081429F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9FCCDC253B66770081429F /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		1D51E8722544AB1400029560 /* SWButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWButton.swift; sourceTree = "<group>"; };
+		1D685DB02549CC5A006F0E5E /* AddedExercisesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedExercisesTableViewCell.swift; sourceTree = "<group>"; };
 		1D9FCCD3253B66770081429F /* SimpleWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9FCCD6253B66770081429F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D9FCCD8253B66770081429F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				1D51E8722544AB1400029560 /* SWButton.swift */,
 				1DD7821E25467FE5008A83A9 /* SWTextField.swift */,
 				1DD78204254660E8008A83A9 /* AutoCompleteSuggestionsView.swift */,
+				1D685DB02549CC5A006F0E5E /* AddedExercisesTableViewCell.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				1D9FCD86253D1E9C0081429F /* ScheduleViewController.swift in Sources */,
 				1D51E8732544AB1400029560 /* SWButton.swift in Sources */,
 				1D9FCD4C253B81280081429F /* TabBarViewController.swift in Sources */,
+				1D685DB12549CC5A006F0E5E /* AddedExercisesTableViewCell.swift in Sources */,
 				1D9FCDC3253D31F10081429F /* SegueId.swift in Sources */,
 				1D9FCD37253B6C600081429F /* DateExtensions.swift in Sources */,
 				1DA49F442544CA6200097F0D /* ExerciseSuggestionEngine.swift in Sources */,
@@ -576,7 +580,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SKL49NTL5D;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -596,7 +600,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SKL49NTL5D;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
