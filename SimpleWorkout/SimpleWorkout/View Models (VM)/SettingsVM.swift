@@ -1,8 +1,8 @@
 // Copyright © 2020 ShawnJames. All rights reserved.
 // Created by Shawn James
-// SettingsViewModel.swift
+// SettingsVM.swift
 
-class SettingsViewModel {
+class SettingsVM {
 //    enum Section: Int, CaseIterable, CustomStringConvertible {
 //        case section1name
 //        case section2name

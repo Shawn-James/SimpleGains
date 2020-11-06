@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>Bench Press</string>
+	<string>Situps</string>
+	<string>Pushups</string>
+	<string>Incline Bench Press</string>
+	<string>Decline Bench Press</string>
+	<string>Leg Press</string>
+	<string>Squats</string>
+	<string>Pullups</string>
+	<string>Military Press</string>
+	<string>Hamstring Curls</string>
+	<string>Calf Extensions</string>
+	<string>Bent-Over Row</string>
+	<string>Bicep Curls</string>
+	<string>Lat Pulldowns</string>
+	<string>Lunges</string>
+	<string>Ab Crunches</string>
+	<string>Shrugs</string>
+	<string>Lateral Raises</string>
+	<string>Deadlift</string>
+	<string>Back Squat</string>
+	<string>Barbell Hip Thrust</string>
+</array>
+</plist>

@@ -6,10 +6,25 @@ import UIKit
 
 extension UIView {
     /// Shortcut to `addSubview` and `translatesAutoresizingMaskIntoConstraints = false`
-    func subviews(_ subviews: UIView...) {
+    func addSubviews(_ subviews: UIView...) {
         subviews.forEach { subview in
             subview.translatesAutoresizingMaskIntoConstraints = false
             subview.addSubview(subview)
+        }
+    }
+
+    func blur() {
+        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        blurEffectView.frame = bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(blurEffectView)
+    }
+
+    func unBlur() {
+        subviews.forEach {
+            if $0 is UIVisualEffectView {
+                $0.removeFromSuperview()
+            }
         }
     }
 }

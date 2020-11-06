@@ -4,5 +4,6 @@
 
 enum CellReuseId {
     static let scheduleTableViewCell = "ScheduleTableViewCell"
+    static let addedExercisesTableViewCell = "AddedExercisesTableViewCell"
     static let suggestionDropDown = "SuggestionDropDown"
 }

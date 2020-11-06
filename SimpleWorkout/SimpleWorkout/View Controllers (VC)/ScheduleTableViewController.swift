@@ -1,14 +1,20 @@
 // Copyright © 2020 ShawnJames. All rights reserved.
 // Created by Shawn James
-// ScheduleTableViewController.swift
+// ScheduleViewController.swift
 
 import UIKit
 
-class ScheduleTableViewController: UITableViewController {
-    // MARK: - Models
+class ScheduleViewController: UIViewController {
+    // MARK: - Properties
 
     let viewModel = ScheduleViewModel()
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+    }
+    
     // MARK: - Tableview
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

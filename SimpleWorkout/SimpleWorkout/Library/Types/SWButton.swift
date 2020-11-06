@@ -11,7 +11,7 @@ class SWButton: UIButton {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
 
-        backgroundColor = UIColor(named: "AccentColor")
+        backgroundColor = .primary
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
 //        layer.borderColor = UIColor.systemBackground.cgColor

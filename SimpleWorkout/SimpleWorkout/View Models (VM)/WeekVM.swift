@@ -1,10 +1,12 @@
 // Copyright © 2020 ShawnJames. All rights reserved.
 // Created by Shawn James
-// ScheduleViewModel.swift
+// WeekVM.swift
 
 import UIKit
 
-class ScheduleViewModel {
+class WeekVM {
+    // MARK: - Nested Types
+
     enum WeekDay: Int, CaseIterable, CustomStringConvertible {
         case monday
         case tuesday
@@ -27,10 +29,18 @@ class ScheduleViewModel {
         }
     }
 
+    // MARK: - Properties
+
     var rowCount = WeekDay.allCases.count
     let cellReuseId = CellReuseId.scheduleTableViewCell
 
-    func getCellTitle(for indexPath: IndexPath) -> String {
-        WeekDay(rawValue: indexPath.row)!.description
+    // MARK: - Public Methods
+
+    func configureCell(_ cell: UITableViewCell, _ indexPath: IndexPath) {
+        cell.textLabel?.text = WeekDay(rawValue: indexPath.row)?.description
+    }
+    
+    func destinationVCTitle(for selectedIndexPath: IndexPath) -> String {
+        WeekDay(rawValue: selectedIndexPath.row)?.description ?? ""
     }
 }
