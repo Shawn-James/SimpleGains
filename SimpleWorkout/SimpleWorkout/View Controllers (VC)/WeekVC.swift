@@ -5,6 +5,8 @@
 import UIKit
 
 class WeekVC: UITableViewController {
+    // MARK: - Properties
+
     // MARK: - Models
 
     let weekVM = WeekVM()
@@ -14,10 +16,10 @@ class WeekVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.makeTransparent()
+//        navigationController?.navigationBar.makeTransparent()
     }
 
-    // MARK: - Tableview
+    // MARK: - TableView
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         weekVM.rowCount

@@ -6,8 +6,8 @@ import UIKit
 
 class AddedExercisesTableViewCell: UITableViewCell {
     @IBOutlet var label: UILabel!
-    @IBOutlet var setsCount: UILabel!
-    @IBOutlet var repsCount: UILabel!
+    @IBOutlet private var weightTextField: UITextField!
+    @IBOutlet private var swRoundButtons: [SWRoundButton]!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,16 +19,11 @@ class AddedExercisesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBAction func handleSteppers(_ sender: UIStepper) {
-        let setsStepper = 0; let repsStepper = 1
-
-        switch sender.tag {
-        case setsStepper:
-            setsCount.text = String(Int(sender.value))
-        case repsStepper:
-            repsCount.text = String(Int(sender.value))
-        default:
-            fatalError("Programmer error: missing tag for stepper")
+    func resetControls() {
+        weightTextField.text?.removeAll(keepingCapacity: false)
+        
+        swRoundButtons.forEach {
+            $0.setTitle("?", for: .normal)
         }
     }
 }

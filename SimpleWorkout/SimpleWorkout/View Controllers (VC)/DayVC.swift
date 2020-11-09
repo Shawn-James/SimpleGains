@@ -121,9 +121,36 @@ extension DayVC: UITableViewDataSource, UITableViewDelegate {
 
         return cell
     }
+
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let reset = UIContextualAction(style: .normal, title: "Reset") { _, _, completion in
+            let cell = tableView.cellForRow(at: indexPath) as? AddedExercisesTableViewCell
+            cell?.resetControls()
+
+            completion(true)
+        }
+
+        reset.image = UIImage(systemName: "gobackward")
+//        reset.backgroundColor = .primary
+
+        return UISwipeActionsConfiguration(actions: [reset])
+    }
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Remove") { [weak self] _, _, completion in
+            self?.addedExerciseNames.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+
+            completion(true)
+        }
+
+        delete.image = UIImage(systemName: "trash")
+
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
 }
 
-// MARK: - TableView Actions Delegate
+// MARK: - Auto-Complete TableView Actions Delegate
 
 extension DayVC: AutoCompleteTableViewActionsDelegate {
     /// Auto-fills the textField with the given text

@@ -1,10 +1,10 @@
 // Copyright © 2020 ShawnJames. All rights reserved.
 // Created by Shawn James
-// SWTextField.swift
+// AutoCompleteTextField.swift
 
 import UIKit
 
-class SWTextField: UITextField {
+class AutoCompleteTextField: UITextField {
     /// Storyboard init
     required init?(coder: NSCoder) {
         super.init(coder: coder)
