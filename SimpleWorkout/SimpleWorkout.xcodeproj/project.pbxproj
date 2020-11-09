@@ -22,6 +22,8 @@
 		1D685E06254F8E36006F0E5E /* Weekday+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685E05254F8E36006F0E5E /* Weekday+Convenience.swift */; };
 		1D8CF9CB2550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8CF9C92550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift */; };
 		1D8CF9CC2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8CF9CA2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift */; };
+		1D9AD6552558ED9100FA21D1 /* ExerciseMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD6542558ED9100FA21D1 /* ExerciseMC.swift */; };
+		1D9AD7172559129400FA21D1 /* Exercise+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD7162559129400FA21D1 /* Exercise+Convenience.swift */; };
 		1D9FCCD7253B66770081429F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCCD6253B66770081429F /* AppDelegate.swift */; };
 		1D9FCCD9253B66770081429F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCCD8253B66770081429F /* SceneDelegate.swift */; };
 		1D9FCCDE253B66770081429F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9FCCDC253B66770081429F /* Main.storyboard */; };
@@ -77,6 +79,8 @@
 		1D685E05254F8E36006F0E5E /* Weekday+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weekday+Convenience.swift"; sourceTree = "<group>"; };
 		1D8CF9C92550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoCompleteOption+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1D8CF9CA2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoCompleteOption+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1D9AD6542558ED9100FA21D1 /* ExerciseMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMC.swift; sourceTree = "<group>"; };
+		1D9AD7162559129400FA21D1 /* Exercise+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+Convenience.swift"; sourceTree = "<group>"; };
 		1D9FCCD3253B66770081429F /* SimpleWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9FCCD6253B66770081429F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D9FCCD8253B66770081429F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				1D8CF9C92550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift */,
 				1D8CF9CA2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift */,
 				1D685E05254F8E36006F0E5E /* Weekday+Convenience.swift */,
+				1D9AD7162559129400FA21D1 /* Exercise+Convenience.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 			children = (
 				1DA49F432544CA6200097F0D /* AutoCompleteMC.swift */,
 				1D685DD8254F69E3006F0E5E /* CoreDataMC.swift */,
+				1D9AD6542558ED9100FA21D1 /* ExerciseMC.swift */,
 			);
 			path = "Model Controllers (MC)";
 			sourceTree = "<group>";
@@ -472,6 +478,7 @@
 				1D9FCD86253D1E9C0081429F /* WeekVC.swift in Sources */,
 				1D51E8732544AB1400029560 /* SWButton.swift in Sources */,
 				1D685DB12549CC5A006F0E5E /* AddedExercisesTableViewCell.swift in Sources */,
+				1D9AD7172559129400FA21D1 /* Exercise+Convenience.swift in Sources */,
 				1D9FCDC3253D31F10081429F /* SegueId.swift in Sources */,
 				1D9FCD37253B6C600081429F /* DateExtensions.swift in Sources */,
 				1D685E06254F8E36006F0E5E /* Weekday+Convenience.swift in Sources */,
@@ -496,6 +503,7 @@
 				1D9FCD2F253B6C200081429F /* ViewExtensions.swift in Sources */,
 				1D5611C72554B92F0000E16A /* UserDefaultsKey.swift in Sources */,
 				1D9FCCD9253B66770081429F /* SceneDelegate.swift in Sources */,
+				1D9AD6552558ED9100FA21D1 /* ExerciseMC.swift in Sources */,
 				1D9FCD74253D16AC0081429F /* SettingsVM.swift in Sources */,
 				1D9FCDC8253D35D30081429F /* DayVC.swift in Sources */,
 			);

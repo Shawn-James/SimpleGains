@@ -14,8 +14,9 @@ extension WeekVC {
             else {
                 fatalError("Programmer Error: Missing Dependencies")
             }
-            
-            destinationVC.title = weekVM.destinationVCTitle(for: selectedIndexPath)
+
+            destinationVC.title = weekdays[selectedIndexPath.row].name
+            destinationVC.weekday = weekdays[selectedIndexPath.row]
 
         default: fatalError("WeekVC is missing a segue.identifier for \(segue.identifier!)")
         }

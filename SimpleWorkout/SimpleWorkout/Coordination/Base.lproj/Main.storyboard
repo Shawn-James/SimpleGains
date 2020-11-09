@@ -169,7 +169,7 @@
                             <outlet property="delegate" destination="HeY-gG-eKH" id="Gzp-mM-tT8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Schedule" id="QM0-rW-cen">
+                    <navigationItem key="navigationItem" title="Schedule" largeTitleDisplayMode="never" id="QM0-rW-cen">
                         <barButtonItem key="backBarButtonItem" title="Back" id="m8K-6L-Pyl"/>
                     </navigationItem>
                 </tableViewController>
@@ -294,7 +294,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4cT-t3-ZNX">
-                                <rect key="frame" x="8" y="148" width="398" height="44"/>
+                                <rect key="frame" x="8" y="96" width="398" height="44"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Exercise..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Udp-ea-Qty" customClass="AutoCompleteTextField" customModule="SimpleWorkout" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="285" height="44"/>
@@ -321,7 +321,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="317" placeholderIntrinsicHeight="400" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hqk-bN-7ms" customClass="AutoCompleteTableView" customModule="SimpleWorkout" customModuleProvider="target">
-                                <rect key="frame" x="8.5" y="188" width="284" height="400"/>
+                                <rect key="frame" x="8.5" y="136" width="284" height="400"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SuggestionDropDown" textLabel="1YP-px-x7N" rowHeight="40" style="IBUITableViewCellStyleDefault" id="S4S-1W-6U2">

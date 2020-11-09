@@ -5,42 +5,34 @@
 import UIKit
 
 class WeekVM {
-    // MARK: - Nested Types
-
-    enum WeekDay: Int, CaseIterable, CustomStringConvertible {
-        case monday
-        case tuesday
-        case wednesday
-        case thursday
-        case friday
-        case saturday
-        case sunday
-
-        var description: String {
-            switch self {
-            case .monday: return "Monday"
-            case .tuesday: return "Tuesday"
-            case .wednesday: return "Wednesday"
-            case .thursday: return "Thursday"
-            case .friday: return "Friday"
-            case .saturday: return "Saturday"
-            case .sunday: return "Sunday"
-            }
-        }
-    }
-
     // MARK: - Properties
 
-    var rowCount = WeekDay.allCases.count
+    var rowCount = Weekday.Day.allCases.count
     let cellReuseId = CellReuseId.scheduleTableViewCell
 
     // MARK: - Public Methods
 
-    func configureCell(_ cell: UITableViewCell, _ indexPath: IndexPath) {
-        cell.textLabel?.text = WeekDay(rawValue: indexPath.row)?.description
-    }
-    
-    func destinationVCTitle(for selectedIndexPath: IndexPath) -> String {
-        WeekDay(rawValue: selectedIndexPath.row)?.description ?? ""
+    func configureCell(_ cell: UITableViewCell, for weekdayObject: Weekday) {
+        guard
+            let weekday = weekdayObject.name,
+            var exercises = weekdayObject.exercises?.allObjects as? [Exercise]
+        else {
+            cell.textLabel?.text = weekdayObject.name
+            cell.detailTextLabel?.text = "Rest Day"
+            return
+        }
+
+        exercises.sort { $0.sort < $1.sort }
+
+        var exerciseDetails = String()
+
+        exercises.forEach {
+            if let exerciseName = $0.name {
+                exerciseDetails += "\(exerciseName)\n"
+            }
+        }
+
+        cell.textLabel?.text = weekday
+        cell.detailTextLabel?.text = !exerciseDetails.isEmpty ? exerciseDetails : "Rest Day"
     }
 }

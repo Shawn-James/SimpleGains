@@ -2,25 +2,43 @@
 // Created by Shawn James
 // Weekday+Convenience.swift
 
+import Foundation
+
 extension Weekday {
-    enum Day: String {
-        case monday = "Monday"
-        case tuesday = "Tuesday"
-        case wednesday = "Wednesday"
-        case thursday = "Thursday"
-        case friday = "Friday"
-        case saturday = "Saturday"
-        case sunday = "Sunday"
+    enum Day: Int, CaseIterable, CustomStringConvertible {
+        case monday
+        case tuesday
+        case wednesday
+        case thursday
+        case friday
+        case saturday
+        case sunday
+
+        var description: String {
+            switch self {
+            case .monday:
+                return "Monday"
+            case .tuesday:
+                return "Tuesday"
+            case .wednesday:
+                return "Wednesday"
+            case .thursday:
+                return "Thursday"
+            case .friday:
+                return "Friday"
+            case .saturday:
+                return "Saturday"
+            case .sunday:
+                return "Sunday"
+            }
+        }
     }
 
-    /// Programmer's initializer for creating weekday managed object
-    convenience init(_ day: Day, exercises: [Exercise]?) {
-        self.init()
+    /// Programmer's initializer for creating initial weekday managed object
+    convenience init(_ weekdayNumber: Int16, _ day: Day) {
+        self.init(context: CoreDataMC.shared.mainContext)
 
-        name = day.rawValue
-        
-        exercises?.forEach {
-            addToExercises($0)
-        }
+        order = weekdayNumber
+        name = day.description
     }
 }

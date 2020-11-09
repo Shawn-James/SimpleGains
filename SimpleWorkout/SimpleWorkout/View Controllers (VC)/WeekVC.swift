@@ -5,11 +5,18 @@
 import UIKit
 
 class WeekVC: UITableViewController {
-    // MARK: - Properties
-
     // MARK: - Models
 
     let weekVM = WeekVM()
+    let exerciseMC = ExerciseMC()
+
+    // MARK: - Properties
+
+    var weekdays: [Weekday] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     // MARK: - Lifecycle
 
@@ -17,6 +24,12 @@ class WeekVC: UITableViewController {
         super.viewDidLoad()
 
 //        navigationController?.navigationBar.makeTransparent()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        weekdays = exerciseMC.fetchWeekdays()
     }
 
     // MARK: - TableView
@@ -27,8 +40,9 @@ class WeekVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: weekVM.cellReuseId, for: indexPath)
+        let weekday = weekdays[indexPath.row]
 
-        weekVM.configureCell(cell, indexPath)
+        weekVM.configureCell(cell, for: weekday)
 
         return cell
     }

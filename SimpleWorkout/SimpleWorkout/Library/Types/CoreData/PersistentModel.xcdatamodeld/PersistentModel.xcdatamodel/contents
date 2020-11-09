@@ -8,17 +8,18 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="sets" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sort" attributeType="Integer 16" usesScalarValueType="YES"/>
         <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="workingReps" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="weekday" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weekday" inverseName="exercises" inverseEntity="Weekday"/>
     </entity>
     <entity name="Weekday" representedClassName="Weekday" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String"/>
+        <attribute name="order" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="weekday" inverseEntity="Exercise"/>
     </entity>
     <elements>
         <element name="AutoCompleteOption" positionX="27.6953125" positionY="-240.60546875" width="128" height="73"/>
         <element name="Exercise" positionX="25.49609375" positionY="-172.01953125" width="128" height="133"/>
-        <element name="Weekday" positionX="-186.9140625" positionY="-198.73828125" width="128" height="73"/>
+        <element name="Weekday" positionX="-186.9140625" positionY="-198.73828125" width="128" height="88"/>
     </elements>
 </model>

@@ -8,10 +8,11 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         let firstLaunch = UserDefaults.standard.value(forKey: UserDefaultsKey.firstLaunch) as? Bool ?? true
         if firstLaunch {
             installStandardAutoCompleteOptions()
+
+            installEmptyWeekdays()
 
             UserDefaults.standard.setValue(false, forKey: UserDefaultsKey.firstLaunch)
         }
@@ -43,14 +44,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let standardAutoCompleteOptions = try PropertyListDecoder().decode([String].self, from: plist)
 
             standardAutoCompleteOptions.forEach {
-                let object = AutoCompleteOption(text: $0)
+                let autoCompleteOption = AutoCompleteOption(text: $0)
                 let minCountToAllowFetching: Int64 = 2
-                object.occurrences = minCountToAllowFetching
-                CoreDataMC.shared.create(object: object)
+                autoCompleteOption.occurrences = minCountToAllowFetching
+                CoreDataMC.shared.create(autoCompleteOption)
             }
 
         } catch {
             print("Error installing standard auto-complete options: \(error)")
         }
+    }
+
+    private func installEmptyWeekdays() {
+        CoreDataMC.shared.create(Weekday(0, .monday),
+                                 Weekday(1, .tuesday),
+                                 Weekday(2, .wednesday),
+                                 Weekday(3, .thursday),
+                                 Weekday(4, .friday),
+                                 Weekday(5, .saturday),
+                                 Weekday(6, .sunday))
     }
 }

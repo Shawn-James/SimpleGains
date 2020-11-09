@@ -18,6 +18,10 @@ final class DayVC: UIViewController {
     private var autoCompleteMC = AutoCompleteMC()
     private var dayVM = DayVM()
 
+    // MARK: - Dependancies
+
+    var weekday = Weekday()
+
     // MARK: - Properties
 
     @IBOutlet private var autoCompleteTextField: UITextField!
@@ -25,8 +29,6 @@ final class DayVC: UIViewController {
 
     @IBOutlet private var addedExercisesTableView: UITableView!
     @IBOutlet private var emptyDataSetView: UIView!
-
-    private var addedExerciseNames: [String] = []
 
     // MARK: - Lifecycle
 
@@ -51,11 +53,12 @@ final class DayVC: UIViewController {
         guard let exerciseName = autoCompleteTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !exerciseName.isEmpty
         else { return }
 
+        weekday.addToExercises(Exercise(name: exerciseName, sort: Int16(weekday.exercises?.count ?? 0))) // FIXME: - clean up, this adds to end
+        CoreDataMC.shared.save()
+
         autoCompleteTextField.text?.removeAll(keepingCapacity: false)
 
-        addedExerciseNames.append(exerciseName)
-
-        if !addedExerciseNames.isEmpty {
+        if weekday.exercises?.count != 0 {
             configurationForEmptyDataSet()
 
             incrementAutoCompleteOccurrenceCount(for: exerciseName)
@@ -82,13 +85,13 @@ final class DayVC: UIViewController {
         if let autoCompleteOption = fetchedAutoCompleteOption {
             autoCompleteOption.occurrences += 1
         } else {
-            CoreDataMC.shared.create(object: AutoCompleteOption(text: userInput))
+            CoreDataMC.shared.create(AutoCompleteOption(text: userInput))
         }
     }
 
     /// Configures the tableView's appearance based on whether or not it is empty.
     private func configurationForEmptyDataSet() {
-        switch addedExerciseNames.isEmpty {
+        switch weekday.exercises?.count == 0 {
         case true:
             navigationItem.largeTitleDisplayMode = .always
             addedExercisesTableView.backgroundView = emptyDataSetView
@@ -108,16 +111,20 @@ final class DayVC: UIViewController {
 
 extension DayVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        addedExerciseNames.count
+        weekday.exercises?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = addedExercisesTableView.dequeueReusableCell(withIdentifier: dayVM.cellReuseId, for: indexPath) as? AddedExercisesTableViewCell
+        guard
+            let cell = addedExercisesTableView.dequeueReusableCell(withIdentifier: dayVM.cellReuseId, for: indexPath) as? AddedExercisesTableViewCell,
+            var exercises = weekday.exercises?.allObjects as? [Exercise]
         else {
             fatalError("Programmer error: Cell dequeue error")
         }
 
-        cell.label.text = addedExerciseNames[indexPath.row]
+        exercises.sort { $0.sort < $1.sort }
+
+        cell.label.text = exercises[indexPath.row].name
 
         return cell
     }
@@ -138,7 +145,7 @@ extension DayVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Remove") { [weak self] _, _, completion in
-            self?.addedExerciseNames.remove(at: indexPath.row)
+//            self?.addedExerciseNames.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
 
             completion(true)

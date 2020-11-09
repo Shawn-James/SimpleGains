@@ -32,9 +32,9 @@ class CoreDataMC {
 
     // MARK: - Public Methods
 
-    /// Creates a new managed object and saves it to the main context
-    /// - Parameter object: The managed object to create
-    func create(object: NSManagedObject) {
+    /// Creates new managed objects and saves them to the main context
+    /// - Parameter objects: The managed objects to create
+    func create(_ : NSManagedObject...) {
         save()
     }
 
