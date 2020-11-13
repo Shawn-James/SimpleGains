@@ -3,8 +3,10 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -128,39 +130,115 @@
             <point key="canvasLocation" x="2384" y="1477"/>
         </scene>
         <!--Schedule-->
-        <scene sceneID="53h-Px-Lpb">
+        <scene sceneID="hDG-Aa-rV2">
             <objects>
-                <tableViewController storyboardIdentifier="ScheduleTableViewController" id="HeY-gG-eKH" customClass="WeekVC" customModule="SimpleWorkout" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="g69-KK-lYs">
+                <collectionViewController id="4D8-Nu-7X3" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="SZD-Fk-xL7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ScheduleTableViewCell" textLabel="EKj-Kh-15R" detailTextLabel="xEQ-yg-gHS" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="DW3-eH-n3Q">
-                                <rect key="frame" x="0.0" y="28" width="414" height="70"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DW3-eH-n3Q" id="eS5-1b-UD4">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="70"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2bZ-BQ-LvW">
+                            <size key="itemSize" width="414" height="91"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9M8-CS-YgZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="N1M-et-uKP">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EKj-Kh-15R">
-                                            <rect key="frame" x="20" y="12" width="51" height="30"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdQ-hz-ueG">
+                                            <rect key="frame" x="30" y="61.5" width="369" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Rest Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xEQ-yg-gHS">
-                                            <rect key="frame" x="20" y="42" width="57.5" height="17"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nG-ta-CzE">
+                                            <rect key="frame" x="15" y="15" width="384" height="31.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0nG-ta-CzE" firstAttribute="top" secondItem="N1M-et-uKP" secondAttribute="top" constant="15" id="DbP-l2-5bd"/>
+                                        <constraint firstAttribute="trailing" secondItem="0nG-ta-CzE" secondAttribute="trailing" constant="15" id="Uad-lO-fe8"/>
+                                        <constraint firstAttribute="trailing" secondItem="kdQ-hz-ueG" secondAttribute="trailing" constant="15" id="VfI-KG-D2Z"/>
+                                        <constraint firstAttribute="bottom" secondItem="kdQ-hz-ueG" secondAttribute="bottom" constant="15" id="iu4-Uw-7Av"/>
+                                        <constraint firstItem="kdQ-hz-ueG" firstAttribute="top" secondItem="0nG-ta-CzE" secondAttribute="bottom" constant="15" id="jK9-zc-4FH"/>
+                                        <constraint firstItem="kdQ-hz-ueG" firstAttribute="leading" secondItem="N1M-et-uKP" secondAttribute="leading" constant="30" id="lDJ-aH-g9u"/>
+                                        <constraint firstItem="0nG-ta-CzE" firstAttribute="leading" secondItem="N1M-et-uKP" secondAttribute="leading" constant="15" id="u6Z-UW-Vyx"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="414" height="91"/>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sbs-1f-X1g">
+                                <rect key="frame" x="0.0" y="101" width="414" height="91"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ng8-Jx-iLL">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="4D8-Nu-7X3" id="tx2-7o-XHe"/>
+                            <outlet property="delegate" destination="4D8-Nu-7X3" id="QtD-x2-WAe"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Schedule" id="TX5-6b-7MF"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="plF-Ps-7yI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2228.985507246377" y="-992.41071428571422"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="53h-Px-Lpb">
+            <objects>
+                <tableViewController storyboardIdentifier="ScheduleTableViewController" id="HeY-gG-eKH" customClass="WeekVC" customModule="SimpleWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="g69-KK-lYs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="WeekTableViewCell" id="DW3-eH-n3Q" customClass="WeekTableViewCell" customModule="SimpleWorkout" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="68"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DW3-eH-n3Q" id="eS5-1b-UD4">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="68"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptn-Ze-NN8">
+                                            <rect key="frame" x="20" y="11" width="355" height="24.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtM-bV-Wfb">
+                                            <rect key="frame" x="35" y="43.5" width="340" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ptn-Ze-NN8" secondAttribute="trailing" id="1C5-Ce-cpC"/>
+                                        <constraint firstItem="RtM-bV-Wfb" firstAttribute="leading" secondItem="Ptn-Ze-NN8" secondAttribute="leading" constant="15" id="J8u-a5-YbR"/>
+                                        <constraint firstItem="RtM-bV-Wfb" firstAttribute="top" secondItem="Ptn-Ze-NN8" secondAttribute="bottom" constant="8" id="Xi9-ud-9vF"/>
+                                        <constraint firstAttribute="trailing" secondItem="RtM-bV-Wfb" secondAttribute="trailing" constant="8" id="Y0E-Aw-uK8"/>
+                                        <constraint firstAttribute="bottom" secondItem="RtM-bV-Wfb" secondAttribute="bottom" constant="10" id="b8c-X1-NsV"/>
+                                        <constraint firstItem="Ptn-Ze-NN8" firstAttribute="leading" secondItem="eS5-1b-UD4" secondAttribute="leadingMargin" id="i8d-js-iyM"/>
+                                        <constraint firstItem="Ptn-Ze-NN8" firstAttribute="top" secondItem="eS5-1b-UD4" secondAttribute="topMargin" id="tgY-Qf-wJm"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="7DS-0G-p52" kind="show" identifier="ScheduleTableViewCellPressed" id="NAR-2Q-Pa5"/>
+                                    <outlet property="exercisesLabel" destination="RtM-bV-Wfb" id="Ebo-0s-HjK"/>
+                                    <outlet property="weekdayLabel" destination="Ptn-Ze-NN8" id="Kxo-O6-5gC"/>
+                                    <segue destination="7DS-0G-p52" kind="show" identifier="ScheduleTableViewCellPressed" id="3bk-e4-Vuf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -185,7 +263,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g65-y4-zeN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g65-y4-zeN">
                                 <rect key="frame" x="0.0" y="596" width="414" height="217"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -224,6 +302,9 @@
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <textInputTraits key="textInputTraits"/>
+                                                                    <connections>
+                                                                        <action selector="TextFieldEditingDidEnd:" destination="zlB-bW-gOQ" eventType="editingDidEnd" id="vNc-JP-X0Y"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
@@ -239,12 +320,15 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36K-xc-v1S" customClass="SWRoundButton" customModule="SimpleWorkout" customModuleProvider="target">
+                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36K-xc-v1S" customClass="SWRoundButton" customModule="SimpleWorkout" customModuleProvider="target">
                                                                     <rect key="frame" x="46.5" y="0.0" width="40" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="36K-xc-v1S" secondAttribute="height" multiplier="1:1" id="rDF-qm-qwb"/>
                                                                     </constraints>
                                                                     <state key="normal" title="?"/>
+                                                                    <connections>
+                                                                        <action selector="buttonValueChanged:" destination="zlB-bW-gOQ" eventType="touchUpInside" id="Ey2-0z-9Sr"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -260,12 +344,15 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0l-pn-RI0" customClass="SWRoundButton" customModule="SimpleWorkout" customModuleProvider="target">
+                                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0l-pn-RI0" customClass="SWRoundButton" customModule="SimpleWorkout" customModuleProvider="target">
                                                                     <rect key="frame" x="52" y="0.0" width="40" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="E0l-pn-RI0" secondAttribute="height" multiplier="1:1" id="bza-C2-03j"/>
                                                                     </constraints>
                                                                     <state key="normal" title="?"/>
+                                                                    <connections>
+                                                                        <action selector="buttonValueChanged:" destination="zlB-bW-gOQ" eventType="touchUpInside" id="UdA-hN-HAP"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -285,10 +372,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="label" destination="fm9-er-W4y" id="mP0-Ng-fCu"/>
+                                            <outlet property="nameLabel" destination="fm9-er-W4y" id="mP0-Ng-fCu"/>
+                                            <outlet property="repsButton" destination="E0l-pn-RI0" id="RpP-bb-gFT"/>
+                                            <outlet property="setsButton" destination="36K-xc-v1S" id="GOU-8Y-HHi"/>
                                             <outlet property="weightTextField" destination="bGm-z6-imT" id="jKZ-9u-e0l"/>
-                                            <outletCollection property="swRoundButtons" destination="36K-xc-v1S" collectionClass="NSMutableArray" id="Q6L-sU-fLq"/>
-                                            <outletCollection property="swRoundButtons" destination="E0l-pn-RI0" collectionClass="NSMutableArray" id="m90-kj-jBI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -324,7 +411,7 @@
                                 <rect key="frame" x="8.5" y="136" width="284" height="400"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SuggestionDropDown" textLabel="1YP-px-x7N" rowHeight="40" style="IBUITableViewCellStyleDefault" id="S4S-1W-6U2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DropDownTableViewCell" textLabel="1YP-px-x7N" rowHeight="40" style="IBUITableViewCellStyleDefault" id="S4S-1W-6U2" customClass="DropDownTableViewCell" customModule="SimpleWorkout" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="284" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S4S-1W-6U2" id="HRV-MI-Zt3">
@@ -359,12 +446,20 @@
                             <constraint firstItem="4cT-t3-ZNX" firstAttribute="leading" secondItem="xJN-k8-3Nc" secondAttribute="leading" constant="8" id="rCQ-lv-7Gc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="NRz-gj-nL1"/>
+                    <navigationItem key="navigationItem" id="NRz-gj-nL1">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="zbi-C5-F4c">
+                            <imageReference key="image" image="list.number.rtl" catalog="system" symbolScale="medium"/>
+                            <connections>
+                                <action selector="reOrderButtonPressed:" destination="7DS-0G-p52" id="OyF-ru-qTA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addedExercisesTableView" destination="g65-y4-zeN" id="Wwx-RT-iBQ"/>
                         <outlet property="autoCompleteDropdown" destination="Hqk-bN-7ms" id="mPE-D8-P03"/>
                         <outlet property="autoCompleteTextField" destination="Udp-ea-Qty" id="Ilv-Mw-BfA"/>
                         <outlet property="emptyDataSetView" destination="EED-EE-MM0" id="IeJ-cA-n3N"/>
+                        <outlet property="reOrderButton" destination="zbi-C5-F4c" id="WF8-gK-Nhs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Pn-fB-HIr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -548,6 +643,7 @@ Schedule, It Will Appear Here.</string>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="gearshape.2.fill" catalog="system" width="128" height="100"/>
+        <image name="list.number.rtl" catalog="system" width="128" height="97"/>
         <systemColor name="placeholderTextColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

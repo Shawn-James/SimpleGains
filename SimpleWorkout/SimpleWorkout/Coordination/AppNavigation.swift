@@ -15,8 +15,13 @@ extension WeekVC {
                 fatalError("Programmer Error: Missing Dependencies")
             }
 
-            destinationVC.title = weekdays[selectedIndexPath.row].name
-            destinationVC.weekday = weekdays[selectedIndexPath.row]
+            let weekday = weekdays[selectedIndexPath.row]
+            
+            controller.initFetchedResultsController(for: weekday)
+            
+            destinationVC.title = weekday.name
+            destinationVC.weekday = weekday
+            destinationVC.controller = controller
 
         default: fatalError("WeekVC is missing a segue.identifier for \(segue.identifier!)")
         }

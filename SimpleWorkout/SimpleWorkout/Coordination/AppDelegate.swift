@@ -2,19 +2,15 @@
 // Created by Shawn James
 // AppDelegate.swift
 
-import CoreData
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let firstLaunch = UserDefaults.standard.value(forKey: UserDefaultsKey.firstLaunch) as? Bool ?? true
+
         if firstLaunch {
-            installStandardAutoCompleteOptions()
-
-            installEmptyWeekdays()
-
-            UserDefaults.standard.setValue(false, forKey: UserDefaultsKey.firstLaunch)
+            installInitialDatabase()
         }
 
         return true
@@ -36,32 +32,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Supporting Methods
 
-    private func installStandardAutoCompleteOptions() {
-        guard let url = Bundle.main.url(forResource: "StandardAutoCompleteOptions", withExtension: "plist") else { return }
+    private func installInitialDatabase() {
+        _ = Weekday(.monday)
+        _ = Weekday(.tuesday)
+        _ = Weekday(.wednesday)
+        _ = Weekday(.thursday)
+        _ = Weekday(.friday)
+        _ = Weekday(.saturday)
+        _ = Weekday(.sunday)
 
-        do {
-            let plist = try Data(contentsOf: url)
-            let standardAutoCompleteOptions = try PropertyListDecoder().decode([String].self, from: plist)
+        _ = AutoCompleteOption(name: "Bench Press")
+        _ = AutoCompleteOption(name: "Sit-Ups")
+        _ = AutoCompleteOption(name: "Push-Ups")
+        _ = AutoCompleteOption(name: "Incline Bench Press")
+        _ = AutoCompleteOption(name: "Decline Bench Press")
+        _ = AutoCompleteOption(name: "Leg Press")
+        _ = AutoCompleteOption(name: "Squats")
+        _ = AutoCompleteOption(name: "Pull-Ups")
+        _ = AutoCompleteOption(name: "Military Press")
+        _ = AutoCompleteOption(name: "Hamstring Curls")
+        _ = AutoCompleteOption(name: "Calf Extensions")
+        _ = AutoCompleteOption(name: "Bent-Over Rows")
+        _ = AutoCompleteOption(name: "Bicep Curls")
+        _ = AutoCompleteOption(name: "Lat Pulldowns")
+        _ = AutoCompleteOption(name: "Lunges")
+        _ = AutoCompleteOption(name: "Ab Crunches")
+        _ = AutoCompleteOption(name: "Shrugs")
+        _ = AutoCompleteOption(name: "Lateral Raises")
+        _ = AutoCompleteOption(name: "Deadlifts")
+        _ = AutoCompleteOption(name: "Back Squats")
+        _ = AutoCompleteOption(name: "Barbell Hip Thrusts")
 
-            standardAutoCompleteOptions.forEach {
-                let autoCompleteOption = AutoCompleteOption(text: $0)
-                let minCountToAllowFetching: Int64 = 2
-                autoCompleteOption.occurrences = minCountToAllowFetching
-                CoreDataMC.shared.create(autoCompleteOption)
-            }
+        CoreData.shared.savePrivateChanges()
 
-        } catch {
-            print("Error installing standard auto-complete options: \(error)")
-        }
-    }
-
-    private func installEmptyWeekdays() {
-        CoreDataMC.shared.create(Weekday(0, .monday),
-                                 Weekday(1, .tuesday),
-                                 Weekday(2, .wednesday),
-                                 Weekday(3, .thursday),
-                                 Weekday(4, .friday),
-                                 Weekday(5, .saturday),
-                                 Weekday(6, .sunday))
+        UserDefaults.standard.setValue(false, forKey: UserDefaultsKey.firstLaunch)
     }
 }

@@ -7,8 +7,7 @@ import UIKit
 class WeekVC: UITableViewController {
     // MARK: - Models
 
-    let weekVM = WeekVM()
-    let exerciseMC = ExerciseMC()
+    let controller = ExerciseMC()
 
     // MARK: - Properties
 
@@ -20,29 +19,21 @@ class WeekVC: UITableViewController {
 
     // MARK: - Lifecycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-//        navigationController?.navigationBar.makeTransparent()
-    }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        weekdays = exerciseMC.fetchWeekdays()
+        weekdays = controller.fetchWeekdays()
     }
 
     // MARK: - TableView
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        weekVM.rowCount
+        weekdays.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: weekVM.cellReuseId, for: indexPath)
-        let weekday = weekdays[indexPath.row]
-
-        weekVM.configureCell(cell, for: weekday)
+        let cell: WeekTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.configureCell(withWeekday: weekdays[indexPath.row])
 
         return cell
     }

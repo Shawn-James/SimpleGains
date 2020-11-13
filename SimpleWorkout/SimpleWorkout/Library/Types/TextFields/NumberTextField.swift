@@ -26,6 +26,11 @@ class NumberTextField: UITextField, UITextFieldDelegate {
         super.init(coder: coder)
 
         keyboardType = .numberPad
+        
+//        layer.borderColor = UIColor.label.cgColor
+//        layer.borderWidth = 2
+//        layer.cornerRadius = 8
+//        layer.masksToBounds = true
 
         inputAccessoryView = toolBar // FIXME: - Getting a console dump for auto-layout. Is this Apple's error or developer?
     }

@@ -16,13 +16,29 @@ final class DayVC: UIViewController {
     // MARK: - Models
 
     private var autoCompleteMC = AutoCompleteMC()
-    private var dayVM = DayVM()
 
-    // MARK: - Dependancies
+    // MARK: - Dependencies
 
-    var weekday = Weekday()
+    var weekday: Weekday?
+    var controller: ExerciseMC? {
+        didSet {
+            if let fetchedResultsController = controller?.fetchedResultsController {
+                exerciseFRC = fetchedResultsController
+            }
+        }
+    }
+
+    var exerciseFRC: NSFetchedResultsController<Exercise>? {
+        didSet {
+            if let exerciseFRC = exerciseFRC {
+                exerciseFRC.delegate = self
+            }
+        }
+    }
 
     // MARK: - Properties
+
+    @IBOutlet var reOrderButton: UIBarButtonItem!
 
     @IBOutlet private var autoCompleteTextField: UITextField!
     @IBOutlet private var autoCompleteDropdown: AutoCompleteTableView!
@@ -43,55 +59,44 @@ final class DayVC: UIViewController {
         configurationForEmptyDataSet()
     }
 
-    // MARK: - Public Methods
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+//        CoreData.shared.saveViewChanges()
+    }
 
     // MARK: - Private Methods
+
+    @IBAction func reOrderButtonPressed(_ sender: UIBarButtonItem) {
+        addedExercisesTableView.isEditing.toggle()
+    }
 
     /// Adds exercises to the tableView and updates their occurrence count for auto-complete sorting purposes
     /// - Parameter sender: The add button itself
     @IBAction private func addButtonPressed(_ sender: SWButton) {
-        guard let exerciseName = autoCompleteTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !exerciseName.isEmpty
+        guard
+            let exerciseName = autoCompleteTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !exerciseName.isEmpty,
+            let weekday = weekday
         else { return }
-
-        weekday.addToExercises(Exercise(name: exerciseName, sort: Int16(weekday.exercises?.count ?? 0))) // FIXME: - clean up, this adds to end
-        CoreDataMC.shared.save()
 
         autoCompleteTextField.text?.removeAll(keepingCapacity: false)
 
-        if weekday.exercises?.count != 0 {
-            configurationForEmptyDataSet()
+        autoCompleteMC.incrementAutoCompleteOccurrenceCount(for: exerciseName)
 
-            incrementAutoCompleteOccurrenceCount(for: exerciseName)
-
-            addedExercisesTableView.reloadData()
-        }
-    }
-
-    /// Adds a new autoComplete option for the userInput or increments the occurrence count if one already exists.
-    /// - Parameter userInput: The text from the textfield
-    private func incrementAutoCompleteOccurrenceCount(for userInput: String) {
-        let fetchRequest: NSFetchRequest<AutoCompleteOption> = AutoCompleteOption.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "text MATCHES %@", userInput)
-
-        var fetchedAutoCompleteOption: AutoCompleteOption?
-
-        do {
-            fetchedAutoCompleteOption = try CoreDataMC.shared.mainContext.fetch(fetchRequest).first
-
-        } catch {
-            print("Error fetching in updateTextOccurrence(): \(error)")
-        }
-
-        if let autoCompleteOption = fetchedAutoCompleteOption {
-            autoCompleteOption.occurrences += 1
-        } else {
-            CoreDataMC.shared.create(AutoCompleteOption(text: userInput))
-        }
+        controller?.createNewExercise(named: exerciseName, for: weekday, completion: {
+            if addedExercisesTableView.backgroundView != .none {
+//                configurationForEmptyDataSet()
+                navigationItem.largeTitleDisplayMode = .never
+                addedExercisesTableView.backgroundView = .none
+                addedExercisesTableView.separatorStyle = .singleLine
+                addedExercisesTableView.isScrollEnabled = true
+            }
+        })
     }
 
     /// Configures the tableView's appearance based on whether or not it is empty.
     private func configurationForEmptyDataSet() {
-        switch weekday.exercises?.count == 0 {
+        switch exerciseFRC?.fetchedObjects?.count ?? 0 == 0 {
         case true:
             navigationItem.largeTitleDisplayMode = .always
             addedExercisesTableView.backgroundView = emptyDataSetView
@@ -104,6 +109,8 @@ final class DayVC: UIViewController {
             addedExercisesTableView.separatorStyle = .singleLine
             addedExercisesTableView.isScrollEnabled = true
         }
+
+        addedExercisesTableView.reloadData()
     }
 }
 
@@ -111,46 +118,118 @@ final class DayVC: UIViewController {
 
 extension DayVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        weekday.exercises?.count ?? 0
+        exerciseFRC?.fetchedObjects?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let cell = addedExercisesTableView.dequeueReusableCell(withIdentifier: dayVM.cellReuseId, for: indexPath) as? AddedExercisesTableViewCell,
-            var exercises = weekday.exercises?.allObjects as? [Exercise]
-        else {
-            fatalError("Programmer error: Cell dequeue error")
-        }
+        guard let exercise = exerciseFRC?.object(at: indexPath) else { return UITableViewCell() }
 
-        exercises.sort { $0.sort < $1.sort }
+        let cell: AddedExercisesTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.configureCell(withExercise: exercise)
 
-        cell.label.text = exercises[indexPath.row].name
+        print("\(exercise.name!) has order: \(exercise.order)")
+        // Save index
+//        if let privateExercise = CoreData.shared.privateContext.object(with: exercise.objectID) as? Exercise {
+//            privateExercise.order = Int16(indexPath.row)
+//        }
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .none
+    }
+
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        false
+    }
+
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        guard
+            sourceIndexPath != destinationIndexPath, // Verify something was moved
+            let sourceObjectID = exerciseFRC?.object(at: sourceIndexPath).objectID,
+            let privateMovedObject = CoreData.shared.privateContext.object(with: sourceObjectID) as? Exercise,
+            let exercises = exerciseFRC?.fetchedObjects // Why does this have zero values??
+        else { return }
+
+        // Map to private
+        var privateExercises = exercises.map {
+            CoreData.shared.privateContext.object(with: $0.objectID) as? Exercise
+        }
+
+        // Perform move
+        privateExercises.remove(at: sourceIndexPath.row)
+        privateExercises.insert(privateMovedObject, at: destinationIndexPath.row)
+
+        // Update order
+        var row: Int16 = 0
+        privateExercises.forEach {
+            $0?.order = row
+            row += 1
+        }
+
+        CoreData.shared.savePrivateChanges()
     }
 
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let reset = UIContextualAction(style: .normal, title: "Reset") { _, _, completion in
             let cell = tableView.cellForRow(at: indexPath) as? AddedExercisesTableViewCell
-            cell?.resetControls()
+            cell?.resetButtonValues()
 
             completion(true)
         }
 
         reset.image = UIImage(systemName: "gobackward")
-//        reset.backgroundColor = .primary
+        //        reset.backgroundColor = .primary
 
         return UISwipeActionsConfiguration(actions: [reset])
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Remove") { [weak self] _, _, completion in
-//            self?.addedExerciseNames.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            guard
+                let exerciseFRC = self?.exerciseFRC,
+                var exercises = exerciseFRC.fetchedObjects
+            else { completion(false); return } // FIXME: - completion false??
+
+            let group = DispatchGroup()
+            group.enter()
+
+            // Delete object
+            CoreData.shared.viewContext.delete(exerciseFRC.object(at: indexPath))
+            exercises.remove(at: indexPath.row)
+
+            // 1st action
+            DispatchQueue.main.async {
+                // Map to private
+                let privateExercises = exercises.map {
+                    CoreData.shared.privateContext.object(with: $0.objectID) as? Exercise
+                }
+
+                // Update order
+                var row: Int16 = 0
+                privateExercises.forEach {
+                    $0?.order = row
+                    row += 1
+                }
+
+                CoreData.shared.savePrivateChanges()
+
+                group.leave()
+            }
+
+            // 2nd action
+            group.notify(queue: .main) {
+                CoreData.shared.saveViewChanges()
+                CoreData.shared.savePrivateChanges()
+
+                if self?.exerciseFRC?.fetchedObjects?.count ?? 0 == 0 {
+                    self?.configurationForEmptyDataSet()
+                }
+            }
 
             completion(true)
         }
-
         delete.image = UIImage(systemName: "trash")
 
         return UISwipeActionsConfiguration(actions: [delete])
@@ -168,4 +247,67 @@ extension DayVC: AutoCompleteTableViewActionsDelegate {
 
         autoCompleteDropdown.hideDropDown()
     }
+}
+
+// MARK: - FetchedResultsController Delegate Methods
+
+extension DayVC: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        addedExercisesTableView.beginUpdates()
+    }
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                addedExercisesTableView.insertRows(at: [newIndexPath], with: .top)
+            }
+        case .update:
+            if let indexPath = indexPath {
+                addedExercisesTableView.reloadRows(at: [indexPath], with: .none)
+            }
+        case .move:
+            if let oldIndexPath = indexPath, let newIndexPath = newIndexPath {
+                addedExercisesTableView.deleteRows(at: [oldIndexPath], with: .none)
+                addedExercisesTableView.insertRows(at: [newIndexPath], with: .none)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                addedExercisesTableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            @unknown default: break
+        }
+    }
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        addedExercisesTableView.endUpdates()
+    }
+
+    // MARK: - Helper Methods
+
+//    Save positions in table view
+//    func updateExerciseOrder() {
+//        guard
+//            let exerciseFRC = exerciseFRC,
+//            let exercises = exerciseFRC.fetchedObjects
+//        else { return }
+//
+//        var index: Int16 = 0
+//
+//        exercises
+//            .map {
+//                CoreData.shared.privateContext.object(with: $0.objectID) as? Exercise
+//            }.forEach {
+//                $0.order = exerciseFRC.indexPath(forObject: )
+//            }
+//
+    ////            .forEach {
+    ////                if let exercise = CoreData.shared.privateContext.object(with: $0) as? Exercise {
+    ////                    exercise.order = addedExercisesTableView.
+    ////                        index += 1
+    ////                }
+    ////            }
+//
+//        CoreData.shared.savePrivateChanges()
+//    }
 }

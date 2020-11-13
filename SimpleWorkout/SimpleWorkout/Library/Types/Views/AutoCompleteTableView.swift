@@ -23,7 +23,6 @@ class AutoCompleteTableView: UITableView, UITableViewDelegate, UITextFieldDelega
     // MARK: - Properties
 
     private var suggestionsDataSource: SuggestionsData!
-    private let cellReuseId = CellReuseId.suggestionDropDown
     var actionsDelegate: AutoCompleteTableViewActionsDelegate?
 
     override var contentSize: CGSize {
@@ -66,15 +65,8 @@ class AutoCompleteTableView: UITableView, UITableViewDelegate, UITextFieldDelega
 
     func cellForRowAt() {
         suggestionsDataSource = SuggestionsData(tableView: self, cellProvider: { (tableView, indexPath, autoCompleteSuggestion) -> UITableViewCell? in
-            let cell = tableView.dequeueReusableCell(withIdentifier: self.cellReuseId, for: indexPath)
-
-            cell.textLabel?.attributedText = autoCompleteSuggestion
-
-            cell.backgroundColor = .secondarySystemBackground
-
-//            highlight color:
-//            let highlightColor = UIView(); highlightColor.backgroundColor = UIColor(named: "AccentColor")
-//            cell.selectedBackgroundView = highlightColor
+            let cell: DropDownTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.configureCell(withAutoCompleteSuggestion: autoCompleteSuggestion)
 
             return cell
         })

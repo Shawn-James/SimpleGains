@@ -4,26 +4,86 @@
 
 import UIKit
 
-class AddedExercisesTableViewCell: UITableViewCell {
-    @IBOutlet var label: UILabel!
-    @IBOutlet private var weightTextField: UITextField!
-    @IBOutlet private var swRoundButtons: [SWRoundButton]!
+class AddedExercisesTableViewCell: UITableViewCell, ReusableView {
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var weightTextField: UITextField!
+    @IBOutlet var setsButton: SWRoundButton!
+    @IBOutlet var repsButton: SWRoundButton!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - Dependencies
+
+    var exercise: Exercise?
+
+    // MARK: - Methods
+
+    public func configureCell(withExercise exercise: Exercise?) {
+        guard let exercise = exercise else { return }
+
+        self.exercise = exercise
+
+        nameLabel.text = exercise.name
+
+        weightTextField.text = exercise.weight != 0 ?
+            "\(exercise.weight)" : "" // Defaults to placeholder
+
+        exercise.sets != 0 ?
+            setsButton.setTitle("\(exercise.sets)", for: .normal) : setsButton.setTitle("?", for: .normal)
+
+        exercise.reps != 0 ?
+            repsButton.setTitle("\(exercise.reps)", for: .normal) : repsButton.setTitle("?", for: .normal)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+    public func resetButtonValues() {
+        guard let exercise = exercise else { return }
+
+        exercise.sets = 0; setsButton.setTitle("?", for: .normal)
+        exercise.reps = 0; repsButton.setTitle("?", for: .normal)
     }
 
-    func resetControls() {
-        weightTextField.text?.removeAll(keepingCapacity: false)
-        
-        swRoundButtons.forEach {
-            $0.setTitle("?", for: .normal)
+    // MARK: - Private Methods
+
+    @IBAction func TextFieldEditingDidEnd(_ sender: NumberTextField) {
+        guard
+            let exercise = exercise,
+            let newValue = Int16(sender.text!)
+        else { return }
+
+        switch sender {
+        case weightTextField:
+            exercise.weight = newValue
+
+        default:
+            fatalError("Programmer error, missing case in textFieldEditingDidEnd for AddedExercisesTableViewCell")
         }
+
+        CoreData.shared.saveViewChanges()
     }
+
+    @IBAction private func buttonValueChanged(_ sender: SWRoundButton) {
+        guard
+            let exercise = exercise,
+            let newValue = Int16(sender.title(for: .normal)!)
+        else { return }
+
+        switch sender {
+        case setsButton:
+            exercise.sets = newValue
+
+        case repsButton:
+            exercise.reps = newValue
+
+        default:
+            fatalError("Programmer error, missing case in buttonValueChanged for AddedExercisesTableViewCell")
+        }
+
+//        configureForEmptyCount(setsButton, repsButton)
+
+        CoreData.shared.saveViewChanges()
+    }
+
+//    private func configureForEmptyCount(_ buttons: SWRoundButton...) {
+//        buttons.forEach {
+//            $0.backgroundColor = $0.title(for: .normal) == "?" ? .none : .primary // Remove backgroundColor if no value
+//        }
+//    }
 }

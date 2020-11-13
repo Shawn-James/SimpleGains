@@ -3,11 +3,11 @@
 // Exercise+Convenience.swift
 
 extension Exercise {
-    /// Programmer's initializer for creating initial weekday managed object
-    convenience init(name: String, sort: Int16) {
-        self.init(context: CoreDataMC.shared.mainContext)
-        
+    /// Programmer's initializer for creating an Exercise managed object
+    @discardableResult convenience init(name: String, numberOfExercises lastIndex: Int) {
+        self.init(context: CoreData.shared.viewContext)
+
         self.name = name
-        self.sort = sort
+        order = Int16(lastIndex)
     }
 }

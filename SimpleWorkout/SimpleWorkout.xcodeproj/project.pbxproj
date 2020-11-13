@@ -9,16 +9,15 @@
 /* Begin PBXBuildFile section */
 		1D28448E2551273F008C7288 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28448D2551273F008C7288 /* TabBarVC.swift */; };
 		1D3064442558A54C0076CC5E /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3064432558A54C0076CC5E /* AutoCompleteTextField.swift */; };
+		1D4D7A28255CA19D001F70AB /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D7A27255CA19D001F70AB /* DropDownTableViewCell.swift */; };
 		1D50F1A52556421E00E65DE3 /* SWRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D50F1A42556421E00E65DE3 /* SWRoundButton.swift */; };
 		1D51E8732544AB1400029560 /* SWButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51E8722544AB1400029560 /* SWButton.swift */; };
-		1D5611B625521CF80000E16A /* DayVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5611B525521CF80000E16A /* DayVM.swift */; };
 		1D5611C72554B92F0000E16A /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5611C62554B92F0000E16A /* UserDefaultsKey.swift */; };
-		1D5611D02554BECB0000E16A /* StandardAutoCompleteOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D5611CF2554BECB0000E16A /* StandardAutoCompleteOptions.plist */; };
 		1D685DB12549CC5A006F0E5E /* AddedExercisesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DB02549CC5A006F0E5E /* AddedExercisesTableViewCell.swift */; };
 		1D685DBD254F27EB006F0E5E /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DBC254F27EB006F0E5E /* Themes.swift */; };
 		1D685DCE254F35DD006F0E5E /* NavBarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DCD254F35DD006F0E5E /* NavBarExtensions.swift */; };
 		1D685DD4254F6997006F0E5E /* PersistentModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DD2254F6997006F0E5E /* PersistentModel.xcdatamodeld */; };
-		1D685DD9254F69E3006F0E5E /* CoreDataMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DD8254F69E3006F0E5E /* CoreDataMC.swift */; };
+		1D685DD9254F69E3006F0E5E /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DD8254F69E3006F0E5E /* CoreData.swift */; };
 		1D685E06254F8E36006F0E5E /* Weekday+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685E05254F8E36006F0E5E /* Weekday+Convenience.swift */; };
 		1D8CF9CB2550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8CF9C92550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift */; };
 		1D8CF9CC2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8CF9CA2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift */; };
@@ -36,12 +35,13 @@
 		1D9FCD2F253B6C200081429F /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD2E253B6C200081429F /* ViewExtensions.swift */; };
 		1D9FCD37253B6C600081429F /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD36253B6C600081429F /* DateExtensions.swift */; };
 		1D9FCD74253D16AC0081429F /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD73253D16AC0081429F /* SettingsVM.swift */; };
-		1D9FCD7C253D1C3F0081429F /* WeekVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD7B253D1C3F0081429F /* WeekVM.swift */; };
 		1D9FCD86253D1E9C0081429F /* WeekVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD85253D1E9C0081429F /* WeekVC.swift */; };
-		1D9FCDAD253D2B8C0081429F /* CellReuseId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCDAC253D2B8C0081429F /* CellReuseId.swift */; };
 		1D9FCDC3253D31F10081429F /* SegueId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCDC2253D31F10081429F /* SegueId.swift */; };
 		1D9FCDC8253D35D30081429F /* DayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCDC7253D35D30081429F /* DayVC.swift */; };
 		1DA49F442544CA6200097F0D /* AutoCompleteMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA49F432544CA6200097F0D /* AutoCompleteMC.swift */; };
+		1DB1691A255C85B8002FCB8A /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB16919255C85B8002FCB8A /* ReusableView.swift */; };
+		1DB1691F255C86A1002FCB8A /* TableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB1691E255C86A1002FCB8A /* TableViewExtensions.swift */; };
+		1DB16936255C8875002FCB8A /* WeekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB16935255C8875002FCB8A /* WeekTableViewCell.swift */; };
 		1DD78205254660E8008A83A9 /* AutoCompleteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD78204254660E8008A83A9 /* AutoCompleteTableView.swift */; };
 		1DD7821F25467FE5008A83A9 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7821E25467FE5008A83A9 /* NumberTextField.swift */; };
 /* End PBXBuildFile section */
@@ -66,16 +66,15 @@
 /* Begin PBXFileReference section */
 		1D28448D2551273F008C7288 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		1D3064432558A54C0076CC5E /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
+		1D4D7A27255CA19D001F70AB /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTableViewCell.swift; sourceTree = "<group>"; };
 		1D50F1A42556421E00E65DE3 /* SWRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWRoundButton.swift; sourceTree = "<group>"; };
 		1D51E8722544AB1400029560 /* SWButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWButton.swift; sourceTree = "<group>"; };
-		1D5611B525521CF80000E16A /* DayVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayVM.swift; sourceTree = "<group>"; };
 		1D5611C62554B92F0000E16A /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
-		1D5611CF2554BECB0000E16A /* StandardAutoCompleteOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = StandardAutoCompleteOptions.plist; sourceTree = "<group>"; };
 		1D685DB02549CC5A006F0E5E /* AddedExercisesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedExercisesTableViewCell.swift; sourceTree = "<group>"; };
 		1D685DBC254F27EB006F0E5E /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		1D685DCD254F35DD006F0E5E /* NavBarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarExtensions.swift; sourceTree = "<group>"; };
 		1D685DD3254F6997006F0E5E /* PersistentModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersistentModel.xcdatamodel; sourceTree = "<group>"; };
-		1D685DD8254F69E3006F0E5E /* CoreDataMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMC.swift; sourceTree = "<group>"; };
+		1D685DD8254F69E3006F0E5E /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		1D685E05254F8E36006F0E5E /* Weekday+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weekday+Convenience.swift"; sourceTree = "<group>"; };
 		1D8CF9C92550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoCompleteOption+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1D8CF9CA2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoCompleteOption+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -99,12 +98,13 @@
 		1D9FCD2E253B6C200081429F /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		1D9FCD36253B6C600081429F /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		1D9FCD73253D16AC0081429F /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
-		1D9FCD7B253D1C3F0081429F /* WeekVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekVM.swift; sourceTree = "<group>"; };
 		1D9FCD85253D1E9C0081429F /* WeekVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekVC.swift; sourceTree = "<group>"; };
-		1D9FCDAC253D2B8C0081429F /* CellReuseId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReuseId.swift; sourceTree = "<group>"; };
 		1D9FCDC2253D31F10081429F /* SegueId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueId.swift; sourceTree = "<group>"; };
 		1D9FCDC7253D35D30081429F /* DayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayVC.swift; sourceTree = "<group>"; };
 		1DA49F432544CA6200097F0D /* AutoCompleteMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteMC.swift; sourceTree = "<group>"; };
+		1DB16919255C85B8002FCB8A /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		1DB1691E255C86A1002FCB8A /* TableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtensions.swift; sourceTree = "<group>"; };
+		1DB16935255C8875002FCB8A /* WeekTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTableViewCell.swift; sourceTree = "<group>"; };
 		1DD78204254660E8008A83A9 /* AutoCompleteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteTableView.swift; sourceTree = "<group>"; };
 		1DD7821E25467FE5008A83A9 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,14 +146,6 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		1D3064492558A5660076CC5E /* Plists */ = {
-			isa = PBXGroup;
-			children = (
-				1D5611CF2554BECB0000E16A /* StandardAutoCompleteOptions.plist */,
-			);
-			path = Plists;
-			sourceTree = "<group>";
-		};
 		1D30644A2558A57F0076CC5E /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				1D685DB02549CC5A006F0E5E /* AddedExercisesTableViewCell.swift */,
+				1DB16935255C8875002FCB8A /* WeekTableViewCell.swift */,
+				1D4D7A27255CA19D001F70AB /* DropDownTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -296,6 +290,7 @@
 				1D9FCD2E253B6C200081429F /* ViewExtensions.swift */,
 				1D9FCD36253B6C600081429F /* DateExtensions.swift */,
 				1D685DCD254F35DD006F0E5E /* NavBarExtensions.swift */,
+				1DB1691E255C86A1002FCB8A /* TableViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -303,11 +298,11 @@
 		1D9FCD41253B7D460081429F /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				1DB16918255C85A9002FCB8A /* Protocols */,
 				1D9AD6412558E20000FA21D1 /* Cells */,
 				1D30644A2558A57F0076CC5E /* Buttons */,
 				1D30644B2558A58F0076CC5E /* Views */,
 				1D30644C2558A5A40076CC5E /* TextFields */,
-				1D3064492558A5660076CC5E /* Plists */,
 				1D3064482558A5550076CC5E /* CoreData */,
 			);
 			path = Types;
@@ -316,8 +311,6 @@
 		1D9FCD6F253D14C40081429F /* View Models (VM) */ = {
 			isa = PBXGroup;
 			children = (
-				1D9FCD7B253D1C3F0081429F /* WeekVM.swift */,
-				1D5611B525521CF80000E16A /* DayVM.swift */,
 				1D9FCD73253D16AC0081429F /* SettingsVM.swift */,
 			);
 			path = "View Models (VM)";
@@ -326,7 +319,6 @@
 		1D9FCDAB253D2B490081429F /* Namespacing */ = {
 			isa = PBXGroup;
 			children = (
-				1D9FCDAC253D2B8C0081429F /* CellReuseId.swift */,
 				1D9FCDC2253D31F10081429F /* SegueId.swift */,
 				1D5611C62554B92F0000E16A /* UserDefaultsKey.swift */,
 			);
@@ -337,10 +329,18 @@
 			isa = PBXGroup;
 			children = (
 				1DA49F432544CA6200097F0D /* AutoCompleteMC.swift */,
-				1D685DD8254F69E3006F0E5E /* CoreDataMC.swift */,
+				1D685DD8254F69E3006F0E5E /* CoreData.swift */,
 				1D9AD6542558ED9100FA21D1 /* ExerciseMC.swift */,
 			);
 			path = "Model Controllers (MC)";
+			sourceTree = "<group>";
+		};
+		1DB16918255C85A9002FCB8A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1DB16919255C85B8002FCB8A /* ReusableView.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,7 +449,6 @@
 			files = (
 				1D9FCCE3253B667A0081429F /* LaunchScreen.storyboard in Resources */,
 				1D9FCCE0253B667A0081429F /* Assets.xcassets in Resources */,
-				1D5611D02554BECB0000E16A /* StandardAutoCompleteOptions.plist in Resources */,
 				1D9FCCDE253B66770081429F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,33 +474,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D4D7A28255CA19D001F70AB /* DropDownTableViewCell.swift in Sources */,
 				1D9FCD86253D1E9C0081429F /* WeekVC.swift in Sources */,
 				1D51E8732544AB1400029560 /* SWButton.swift in Sources */,
 				1D685DB12549CC5A006F0E5E /* AddedExercisesTableViewCell.swift in Sources */,
 				1D9AD7172559129400FA21D1 /* Exercise+Convenience.swift in Sources */,
+				1DB16936255C8875002FCB8A /* WeekTableViewCell.swift in Sources */,
 				1D9FCDC3253D31F10081429F /* SegueId.swift in Sources */,
 				1D9FCD37253B6C600081429F /* DateExtensions.swift in Sources */,
 				1D685E06254F8E36006F0E5E /* Weekday+Convenience.swift in Sources */,
 				1D685DD4254F6997006F0E5E /* PersistentModel.xcdatamodeld in Sources */,
 				1D3064442558A54C0076CC5E /* AutoCompleteTextField.swift in Sources */,
-				1D5611B625521CF80000E16A /* DayVM.swift in Sources */,
 				1D8CF9CC2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift in Sources */,
 				1DA49F442544CA6200097F0D /* AutoCompleteMC.swift in Sources */,
 				1D8CF9CB2550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift in Sources */,
 				1D28448E2551273F008C7288 /* TabBarVC.swift in Sources */,
 				1D9FCD0D253B66E70081429F /* GuardDebugOperator.swift in Sources */,
 				1D9FCD22253B69900081429F /* AppNavigation.swift in Sources */,
-				1D9FCD7C253D1C3F0081429F /* WeekVM.swift in Sources */,
-				1D9FCDAD253D2B8C0081429F /* CellReuseId.swift in Sources */,
 				1DD7821F25467FE5008A83A9 /* NumberTextField.swift in Sources */,
 				1D685DCE254F35DD006F0E5E /* NavBarExtensions.swift in Sources */,
-				1D685DD9254F69E3006F0E5E /* CoreDataMC.swift in Sources */,
+				1DB1691F255C86A1002FCB8A /* TableViewExtensions.swift in Sources */,
+				1D685DD9254F69E3006F0E5E /* CoreData.swift in Sources */,
 				1D685DBD254F27EB006F0E5E /* Themes.swift in Sources */,
 				1D50F1A52556421E00E65DE3 /* SWRoundButton.swift in Sources */,
 				1DD78205254660E8008A83A9 /* AutoCompleteTableView.swift in Sources */,
 				1D9FCCD7253B66770081429F /* AppDelegate.swift in Sources */,
 				1D9FCD2F253B6C200081429F /* ViewExtensions.swift in Sources */,
 				1D5611C72554B92F0000E16A /* UserDefaultsKey.swift in Sources */,
+				1DB1691A255C85B8002FCB8A /* ReusableView.swift in Sources */,
 				1D9FCCD9253B66770081429F /* SceneDelegate.swift in Sources */,
 				1D9AD6552558ED9100FA21D1 /* ExerciseMC.swift in Sources */,
 				1D9FCD74253D16AC0081429F /* SettingsVM.swift in Sources */,

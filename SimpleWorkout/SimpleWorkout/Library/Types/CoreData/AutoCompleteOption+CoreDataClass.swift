@@ -9,9 +9,16 @@ import Foundation
 @objc(AutoCompleteOption)
 public class AutoCompleteOption: NSManagedObject {
     @discardableResult convenience init(text userInput: String) {
-        self.init(context: CoreDataMC.shared.mainContext)
+        self.init(context: CoreData.shared.viewContext)
 
         text = userInput
         occurrences = 1
+    }
+
+    @discardableResult convenience init(name stockName: String) {
+        self.init(context: CoreData.shared.privateContext)
+
+        text = stockName
+        occurrences = 2 // This is the minimum number required to be fetched
     }
 }

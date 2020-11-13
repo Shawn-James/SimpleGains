@@ -5,40 +5,21 @@
 import Foundation
 
 extension Weekday {
-    enum Day: Int, CaseIterable, CustomStringConvertible {
-        case monday
-        case tuesday
-        case wednesday
-        case thursday
-        case friday
-        case saturday
-        case sunday
-
-        var description: String {
-            switch self {
-            case .monday:
-                return "Monday"
-            case .tuesday:
-                return "Tuesday"
-            case .wednesday:
-                return "Wednesday"
-            case .thursday:
-                return "Thursday"
-            case .friday:
-                return "Friday"
-            case .saturday:
-                return "Saturday"
-            case .sunday:
-                return "Sunday"
-            }
-        }
+    enum Day: String, CaseIterable {
+        case monday = "Monday"
+        case tuesday = "Tuesday"
+        case wednesday = "Wednesday"
+        case thursday = "Thursday"
+        case friday = "Friday"
+        case saturday = "Saturday"
+        case sunday = "Sunday"
     }
 
     /// Programmer's initializer for creating initial weekday managed object
-    convenience init(_ weekdayNumber: Int16, _ day: Day) {
-        self.init(context: CoreDataMC.shared.mainContext)
+    @discardableResult convenience init(_ day: Day) {
+        self.init(context: CoreData.shared.privateContext)
 
-        order = weekdayNumber
-        name = day.description
+        name = day.rawValue
+        order = Int16(Day.allCases.firstIndex(of: day)!) // Programmer error if missing case
     }
 }

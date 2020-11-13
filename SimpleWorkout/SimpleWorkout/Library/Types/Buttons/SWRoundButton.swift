@@ -5,7 +5,6 @@
 import UIKit
 
 class SWRoundButton: UIButton {
-    
     // MARK: - Lifecycle
 
     /// Storyboard init
@@ -25,8 +24,8 @@ class SWRoundButton: UIButton {
 
     @objc private func handleButtonPress() {
         let currentValue = Int(title(for: .normal) ?? "0") ?? 0
-        let newValue = currentValue + 1
+        let newValue = "\(currentValue + 1)"
 
-        setTitle(String(newValue), for: .normal)
+        setTitle(newValue, for: .normal)
     }
 }

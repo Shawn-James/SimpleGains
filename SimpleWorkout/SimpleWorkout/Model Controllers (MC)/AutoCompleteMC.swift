@@ -30,7 +30,7 @@ class AutoCompleteMC {
         }
 
         let request: ACOFetchRequest = AutoCompleteOption.fetchRequest()
-        let context = CoreDataMC.shared.mainContext
+        let context = CoreData.shared.viewContext
 
         fetchPrefixMatches(quantity: quantity, userInput: userInput, request: request, context: context)
 
@@ -39,6 +39,30 @@ class AutoCompleteMC {
             let remaining = quantity - autoCompleteSuggestions.count
             fetchedPatternMatches(remaining: remaining, userInput: userInput, request: request, context: context)
         }
+    }
+
+    /// Adds a new autoComplete option for the userInput or increments the occurrence count if one already exists.
+    /// - Parameter userInput: The text from the textfield
+    func incrementAutoCompleteOccurrenceCount(for userInput: String) {
+        let fetchRequest: NSFetchRequest<AutoCompleteOption> = AutoCompleteOption.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "text MATCHES %@", userInput)
+
+        var fetchedAutoCompleteOption: AutoCompleteOption?
+
+        do {
+            fetchedAutoCompleteOption = try CoreData.shared.viewContext.fetch(fetchRequest).first
+
+        } catch {
+            print("Error fetching in updateTextOccurrence(): \(error)")
+        }
+
+        if let autoCompleteOption = fetchedAutoCompleteOption {
+            autoCompleteOption.occurrences += 1
+        } else {
+            AutoCompleteOption(text: userInput)
+        }
+
+        CoreData.shared.saveViewChanges()
     }
 
     // MARK: - Private Methods
@@ -60,7 +84,7 @@ class AutoCompleteMC {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "occurrences", ascending: false)]
         fetchRequest.fetchLimit = fetchLimit
 
-        let usedMoreThanOnce = NSPredicate(format: "occurrences > 1")
+        let usedMoreThanOnce = NSPredicate(format: "occurrences > 1") // We want to prevent from suggesting "one-time typos"
         let prefixMatches = NSPredicate(format: "text BEGINSWITH %@", userInput)
 
         fetchRequest.predicate = NSCompoundPredicate(type: .and, subpredicates: [prefixMatches, usedMoreThanOnce])
@@ -87,7 +111,7 @@ class AutoCompleteMC {
     private func fetchedPatternMatches(remaining fetchLimit: Int, userInput: String, request fetchRequest: ACOFetchRequest, context: NSManagedObjectContext) {
         fetchRequest.fetchLimit = fetchLimit
 
-        let usedMoreThanOnce = NSPredicate(format: "occurrences > 0") // FIXME: - change to 1
+        let usedMoreThanOnce = NSPredicate(format: "occurrences > 1") // We want to prevent from suggesting "one-time typos"
         let patternMatches = NSPredicate(format: "text CONTAINS %@", userInput)
         let notAddedYet = NSPredicate(format: "NOT (text BEGINSWITH %@)", userInput)
 
