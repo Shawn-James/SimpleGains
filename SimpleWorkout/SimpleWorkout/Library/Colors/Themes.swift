@@ -5,11 +5,14 @@
 import UIKit
 
 extension UIColor {
-    static var primary = UIColor(named: "Primary")
-
-    static var base = UIColor(named: "Base")
-    static var overlay = UIColor(named: "Overlay")
-
-    static var text = UIColor(named: "Text")
-    static var lightText = UIColor(named: "LightText")
+    enum Theme {
+        static var primary = UIColor(named: "Primary")!
+        
+        static var base = UIColor(named: "Base")!
+        static var overlay = UIColor(named: "Overlay")!
+        static var border = UIColor(named: "Border")!
+        
+        static var text = UIColor(named: "Text")!
+        static var lightText = UIColor(named: "LightText")!
+    }
 }

@@ -39,6 +39,11 @@
 		1D9FCDC3253D31F10081429F /* SegueId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCDC2253D31F10081429F /* SegueId.swift */; };
 		1D9FCDC8253D35D30081429F /* DayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCDC7253D35D30081429F /* DayVC.swift */; };
 		1DA49F442544CA6200097F0D /* AutoCompleteMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA49F432544CA6200097F0D /* AutoCompleteMC.swift */; };
+		1DAA0212255F05D40066FC35 /* SWTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA0211255F05D40066FC35 /* SWTableViewCell.swift */; };
+		1DAA021E255F083A0066FC35 /* SWTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA021D255F083A0066FC35 /* SWTableView.swift */; };
+		1DAA022E255F095A0066FC35 /* SWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA022D255F095A0066FC35 /* SWViewController.swift */; };
+		1DAA0233255F09D80066FC35 /* SWTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA0232255F09D80066FC35 /* SWTableViewController.swift */; };
+		1DAA023E255F0D4D0066FC35 /* SWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA023D255F0D4D0066FC35 /* SWNavigationController.swift */; };
 		1DB1691A255C85B8002FCB8A /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB16919255C85B8002FCB8A /* ReusableView.swift */; };
 		1DB1691F255C86A1002FCB8A /* TableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB1691E255C86A1002FCB8A /* TableViewExtensions.swift */; };
 		1DB16936255C8875002FCB8A /* WeekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB16935255C8875002FCB8A /* WeekTableViewCell.swift */; };
@@ -102,6 +107,11 @@
 		1D9FCDC2253D31F10081429F /* SegueId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueId.swift; sourceTree = "<group>"; };
 		1D9FCDC7253D35D30081429F /* DayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayVC.swift; sourceTree = "<group>"; };
 		1DA49F432544CA6200097F0D /* AutoCompleteMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteMC.swift; sourceTree = "<group>"; };
+		1DAA0211255F05D40066FC35 /* SWTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTableViewCell.swift; sourceTree = "<group>"; };
+		1DAA021D255F083A0066FC35 /* SWTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTableView.swift; sourceTree = "<group>"; };
+		1DAA022D255F095A0066FC35 /* SWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWViewController.swift; sourceTree = "<group>"; };
+		1DAA0232255F09D80066FC35 /* SWTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTableViewController.swift; sourceTree = "<group>"; };
+		1DAA023D255F0D4D0066FC35 /* SWNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWNavigationController.swift; sourceTree = "<group>"; };
 		1DB16919255C85B8002FCB8A /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		1DB1691E255C86A1002FCB8A /* TableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtensions.swift; sourceTree = "<group>"; };
 		1DB16935255C8875002FCB8A /* WeekTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTableViewCell.swift; sourceTree = "<group>"; };
@@ -257,7 +267,6 @@
 		1D9FCD1F253B67EF0081429F /* View Controllers (VC) */ = {
 			isa = PBXGroup;
 			children = (
-				1D28448D2551273F008C7288 /* TabBarVC.swift */,
 				1D9FCD85253D1E9C0081429F /* WeekVC.swift */,
 				1D9FCDC7253D35D30081429F /* DayVC.swift */,
 			);
@@ -298,6 +307,7 @@
 		1D9FCD41253B7D460081429F /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				1DAA0219255F07BF0066FC35 /* Design */,
 				1DB16918255C85A9002FCB8A /* Protocols */,
 				1D9AD6412558E20000FA21D1 /* Cells */,
 				1D30644A2558A57F0076CC5E /* Buttons */,
@@ -333,6 +343,19 @@
 				1D9AD6542558ED9100FA21D1 /* ExerciseMC.swift */,
 			);
 			path = "Model Controllers (MC)";
+			sourceTree = "<group>";
+		};
+		1DAA0219255F07BF0066FC35 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				1D28448D2551273F008C7288 /* TabBarVC.swift */,
+				1DAA0211255F05D40066FC35 /* SWTableViewCell.swift */,
+				1DAA021D255F083A0066FC35 /* SWTableView.swift */,
+				1DAA022D255F095A0066FC35 /* SWViewController.swift */,
+				1DAA0232255F09D80066FC35 /* SWTableViewController.swift */,
+				1DAA023D255F0D4D0066FC35 /* SWNavigationController.swift */,
+			);
+			path = Design;
 			sourceTree = "<group>";
 		};
 		1DB16918255C85A9002FCB8A /* Protocols */ = {
@@ -479,6 +502,7 @@
 				1D51E8732544AB1400029560 /* SWButton.swift in Sources */,
 				1D685DB12549CC5A006F0E5E /* AddedExercisesTableViewCell.swift in Sources */,
 				1D9AD7172559129400FA21D1 /* Exercise+Convenience.swift in Sources */,
+				1DAA021E255F083A0066FC35 /* SWTableView.swift in Sources */,
 				1DB16936255C8875002FCB8A /* WeekTableViewCell.swift in Sources */,
 				1D9FCDC3253D31F10081429F /* SegueId.swift in Sources */,
 				1D9FCD37253B6C600081429F /* DateExtensions.swift in Sources */,
@@ -486,12 +510,14 @@
 				1D685DD4254F6997006F0E5E /* PersistentModel.xcdatamodeld in Sources */,
 				1D3064442558A54C0076CC5E /* AutoCompleteTextField.swift in Sources */,
 				1D8CF9CC2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift in Sources */,
+				1DAA022E255F095A0066FC35 /* SWViewController.swift in Sources */,
 				1DA49F442544CA6200097F0D /* AutoCompleteMC.swift in Sources */,
 				1D8CF9CB2550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift in Sources */,
 				1D28448E2551273F008C7288 /* TabBarVC.swift in Sources */,
 				1D9FCD0D253B66E70081429F /* GuardDebugOperator.swift in Sources */,
 				1D9FCD22253B69900081429F /* AppNavigation.swift in Sources */,
 				1DD7821F25467FE5008A83A9 /* NumberTextField.swift in Sources */,
+				1DAA023E255F0D4D0066FC35 /* SWNavigationController.swift in Sources */,
 				1D685DCE254F35DD006F0E5E /* NavBarExtensions.swift in Sources */,
 				1DB1691F255C86A1002FCB8A /* TableViewExtensions.swift in Sources */,
 				1D685DD9254F69E3006F0E5E /* CoreData.swift in Sources */,
@@ -506,6 +532,8 @@
 				1D9AD6552558ED9100FA21D1 /* ExerciseMC.swift in Sources */,
 				1D9FCD74253D16AC0081429F /* SettingsVM.swift in Sources */,
 				1D9FCDC8253D35D30081429F /* DayVC.swift in Sources */,
+				1DAA0212255F05D40066FC35 /* SWTableViewCell.swift in Sources */,
+				1DAA0233255F09D80066FC35 /* SWTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

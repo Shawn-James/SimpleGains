@@ -4,15 +4,26 @@
 
 import UIKit
 
-class AddedExercisesTableViewCell: UITableViewCell, ReusableView {
+final class AddedExercisesTableViewCell: SWTableViewCell, ReusableView {
     @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var weightLabel: UILabel!
     @IBOutlet var weightTextField: UITextField!
+    @IBOutlet var setsLabel: UILabel!
     @IBOutlet var setsButton: SWRoundButton!
+    @IBOutlet var repsLabel: UILabel!
     @IBOutlet var repsButton: SWRoundButton!
 
     // MARK: - Dependencies
 
     var exercise: Exercise?
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        weightLabel.textColor = UIColor.Theme.lightText
+        setsLabel.textColor = UIColor.Theme.lightText
+        repsLabel.textColor = UIColor.Theme.lightText
+    }
 
     // MARK: - Methods
 

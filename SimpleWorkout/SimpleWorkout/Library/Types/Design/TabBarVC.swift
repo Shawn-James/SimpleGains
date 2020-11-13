@@ -9,6 +9,9 @@ class TabBarVC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         selectedIndex = 1
+        
+        tabBar.backgroundColor = UIColor.Theme.overlay
     }
 }

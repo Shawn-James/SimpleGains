@@ -5,7 +5,7 @@
 import CoreData
 import UIKit
 
-final class DayVC: UIViewController {
+final class DayVC: SWViewController {
     // MARK: - Typealias
 
     typealias AutoCompleteData = UITableViewDiffableDataSource<Int, Exercise>
@@ -55,7 +55,7 @@ final class DayVC: UIViewController {
         addedExercisesTableView.dataSource = self
         addedExercisesTableView.delegate = self
         autoCompleteDropdown.actionsDelegate = self
-
+        
         configurationForEmptyDataSet()
     }
 
@@ -85,7 +85,6 @@ final class DayVC: UIViewController {
 
         controller?.createNewExercise(named: exerciseName, for: weekday, completion: {
             if addedExercisesTableView.backgroundView != .none {
-//                configurationForEmptyDataSet()
                 navigationItem.largeTitleDisplayMode = .never
                 addedExercisesTableView.backgroundView = .none
                 addedExercisesTableView.separatorStyle = .singleLine

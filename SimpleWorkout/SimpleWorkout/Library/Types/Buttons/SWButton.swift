@@ -11,12 +11,12 @@ class SWButton: UIButton {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
 
-        backgroundColor = .primary
+        backgroundColor = UIColor.Theme.primary
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         
-        layer.borderColor = UIColor.label.cgColor
-        layer.borderWidth = 2
+        layer.borderColor = UIColor.Theme.border.cgColor
+        layer.borderWidth = 1
         layer.cornerRadius = 5
     }
 }
