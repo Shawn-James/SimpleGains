@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D28448E2551273F008C7288 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28448D2551273F008C7288 /* TabBarVC.swift */; };
 		1D3064442558A54C0076CC5E /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3064432558A54C0076CC5E /* AutoCompleteTextField.swift */; };
+		1D45DCF1255F386700B9F5BC /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45DCF0255F386700B9F5BC /* SettingsVC.swift */; };
 		1D4D7A28255CA19D001F70AB /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D7A27255CA19D001F70AB /* DropDownTableViewCell.swift */; };
 		1D50F1A52556421E00E65DE3 /* SWRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D50F1A42556421E00E65DE3 /* SWRoundButton.swift */; };
 		1D51E8732544AB1400029560 /* SWButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51E8722544AB1400029560 /* SWButton.swift */; };
@@ -71,6 +72,7 @@
 /* Begin PBXFileReference section */
 		1D28448D2551273F008C7288 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		1D3064432558A54C0076CC5E /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
+		1D45DCF0255F386700B9F5BC /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		1D4D7A27255CA19D001F70AB /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTableViewCell.swift; sourceTree = "<group>"; };
 		1D50F1A42556421E00E65DE3 /* SWRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWRoundButton.swift; sourceTree = "<group>"; };
 		1D51E8722544AB1400029560 /* SWButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWButton.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 			children = (
 				1D9FCD85253D1E9C0081429F /* WeekVC.swift */,
 				1D9FCDC7253D35D30081429F /* DayVC.swift */,
+				1D45DCF0255F386700B9F5BC /* SettingsVC.swift */,
 			);
 			path = "View Controllers (VC)";
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				1D28448E2551273F008C7288 /* TabBarVC.swift in Sources */,
 				1D9FCD0D253B66E70081429F /* GuardDebugOperator.swift in Sources */,
 				1D9FCD22253B69900081429F /* AppNavigation.swift in Sources */,
+				1D45DCF1255F386700B9F5BC /* SettingsVC.swift in Sources */,
 				1DD7821F25467FE5008A83A9 /* NumberTextField.swift in Sources */,
 				1DAA023E255F0D4D0066FC35 /* SWNavigationController.swift in Sources */,
 				1D685DCE254F35DD006F0E5E /* NavBarExtensions.swift in Sources */,

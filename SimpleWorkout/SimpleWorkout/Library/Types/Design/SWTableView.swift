@@ -10,6 +10,6 @@ class SWTableView: UITableView {
         
         separatorStyle = .none
         
-        backgroundColor = UIColor.Theme.base
+        backgroundColor = UIColor.SWColor.base
     }
 }

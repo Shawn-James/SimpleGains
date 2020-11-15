@@ -8,7 +8,7 @@ class SWNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationBar.barTintColor = UIColor.Theme.base
+        navigationBar.barTintColor = UIColor.SWColor.base
         navigationBar.isTranslucent = false
 
         navigationBar.titleTextAttributes = [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]

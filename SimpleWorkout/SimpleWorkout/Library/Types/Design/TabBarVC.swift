@@ -12,6 +12,6 @@ class TabBarVC: UITabBarController {
 
         selectedIndex = 1
         
-        tabBar.backgroundColor = UIColor.Theme.overlay
+        tabBar.backgroundColor = UIColor.SWColor.overlay
     }
 }

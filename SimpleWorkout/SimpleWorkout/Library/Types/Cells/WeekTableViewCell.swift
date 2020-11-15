@@ -11,7 +11,7 @@ final class WeekTableViewCell: SWTableViewCell, ReusableView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        exercisesLabel.textColor = UIColor.Theme.lightText
+        exercisesLabel.textColor = UIColor.SWColor.lightText
     }
 
     public func configureCell(withWeekday weekday: Weekday) {

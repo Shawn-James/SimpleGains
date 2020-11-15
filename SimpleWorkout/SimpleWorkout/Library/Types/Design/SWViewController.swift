@@ -8,6 +8,6 @@ class SWViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.Theme.base
+        view.backgroundColor = UIColor.SWColor.base
     }
 }

@@ -140,7 +140,7 @@ class AutoCompleteMC {
         let patternMatch = (original as NSString).range(of: pattern, options: .caseInsensitive)
 
         attributedString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 17), range: patternMatch)
-        attributedString.addAttribute(.foregroundColor, value: UIColor.Theme.primary, range: patternMatch)
+        attributedString.addAttribute(.foregroundColor, value: UIColor.SWColor.primary, range: patternMatch)
 
         return attributedString
     }

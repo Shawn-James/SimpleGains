@@ -17,6 +17,6 @@ class AutoCompleteTextField: UITextField {
         leftView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: frame.height))
         leftViewMode = .always
         
-        backgroundColor = UIColor.Theme.overlay
+        backgroundColor = UIColor.SWColor.overlay
     }
 }

@@ -15,9 +15,9 @@ class SWTableViewCell: UITableViewCell {
         super.layoutSubviews()
         
         layer.borderWidth = 2
-        layer.borderColor = UIColor.Theme.base.cgColor
+        layer.borderColor = UIColor.SWColor.base.cgColor
         
-        backgroundColor = UIColor.Theme.overlay
+        backgroundColor = UIColor.SWColor.overlay
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

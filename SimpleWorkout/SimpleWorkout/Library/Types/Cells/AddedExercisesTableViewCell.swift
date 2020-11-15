@@ -20,9 +20,9 @@ final class AddedExercisesTableViewCell: SWTableViewCell, ReusableView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        weightLabel.textColor = UIColor.Theme.lightText
-        setsLabel.textColor = UIColor.Theme.lightText
-        repsLabel.textColor = UIColor.Theme.lightText
+        weightLabel.textColor = UIColor.SWColor.lightText
+        setsLabel.textColor = UIColor.SWColor.lightText
+        repsLabel.textColor = UIColor.SWColor.lightText
     }
 
     // MARK: - Methods

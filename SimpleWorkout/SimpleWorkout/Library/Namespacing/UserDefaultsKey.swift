@@ -4,4 +4,5 @@
 
 enum UserDefaultsKey {
     static let firstLaunch = "FirstLaunch"
+    static let primaryColor = "PrimaryColor"
 }
