@@ -7,23 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D28448E2551273F008C7288 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28448D2551273F008C7288 /* TabBarVC.swift */; };
+		1D28448E2551273F008C7288 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D28448D2551273F008C7288 /* CustomTabBar.swift */; };
 		1D3064442558A54C0076CC5E /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3064432558A54C0076CC5E /* AutoCompleteTextField.swift */; };
-		1D45DCF1255F386700B9F5BC /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45DCF0255F386700B9F5BC /* SettingsVC.swift */; };
-		1D4D7A28255CA19D001F70AB /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D7A27255CA19D001F70AB /* DropDownTableViewCell.swift */; };
-		1D50F1A52556421E00E65DE3 /* SWRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D50F1A42556421E00E65DE3 /* SWRoundButton.swift */; };
-		1D51E8732544AB1400029560 /* SWButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51E8722544AB1400029560 /* SWButton.swift */; };
+		1D45DCF1255F386700B9F5BC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45DCF0255F386700B9F5BC /* SettingsViewController.swift */; };
+		1D4D7A28255CA19D001F70AB /* AutoCompleteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D7A27255CA19D001F70AB /* AutoCompleteCell.swift */; };
+		1D50F1A52556421E00E65DE3 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D50F1A42556421E00E65DE3 /* CircleButton.swift */; };
+		1D51E8732544AB1400029560 /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D51E8722544AB1400029560 /* StandardButton.swift */; };
 		1D5611C72554B92F0000E16A /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5611C62554B92F0000E16A /* UserDefaultsKey.swift */; };
-		1D685DB12549CC5A006F0E5E /* AddedExercisesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DB02549CC5A006F0E5E /* AddedExercisesTableViewCell.swift */; };
-		1D685DBD254F27EB006F0E5E /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DBC254F27EB006F0E5E /* Themes.swift */; };
-		1D685DCE254F35DD006F0E5E /* NavBarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DCD254F35DD006F0E5E /* NavBarExtensions.swift */; };
+		1D685DB12549CC5A006F0E5E /* ScheduleDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DB02549CC5A006F0E5E /* ScheduleDetailCell.swift */; };
+		1D685DBD254F27EB006F0E5E /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DBC254F27EB006F0E5E /* CustomColor.swift */; };
 		1D685DD4254F6997006F0E5E /* PersistentModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DD2254F6997006F0E5E /* PersistentModel.xcdatamodeld */; };
-		1D685DD9254F69E3006F0E5E /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DD8254F69E3006F0E5E /* CoreData.swift */; };
+		1D685DD9254F69E3006F0E5E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685DD8254F69E3006F0E5E /* CoreDataManager.swift */; };
 		1D685E06254F8E36006F0E5E /* Weekday+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685E05254F8E36006F0E5E /* Weekday+Convenience.swift */; };
-		1D8CF9CB2550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8CF9C92550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift */; };
-		1D8CF9CC2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8CF9CA2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift */; };
-		1D9AD6552558ED9100FA21D1 /* ExerciseMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD6542558ED9100FA21D1 /* ExerciseMC.swift */; };
+		1D8CF9CB2550EF2100588E82 /* ExercisePermanentRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8CF9C92550EF2100588E82 /* ExercisePermanentRecord+CoreDataClass.swift */; };
+		1D8CF9CC2550EF2100588E82 /* ExercisePermanentRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8CF9CA2550EF2100588E82 /* ExercisePermanentRecord+CoreDataProperties.swift */; };
+		1D9A48462568D6CF00036B71 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9A48452568D6CF00036B71 /* CustomButton.swift */; };
+		1D9AD6552558ED9100FA21D1 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD6542558ED9100FA21D1 /* ExerciseModel.swift */; };
 		1D9AD7172559129400FA21D1 /* Exercise+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD7162559129400FA21D1 /* Exercise+Convenience.swift */; };
+		1D9B54822561BE3900DA102A /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B54812561BE3900DA102A /* WorkoutCell.swift */; };
+		1D9B54CC2561E94600DA102A /* AppearanceSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B54CB2561E94600DA102A /* AppearanceSettingCell.swift */; };
+		1D9B54D7256229F000DA102A /* GeneralSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B54D6256229F000DA102A /* GeneralSettingsCell.swift */; };
+		1D9B555725635F8300DA102A /* TopGainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B555625635F8300DA102A /* TopGainsViewController.swift */; };
+		1D9B555C2563615500DA102A /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B555B2563615500DA102A /* WorkoutViewController.swift */; };
 		1D9FCCD7253B66770081429F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCCD6253B66770081429F /* AppDelegate.swift */; };
 		1D9FCCD9253B66770081429F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCCD8253B66770081429F /* SceneDelegate.swift */; };
 		1D9FCCDE253B66770081429F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9FCCDC253B66770081429F /* Main.storyboard */; };
@@ -31,23 +36,20 @@
 		1D9FCCE3253B667A0081429F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9FCCE1253B667A0081429F /* LaunchScreen.storyboard */; };
 		1D9FCCEE253B667A0081429F /* SimpleWorkoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCCED253B667A0081429F /* SimpleWorkoutTests.swift */; };
 		1D9FCCF9253B667A0081429F /* SimpleWorkoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCCF8253B667A0081429F /* SimpleWorkoutUITests.swift */; };
-		1D9FCD0D253B66E70081429F /* GuardDebugOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD0C253B66E70081429F /* GuardDebugOperator.swift */; };
-		1D9FCD22253B69900081429F /* AppNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD21253B69900081429F /* AppNavigation.swift */; };
-		1D9FCD2F253B6C200081429F /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD2E253B6C200081429F /* ViewExtensions.swift */; };
-		1D9FCD37253B6C600081429F /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD36253B6C600081429F /* DateExtensions.swift */; };
-		1D9FCD74253D16AC0081429F /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD73253D16AC0081429F /* SettingsVM.swift */; };
-		1D9FCD86253D1E9C0081429F /* WeekVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD85253D1E9C0081429F /* WeekVC.swift */; };
+		1D9FCD0D253B66E70081429F /* CustomOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD0C253B66E70081429F /* CustomOperators.swift */; };
+		1D9FCD74253D16AC0081429F /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD73253D16AC0081429F /* SettingsViewModel.swift */; };
+		1D9FCD86253D1E9C0081429F /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCD85253D1E9C0081429F /* ScheduleViewController.swift */; };
 		1D9FCDC3253D31F10081429F /* SegueId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCDC2253D31F10081429F /* SegueId.swift */; };
-		1D9FCDC8253D35D30081429F /* DayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCDC7253D35D30081429F /* DayVC.swift */; };
-		1DA49F442544CA6200097F0D /* AutoCompleteMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA49F432544CA6200097F0D /* AutoCompleteMC.swift */; };
-		1DAA0212255F05D40066FC35 /* SWTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA0211255F05D40066FC35 /* SWTableViewCell.swift */; };
-		1DAA021E255F083A0066FC35 /* SWTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA021D255F083A0066FC35 /* SWTableView.swift */; };
-		1DAA022E255F095A0066FC35 /* SWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA022D255F095A0066FC35 /* SWViewController.swift */; };
-		1DAA0233255F09D80066FC35 /* SWTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA0232255F09D80066FC35 /* SWTableViewController.swift */; };
-		1DAA023E255F0D4D0066FC35 /* SWNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA023D255F0D4D0066FC35 /* SWNavigationController.swift */; };
+		1D9FCDC8253D35D30081429F /* ScheduleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9FCDC7253D35D30081429F /* ScheduleDetailViewController.swift */; };
+		1DA49F442544CA6200097F0D /* ExercisePermanentRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA49F432544CA6200097F0D /* ExercisePermanentRecordModel.swift */; };
+		1DAA0212255F05D40066FC35 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA0211255F05D40066FC35 /* CustomCell.swift */; };
+		1DAA021E255F083A0066FC35 /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA021D255F083A0066FC35 /* CustomTableView.swift */; };
+		1DAA022E255F095A0066FC35 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA022D255F095A0066FC35 /* CustomViewController.swift */; };
+		1DAA0233255F09D80066FC35 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA0232255F09D80066FC35 /* CustomTableViewController.swift */; };
+		1DAA023E255F0D4D0066FC35 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA023D255F0D4D0066FC35 /* CustomNavigationController.swift */; };
 		1DB1691A255C85B8002FCB8A /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB16919255C85B8002FCB8A /* ReusableView.swift */; };
-		1DB1691F255C86A1002FCB8A /* TableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB1691E255C86A1002FCB8A /* TableViewExtensions.swift */; };
-		1DB16936255C8875002FCB8A /* WeekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB16935255C8875002FCB8A /* WeekTableViewCell.swift */; };
+		1DB1691F255C86A1002FCB8A /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB1691E255C86A1002FCB8A /* UITableView.swift */; };
+		1DB16936255C8875002FCB8A /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB16935255C8875002FCB8A /* ScheduleCell.swift */; };
 		1DD78205254660E8008A83A9 /* AutoCompleteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD78204254660E8008A83A9 /* AutoCompleteTableView.swift */; };
 		1DD7821F25467FE5008A83A9 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7821E25467FE5008A83A9 /* NumberTextField.swift */; };
 /* End PBXBuildFile section */
@@ -70,23 +72,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D28448D2551273F008C7288 /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		1D28448D2551273F008C7288 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		1D3064432558A54C0076CC5E /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
-		1D45DCF0255F386700B9F5BC /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		1D4D7A27255CA19D001F70AB /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTableViewCell.swift; sourceTree = "<group>"; };
-		1D50F1A42556421E00E65DE3 /* SWRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWRoundButton.swift; sourceTree = "<group>"; };
-		1D51E8722544AB1400029560 /* SWButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWButton.swift; sourceTree = "<group>"; };
+		1D45DCF0255F386700B9F5BC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1D4D7A27255CA19D001F70AB /* AutoCompleteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteCell.swift; sourceTree = "<group>"; };
+		1D50F1A42556421E00E65DE3 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		1D51E8722544AB1400029560 /* StandardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButton.swift; sourceTree = "<group>"; };
 		1D5611C62554B92F0000E16A /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
-		1D685DB02549CC5A006F0E5E /* AddedExercisesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedExercisesTableViewCell.swift; sourceTree = "<group>"; };
-		1D685DBC254F27EB006F0E5E /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
-		1D685DCD254F35DD006F0E5E /* NavBarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarExtensions.swift; sourceTree = "<group>"; };
+		1D685DB02549CC5A006F0E5E /* ScheduleDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailCell.swift; sourceTree = "<group>"; };
+		1D685DBC254F27EB006F0E5E /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		1D685DD3254F6997006F0E5E /* PersistentModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersistentModel.xcdatamodel; sourceTree = "<group>"; };
-		1D685DD8254F69E3006F0E5E /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		1D685DD8254F69E3006F0E5E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1D685E05254F8E36006F0E5E /* Weekday+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weekday+Convenience.swift"; sourceTree = "<group>"; };
-		1D8CF9C92550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoCompleteOption+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1D8CF9CA2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoCompleteOption+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1D9AD6542558ED9100FA21D1 /* ExerciseMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMC.swift; sourceTree = "<group>"; };
+		1D8CF9C92550EF2100588E82 /* ExercisePermanentRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExercisePermanentRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1D8CF9CA2550EF2100588E82 /* ExercisePermanentRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExercisePermanentRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1D9A48452568D6CF00036B71 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		1D9AD6542558ED9100FA21D1 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
 		1D9AD7162559129400FA21D1 /* Exercise+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+Convenience.swift"; sourceTree = "<group>"; };
+		1D9B54812561BE3900DA102A /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
+		1D9B54CB2561E94600DA102A /* AppearanceSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingCell.swift; sourceTree = "<group>"; };
+		1D9B54D6256229F000DA102A /* GeneralSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsCell.swift; sourceTree = "<group>"; };
+		1D9B555625635F8300DA102A /* TopGainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGainsViewController.swift; sourceTree = "<group>"; };
+		1D9B555B2563615500DA102A /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		1D9FCCD3253B66770081429F /* SimpleWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9FCCD6253B66770081429F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D9FCCD8253B66770081429F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,23 +107,20 @@
 		1D9FCCF4253B667A0081429F /* SimpleWorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleWorkoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9FCCF8253B667A0081429F /* SimpleWorkoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWorkoutUITests.swift; sourceTree = "<group>"; };
 		1D9FCCFA253B667A0081429F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D9FCD0C253B66E70081429F /* GuardDebugOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardDebugOperator.swift; sourceTree = "<group>"; };
-		1D9FCD21253B69900081429F /* AppNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigation.swift; sourceTree = "<group>"; };
-		1D9FCD2E253B6C200081429F /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
-		1D9FCD36253B6C600081429F /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
-		1D9FCD73253D16AC0081429F /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
-		1D9FCD85253D1E9C0081429F /* WeekVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekVC.swift; sourceTree = "<group>"; };
+		1D9FCD0C253B66E70081429F /* CustomOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOperators.swift; sourceTree = "<group>"; };
+		1D9FCD73253D16AC0081429F /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		1D9FCD85253D1E9C0081429F /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		1D9FCDC2253D31F10081429F /* SegueId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueId.swift; sourceTree = "<group>"; };
-		1D9FCDC7253D35D30081429F /* DayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayVC.swift; sourceTree = "<group>"; };
-		1DA49F432544CA6200097F0D /* AutoCompleteMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteMC.swift; sourceTree = "<group>"; };
-		1DAA0211255F05D40066FC35 /* SWTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTableViewCell.swift; sourceTree = "<group>"; };
-		1DAA021D255F083A0066FC35 /* SWTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTableView.swift; sourceTree = "<group>"; };
-		1DAA022D255F095A0066FC35 /* SWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWViewController.swift; sourceTree = "<group>"; };
-		1DAA0232255F09D80066FC35 /* SWTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTableViewController.swift; sourceTree = "<group>"; };
-		1DAA023D255F0D4D0066FC35 /* SWNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWNavigationController.swift; sourceTree = "<group>"; };
+		1D9FCDC7253D35D30081429F /* ScheduleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailViewController.swift; sourceTree = "<group>"; };
+		1DA49F432544CA6200097F0D /* ExercisePermanentRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePermanentRecordModel.swift; sourceTree = "<group>"; };
+		1DAA0211255F05D40066FC35 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		1DAA021D255F083A0066FC35 /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		1DAA022D255F095A0066FC35 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		1DAA0232255F09D80066FC35 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		1DAA023D255F0D4D0066FC35 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		1DB16919255C85B8002FCB8A /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
-		1DB1691E255C86A1002FCB8A /* TableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtensions.swift; sourceTree = "<group>"; };
-		1DB16935255C8875002FCB8A /* WeekTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTableViewCell.swift; sourceTree = "<group>"; };
+		1DB1691E255C86A1002FCB8A /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		1DB16935255C8875002FCB8A /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		1DD78204254660E8008A83A9 /* AutoCompleteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteTableView.swift; sourceTree = "<group>"; };
 		1DD7821E25467FE5008A83A9 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,9 +153,10 @@
 		1D3064482558A5550076CC5E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				1D685DD8254F69E3006F0E5E /* CoreDataManager.swift */,
 				1D685DD2254F6997006F0E5E /* PersistentModel.xcdatamodeld */,
-				1D8CF9C92550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift */,
-				1D8CF9CA2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift */,
+				1D8CF9C92550EF2100588E82 /* ExercisePermanentRecord+CoreDataClass.swift */,
+				1D8CF9CA2550EF2100588E82 /* ExercisePermanentRecord+CoreDataProperties.swift */,
 				1D685E05254F8E36006F0E5E /* Weekday+Convenience.swift */,
 				1D9AD7162559129400FA21D1 /* Exercise+Convenience.swift */,
 			);
@@ -161,18 +166,11 @@
 		1D30644A2558A57F0076CC5E /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				1D50F1A42556421E00E65DE3 /* SWRoundButton.swift */,
-				1D51E8722544AB1400029560 /* SWButton.swift */,
+				1D9A48452568D6CF00036B71 /* CustomButton.swift */,
+				1D51E8722544AB1400029560 /* StandardButton.swift */,
+				1D50F1A42556421E00E65DE3 /* CircleButton.swift */,
 			);
 			path = Buttons;
-			sourceTree = "<group>";
-		};
-		1D30644B2558A58F0076CC5E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				1DD78204254660E8008A83A9 /* AutoCompleteTableView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		1D30644C2558A5A40076CC5E /* TextFields */ = {
@@ -184,21 +182,15 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
-		1D685DBB254F27D0006F0E5E /* Colors */ = {
-			isa = PBXGroup;
-			children = (
-				1D9FCCDF253B667A0081429F /* Assets.xcassets */,
-				1D685DBC254F27EB006F0E5E /* Themes.swift */,
-			);
-			path = Colors;
-			sourceTree = "<group>";
-		};
 		1D9AD6412558E20000FA21D1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1D685DB02549CC5A006F0E5E /* AddedExercisesTableViewCell.swift */,
-				1DB16935255C8875002FCB8A /* WeekTableViewCell.swift */,
-				1D4D7A27255CA19D001F70AB /* DropDownTableViewCell.swift */,
+				1DB16935255C8875002FCB8A /* ScheduleCell.swift */,
+				1D685DB02549CC5A006F0E5E /* ScheduleDetailCell.swift */,
+				1D4D7A27255CA19D001F70AB /* AutoCompleteCell.swift */,
+				1D9B54812561BE3900DA102A /* WorkoutCell.swift */,
+				1D9B54D6256229F000DA102A /* GeneralSettingsCell.swift */,
+				1D9B54CB2561E94600DA102A /* AppearanceSettingCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -228,9 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				1D9FCD1B253B67670081429F /* Coordination */,
-				1D9FCD1F253B67EF0081429F /* View Controllers (VC) */,
-				1D9FCD6F253D14C40081429F /* View Models (VM) */,
-				1DA49F3A2544C29800097F0D /* Model Controllers (MC) */,
+				1D9FCD1F253B67EF0081429F /* View Controllers */,
+				1DA49F3A2544C29800097F0D /* Model Controllers */,
 				1D9FCD20253B68160081429F /* Library */,
 			);
 			path = SimpleWorkout;
@@ -258,115 +249,66 @@
 			isa = PBXGroup;
 			children = (
 				1D9FCCE1253B667A0081429F /* LaunchScreen.storyboard */,
+				1D9FCCDC253B66770081429F /* Main.storyboard */,
 				1D9FCCD6253B66770081429F /* AppDelegate.swift */,
 				1D9FCCD8253B66770081429F /* SceneDelegate.swift */,
-				1D9FCCDC253B66770081429F /* Main.storyboard */,
-				1D9FCD21253B69900081429F /* AppNavigation.swift */,
 			);
 			path = Coordination;
 			sourceTree = "<group>";
 		};
-		1D9FCD1F253B67EF0081429F /* View Controllers (VC) */ = {
+		1D9FCD1F253B67EF0081429F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1D9FCD85253D1E9C0081429F /* WeekVC.swift */,
-				1D9FCDC7253D35D30081429F /* DayVC.swift */,
-				1D45DCF0255F386700B9F5BC /* SettingsVC.swift */,
+				1D9FCD85253D1E9C0081429F /* ScheduleViewController.swift */,
+				1D9FCDC7253D35D30081429F /* ScheduleDetailViewController.swift */,
+				1D9B555625635F8300DA102A /* TopGainsViewController.swift */,
+				1D9B555B2563615500DA102A /* WorkoutViewController.swift */,
+				1D45DCF0255F386700B9F5BC /* SettingsViewController.swift */,
 			);
-			path = "View Controllers (VC)";
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		1D9FCD20253B68160081429F /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				1D685DBB254F27D0006F0E5E /* Colors */,
-				1D9FCDAB253D2B490081429F /* Namespacing */,
-				1D9FCD41253B7D460081429F /* Types */,
-				1D9FCD2D253B6BF20081429F /* Extensions */,
-				1D9FCD2C253B6B990081429F /* Operators */,
+				1D3064482558A5550076CC5E /* CoreData */,
+				1D30644A2558A57F0076CC5E /* Buttons */,
+				1D30644C2558A5A40076CC5E /* TextFields */,
+				1D9AD6412558E20000FA21D1 /* Cells */,
+				1DAA0219255F07BF0066FC35 /* Design */,
+				1DD78204254660E8008A83A9 /* AutoCompleteTableView.swift */,
+				1DB1691E255C86A1002FCB8A /* UITableView.swift */,
+				1D9FCD0C253B66E70081429F /* CustomOperators.swift */,
+				1D9FCD73253D16AC0081429F /* SettingsViewModel.swift */,
+				1D9FCDC2253D31F10081429F /* SegueId.swift */,
+				1D5611C62554B92F0000E16A /* UserDefaultsKey.swift */,
+				1D9FCCDF253B667A0081429F /* Assets.xcassets */,
+				1D685DBC254F27EB006F0E5E /* CustomColor.swift */,
+				1DB16919255C85B8002FCB8A /* ReusableView.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
 		};
-		1D9FCD2C253B6B990081429F /* Operators */ = {
+		1DA49F3A2544C29800097F0D /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1D9FCD0C253B66E70081429F /* GuardDebugOperator.swift */,
+				1DA49F432544CA6200097F0D /* ExercisePermanentRecordModel.swift */,
+				1D9AD6542558ED9100FA21D1 /* ExerciseModel.swift */,
 			);
-			path = Operators;
-			sourceTree = "<group>";
-		};
-		1D9FCD2D253B6BF20081429F /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				1D9FCD2E253B6C200081429F /* ViewExtensions.swift */,
-				1D9FCD36253B6C600081429F /* DateExtensions.swift */,
-				1D685DCD254F35DD006F0E5E /* NavBarExtensions.swift */,
-				1DB1691E255C86A1002FCB8A /* TableViewExtensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		1D9FCD41253B7D460081429F /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				1DAA0219255F07BF0066FC35 /* Design */,
-				1DB16918255C85A9002FCB8A /* Protocols */,
-				1D9AD6412558E20000FA21D1 /* Cells */,
-				1D30644A2558A57F0076CC5E /* Buttons */,
-				1D30644B2558A58F0076CC5E /* Views */,
-				1D30644C2558A5A40076CC5E /* TextFields */,
-				1D3064482558A5550076CC5E /* CoreData */,
-			);
-			path = Types;
-			sourceTree = "<group>";
-		};
-		1D9FCD6F253D14C40081429F /* View Models (VM) */ = {
-			isa = PBXGroup;
-			children = (
-				1D9FCD73253D16AC0081429F /* SettingsVM.swift */,
-			);
-			path = "View Models (VM)";
-			sourceTree = "<group>";
-		};
-		1D9FCDAB253D2B490081429F /* Namespacing */ = {
-			isa = PBXGroup;
-			children = (
-				1D9FCDC2253D31F10081429F /* SegueId.swift */,
-				1D5611C62554B92F0000E16A /* UserDefaultsKey.swift */,
-			);
-			path = Namespacing;
-			sourceTree = "<group>";
-		};
-		1DA49F3A2544C29800097F0D /* Model Controllers (MC) */ = {
-			isa = PBXGroup;
-			children = (
-				1DA49F432544CA6200097F0D /* AutoCompleteMC.swift */,
-				1D685DD8254F69E3006F0E5E /* CoreData.swift */,
-				1D9AD6542558ED9100FA21D1 /* ExerciseMC.swift */,
-			);
-			path = "Model Controllers (MC)";
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 		1DAA0219255F07BF0066FC35 /* Design */ = {
 			isa = PBXGroup;
 			children = (
-				1D28448D2551273F008C7288 /* TabBarVC.swift */,
-				1DAA0211255F05D40066FC35 /* SWTableViewCell.swift */,
-				1DAA021D255F083A0066FC35 /* SWTableView.swift */,
-				1DAA022D255F095A0066FC35 /* SWViewController.swift */,
-				1DAA0232255F09D80066FC35 /* SWTableViewController.swift */,
-				1DAA023D255F0D4D0066FC35 /* SWNavigationController.swift */,
+				1DAA023D255F0D4D0066FC35 /* CustomNavigationController.swift */,
+				1D28448D2551273F008C7288 /* CustomTabBar.swift */,
+				1DAA0211255F05D40066FC35 /* CustomCell.swift */,
+				1DAA021D255F083A0066FC35 /* CustomTableView.swift */,
+				1DAA022D255F095A0066FC35 /* CustomViewController.swift */,
+				1DAA0232255F09D80066FC35 /* CustomTableViewController.swift */,
 			);
 			path = Design;
-			sourceTree = "<group>";
-		};
-		1DB16918255C85A9002FCB8A /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				1DB16919255C85B8002FCB8A /* ReusableView.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,44 +442,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D4D7A28255CA19D001F70AB /* DropDownTableViewCell.swift in Sources */,
-				1D9FCD86253D1E9C0081429F /* WeekVC.swift in Sources */,
-				1D51E8732544AB1400029560 /* SWButton.swift in Sources */,
-				1D685DB12549CC5A006F0E5E /* AddedExercisesTableViewCell.swift in Sources */,
+				1D4D7A28255CA19D001F70AB /* AutoCompleteCell.swift in Sources */,
+				1D9FCD86253D1E9C0081429F /* ScheduleViewController.swift in Sources */,
+				1D51E8732544AB1400029560 /* StandardButton.swift in Sources */,
+				1D685DB12549CC5A006F0E5E /* ScheduleDetailCell.swift in Sources */,
+				1D9A48462568D6CF00036B71 /* CustomButton.swift in Sources */,
 				1D9AD7172559129400FA21D1 /* Exercise+Convenience.swift in Sources */,
-				1DAA021E255F083A0066FC35 /* SWTableView.swift in Sources */,
-				1DB16936255C8875002FCB8A /* WeekTableViewCell.swift in Sources */,
+				1DAA021E255F083A0066FC35 /* CustomTableView.swift in Sources */,
+				1DB16936255C8875002FCB8A /* ScheduleCell.swift in Sources */,
 				1D9FCDC3253D31F10081429F /* SegueId.swift in Sources */,
-				1D9FCD37253B6C600081429F /* DateExtensions.swift in Sources */,
 				1D685E06254F8E36006F0E5E /* Weekday+Convenience.swift in Sources */,
 				1D685DD4254F6997006F0E5E /* PersistentModel.xcdatamodeld in Sources */,
 				1D3064442558A54C0076CC5E /* AutoCompleteTextField.swift in Sources */,
-				1D8CF9CC2550EF2100588E82 /* AutoCompleteOption+CoreDataProperties.swift in Sources */,
-				1DAA022E255F095A0066FC35 /* SWViewController.swift in Sources */,
-				1DA49F442544CA6200097F0D /* AutoCompleteMC.swift in Sources */,
-				1D8CF9CB2550EF2100588E82 /* AutoCompleteOption+CoreDataClass.swift in Sources */,
-				1D28448E2551273F008C7288 /* TabBarVC.swift in Sources */,
-				1D9FCD0D253B66E70081429F /* GuardDebugOperator.swift in Sources */,
-				1D9FCD22253B69900081429F /* AppNavigation.swift in Sources */,
-				1D45DCF1255F386700B9F5BC /* SettingsVC.swift in Sources */,
+				1D8CF9CC2550EF2100588E82 /* ExercisePermanentRecord+CoreDataProperties.swift in Sources */,
+				1DAA022E255F095A0066FC35 /* CustomViewController.swift in Sources */,
+				1DA49F442544CA6200097F0D /* ExercisePermanentRecordModel.swift in Sources */,
+				1D8CF9CB2550EF2100588E82 /* ExercisePermanentRecord+CoreDataClass.swift in Sources */,
+				1D28448E2551273F008C7288 /* CustomTabBar.swift in Sources */,
+				1D9FCD0D253B66E70081429F /* CustomOperators.swift in Sources */,
+				1D9B555725635F8300DA102A /* TopGainsViewController.swift in Sources */,
+				1D45DCF1255F386700B9F5BC /* SettingsViewController.swift in Sources */,
 				1DD7821F25467FE5008A83A9 /* NumberTextField.swift in Sources */,
-				1DAA023E255F0D4D0066FC35 /* SWNavigationController.swift in Sources */,
-				1D685DCE254F35DD006F0E5E /* NavBarExtensions.swift in Sources */,
-				1DB1691F255C86A1002FCB8A /* TableViewExtensions.swift in Sources */,
-				1D685DD9254F69E3006F0E5E /* CoreData.swift in Sources */,
-				1D685DBD254F27EB006F0E5E /* Themes.swift in Sources */,
-				1D50F1A52556421E00E65DE3 /* SWRoundButton.swift in Sources */,
+				1DAA023E255F0D4D0066FC35 /* CustomNavigationController.swift in Sources */,
+				1DB1691F255C86A1002FCB8A /* UITableView.swift in Sources */,
+				1D685DD9254F69E3006F0E5E /* CoreDataManager.swift in Sources */,
+				1D685DBD254F27EB006F0E5E /* CustomColor.swift in Sources */,
+				1D50F1A52556421E00E65DE3 /* CircleButton.swift in Sources */,
+				1D9B54CC2561E94600DA102A /* AppearanceSettingCell.swift in Sources */,
+				1D9B555C2563615500DA102A /* WorkoutViewController.swift in Sources */,
 				1DD78205254660E8008A83A9 /* AutoCompleteTableView.swift in Sources */,
 				1D9FCCD7253B66770081429F /* AppDelegate.swift in Sources */,
-				1D9FCD2F253B6C200081429F /* ViewExtensions.swift in Sources */,
 				1D5611C72554B92F0000E16A /* UserDefaultsKey.swift in Sources */,
+				1D9B54D7256229F000DA102A /* GeneralSettingsCell.swift in Sources */,
 				1DB1691A255C85B8002FCB8A /* ReusableView.swift in Sources */,
 				1D9FCCD9253B66770081429F /* SceneDelegate.swift in Sources */,
-				1D9AD6552558ED9100FA21D1 /* ExerciseMC.swift in Sources */,
-				1D9FCD74253D16AC0081429F /* SettingsVM.swift in Sources */,
-				1D9FCDC8253D35D30081429F /* DayVC.swift in Sources */,
-				1DAA0212255F05D40066FC35 /* SWTableViewCell.swift in Sources */,
-				1DAA0233255F09D80066FC35 /* SWTableViewController.swift in Sources */,
+				1D9AD6552558ED9100FA21D1 /* ExerciseModel.swift in Sources */,
+				1D9FCD74253D16AC0081429F /* SettingsViewModel.swift in Sources */,
+				1D9B54822561BE3900DA102A /* WorkoutCell.swift in Sources */,
+				1D9FCDC8253D35D30081429F /* ScheduleDetailViewController.swift in Sources */,
+				1DAA0212255F05D40066FC35 /* CustomCell.swift in Sources */,
+				1DAA0233255F09D80066FC35 /* CustomTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
