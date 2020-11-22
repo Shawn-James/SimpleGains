@@ -47,8 +47,8 @@ final class TopGainsViewController: CustomViewController, UITableViewDataSource,
         tableView.delegate = self
         tableView.dataSource = self
 
-        startButton.setTitle("Return Next Workout Day 😌", for: .disabled)
-        startButton.setTitle("Start Today's Workout 😤", for: .normal)
+        startButton.setTitle("Return Next Workout Day", for: .disabled)
+        startButton.setTitle("Start Today's Workout", for: .normal)
     }
 
     override func viewWillAppear(_ animated: Bool) {

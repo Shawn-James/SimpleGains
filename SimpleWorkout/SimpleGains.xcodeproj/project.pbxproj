@@ -96,17 +96,17 @@
 		1D9B54D6256229F000DA102A /* GeneralSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsCell.swift; sourceTree = "<group>"; };
 		1D9B555625635F8300DA102A /* TopGainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGainsViewController.swift; sourceTree = "<group>"; };
 		1D9B555B2563615500DA102A /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
-		1D9FCCD3253B66770081429F /* SimpleWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9FCCD3253B66770081429F /* SimpleGains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGains.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9FCCD6253B66770081429F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D9FCCD8253B66770081429F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1D9FCCDD253B66770081429F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D9FCCDF253B667A0081429F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D9FCCE2253B667A0081429F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D9FCCE4253B667A0081429F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D9FCCE9253B667A0081429F /* SimpleWorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleWorkoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9FCCE9253B667A0081429F /* SimpleGainsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleGainsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9FCCED253B667A0081429F /* SimpleWorkoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWorkoutTests.swift; sourceTree = "<group>"; };
 		1D9FCCEF253B667A0081429F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D9FCCF4253B667A0081429F /* SimpleWorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleWorkoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9FCCF4253B667A0081429F /* SimpleGainsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleGainsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9FCCF8253B667A0081429F /* SimpleWorkoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWorkoutUITests.swift; sourceTree = "<group>"; };
 		1D9FCCFA253B667A0081429F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D9FCD0C253B66E70081429F /* GuardDebugOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardDebugOperator.swift; sourceTree = "<group>"; };
@@ -281,9 +281,9 @@
 		1D9FCCD4253B66770081429F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D9FCCD3253B66770081429F /* SimpleWorkout.app */,
-				1D9FCCE9253B667A0081429F /* SimpleWorkoutTests.xctest */,
-				1D9FCCF4253B667A0081429F /* SimpleWorkoutUITests.xctest */,
+				1D9FCCD3253B66770081429F /* SimpleGains.app */,
+				1D9FCCE9253B667A0081429F /* SimpleGainsTests.xctest */,
+				1D9FCCF4253B667A0081429F /* SimpleGainsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -381,9 +381,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D9FCCD2253B66770081429F /* SimpleWorkout */ = {
+		1D9FCCD2253B66770081429F /* SimpleGains */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D9FCCFD253B667A0081429F /* Build configuration list for PBXNativeTarget "SimpleWorkout" */;
+			buildConfigurationList = 1D9FCCFD253B667A0081429F /* Build configuration list for PBXNativeTarget "SimpleGains" */;
 			buildPhases = (
 				1D9FCCCF253B66770081429F /* Sources */,
 				1D9FCCD0253B66770081429F /* Frameworks */,
@@ -393,14 +393,14 @@
 			);
 			dependencies = (
 			);
-			name = SimpleWorkout;
+			name = SimpleGains;
 			productName = SimpleWorkout;
-			productReference = 1D9FCCD3253B66770081429F /* SimpleWorkout.app */;
+			productReference = 1D9FCCD3253B66770081429F /* SimpleGains.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1D9FCCE8253B667A0081429F /* SimpleWorkoutTests */ = {
+		1D9FCCE8253B667A0081429F /* SimpleGainsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D9FCD00253B667A0081429F /* Build configuration list for PBXNativeTarget "SimpleWorkoutTests" */;
+			buildConfigurationList = 1D9FCD00253B667A0081429F /* Build configuration list for PBXNativeTarget "SimpleGainsTests" */;
 			buildPhases = (
 				1D9FCCE5253B667A0081429F /* Sources */,
 				1D9FCCE6253B667A0081429F /* Frameworks */,
@@ -411,14 +411,14 @@
 			dependencies = (
 				1D9FCCEB253B667A0081429F /* PBXTargetDependency */,
 			);
-			name = SimpleWorkoutTests;
+			name = SimpleGainsTests;
 			productName = SimpleWorkoutTests;
-			productReference = 1D9FCCE9253B667A0081429F /* SimpleWorkoutTests.xctest */;
+			productReference = 1D9FCCE9253B667A0081429F /* SimpleGainsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1D9FCCF3253B667A0081429F /* SimpleWorkoutUITests */ = {
+		1D9FCCF3253B667A0081429F /* SimpleGainsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D9FCD03253B667A0081429F /* Build configuration list for PBXNativeTarget "SimpleWorkoutUITests" */;
+			buildConfigurationList = 1D9FCD03253B667A0081429F /* Build configuration list for PBXNativeTarget "SimpleGainsUITests" */;
 			buildPhases = (
 				1D9FCCF0253B667A0081429F /* Sources */,
 				1D9FCCF1253B667A0081429F /* Frameworks */,
@@ -429,9 +429,9 @@
 			dependencies = (
 				1D9FCCF6253B667A0081429F /* PBXTargetDependency */,
 			);
-			name = SimpleWorkoutUITests;
+			name = SimpleGainsUITests;
 			productName = SimpleWorkoutUITests;
-			productReference = 1D9FCCF4253B667A0081429F /* SimpleWorkoutUITests.xctest */;
+			productReference = 1D9FCCF4253B667A0081429F /* SimpleGainsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -470,9 +470,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D9FCCD2253B66770081429F /* SimpleWorkout */,
-				1D9FCCE8253B667A0081429F /* SimpleWorkoutTests */,
-				1D9FCCF3253B667A0081429F /* SimpleWorkoutUITests */,
+				1D9FCCD2253B66770081429F /* SimpleGains */,
+				1D9FCCE8253B667A0081429F /* SimpleGainsTests */,
+				1D9FCCF3253B667A0081429F /* SimpleGainsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -574,12 +574,12 @@
 /* Begin PBXTargetDependency section */
 		1D9FCCEB253B667A0081429F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1D9FCCD2253B66770081429F /* SimpleWorkout */;
+			target = 1D9FCCD2253B66770081429F /* SimpleGains */;
 			targetProxy = 1D9FCCEA253B667A0081429F /* PBXContainerItemProxy */;
 		};
 		1D9FCCF6253B667A0081429F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1D9FCCD2253B66770081429F /* SimpleWorkout */;
+			target = 1D9FCCD2253B66770081429F /* SimpleGains */;
 			targetProxy = 1D9FCCF5253B667A0081429F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -733,7 +733,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShawnJames.SimpleWorkout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShawnJames.SimpleGains;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -753,7 +753,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShawnJames.SimpleWorkout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShawnJames.SimpleGains;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -778,7 +778,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleWorkout.app/SimpleWorkout";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleGains.app/SimpleGains";
 			};
 			name = Debug;
 		};
@@ -800,7 +800,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleWorkout.app/SimpleWorkout";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleGains.app/SimpleGains";
 			};
 			name = Release;
 		};
@@ -856,7 +856,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D9FCCFD253B667A0081429F /* Build configuration list for PBXNativeTarget "SimpleWorkout" */ = {
+		1D9FCCFD253B667A0081429F /* Build configuration list for PBXNativeTarget "SimpleGains" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D9FCCFE253B667A0081429F /* Debug */,
@@ -865,7 +865,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D9FCD00253B667A0081429F /* Build configuration list for PBXNativeTarget "SimpleWorkoutTests" */ = {
+		1D9FCD00253B667A0081429F /* Build configuration list for PBXNativeTarget "SimpleGainsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D9FCD01253B667A0081429F /* Debug */,
@@ -874,7 +874,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D9FCD03253B667A0081429F /* Build configuration list for PBXNativeTarget "SimpleWorkoutUITests" */ = {
+		1D9FCD03253B667A0081429F /* Build configuration list for PBXNativeTarget "SimpleGainsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D9FCD04253B667A0081429F /* Debug */,
