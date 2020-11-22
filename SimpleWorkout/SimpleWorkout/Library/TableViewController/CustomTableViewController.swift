@@ -3,8 +3,8 @@
 // CustomTableViewController.swift
 
 import UIKit
-/// Shared button configurations, used for consistent styling
 
+/// Shared TableViewController configurations, used for consistent styling
 class CustomTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()

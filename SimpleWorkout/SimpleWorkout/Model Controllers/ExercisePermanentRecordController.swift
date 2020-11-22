@@ -1,6 +1,6 @@
 // Copyright © 2020 ShawnJames. All rights reserved.
 // Created by Shawn James
-// ExercisePermanentRecordModel.swift
+// ExercisePermanentRecordController.swift
 
 import CoreData
 import UIKit
@@ -17,7 +17,7 @@ final class ExercisePermanentRecordController {
     var autoCompleteResults: [NSAttributedString] = []
 
     // MARK: - Public Methods
-    
+
     /// Fetches exercise auto-complete suggestions using a textField's text
     /// - Parameters:
     ///   - quantity: The maximum number of suggestions to return
@@ -41,6 +41,8 @@ final class ExercisePermanentRecordController {
         }
     }
 
+    /// Fetches the permanent records with the greatest weight increases
+    /// - Returns: Max 25 ExercisePermanentRecords that have total gains above `0`, sorted descending
     func fetchTopGains() -> ExercisePermanentRecords {
         let fetchRequest: PermanentRecordFetchRequest = ExercisePermanentRecord.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "totalGains > 0")
@@ -58,7 +60,9 @@ final class ExercisePermanentRecordController {
         }
     }
 
-    func updateTotalGains(for exercise: Exercise) {
+    /// Updates the permanent record matching the exercise name by increasing it's `totalGains` by 5
+    /// - Parameter exercise: The exercise use for permanent record lookup
+    func updateTotalGains(for exercise: Exercise, by increaseAmount: Int16) {
         guard let exerciseName = exercise.name else { return }
 
         let fetchRequest: PermanentRecordFetchRequest = ExercisePermanentRecord.fetchRequest()
@@ -69,7 +73,7 @@ final class ExercisePermanentRecordController {
 
         do {
             let exercise = try privateContext.fetch(fetchRequest).first
-            exercise?.totalGains += 5
+            exercise?.totalGains += Int64(increaseAmount)
 
             try privateContext.save()
 
@@ -101,6 +105,8 @@ final class ExercisePermanentRecordController {
 
         CoreDataManager.shared.saveViewChanges()
     }
+
+    // MARK: - Private Methods
 
     /// Removes all autoCompleteSuggestions
     private func cancel() {

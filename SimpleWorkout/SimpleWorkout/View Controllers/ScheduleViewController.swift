@@ -4,11 +4,14 @@
 
 import UIKit
 
-final class ScheduleViewController: UITableViewController {
+/// An TableViewController that provides overview of the scheduled exercises for the week
+final class ScheduleViewController: CustomTableViewController {
     // MARK: - Private Properties
 
-    private let exerciseModel = ExerciseModel()
+    /// Controller used for interacting with the `Exercise` model
+    private let exerciseModel = ExerciseController()
 
+    /// DataSource for the TableView; holds the weekdays and their exercises
     private var weekdays: Weekdays = [] {
         didSet {
             tableView.reloadData()
@@ -50,8 +53,8 @@ final class ScheduleViewController: UITableViewController {
 
             destinationVC.weekday = selectedWeekday
 
-            exerciseModel.initFetchedResultsController(for: selectedWeekday) {
-                destinationVC.exerciseModel = exerciseModel
+            exerciseModel.configureFetchedResultsController(for: selectedWeekday) {
+                destinationVC.exerciseController = exerciseModel
             }
         }
     }

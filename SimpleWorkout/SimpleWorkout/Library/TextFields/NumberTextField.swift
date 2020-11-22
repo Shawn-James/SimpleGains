@@ -4,6 +4,7 @@
 
 import UIKit
 
+/// The numberPad used to enter a custom weight for an exercise
 final class NumberTextField: UITextField, UITextFieldDelegate {
     /// The toolbar to be added above the numberPad keyboard that introduces a `done` button
     private lazy var toolBar: UIToolbar = {

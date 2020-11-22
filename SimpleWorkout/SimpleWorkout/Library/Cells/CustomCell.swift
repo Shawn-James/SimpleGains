@@ -3,8 +3,8 @@
 // CustomCell.swift
 
 import UIKit
-/// Shared button configurations, used for consistent styling
 
+/// Shared TableViewCell configurations, used for consistent styling
 class CustomCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()

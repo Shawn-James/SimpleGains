@@ -4,6 +4,7 @@
 
 import UIKit
 
+/// TableView cell that shows a scheduled exercise for the selected weekday
 final class ScheduleDetailCell: CustomCell, ReusableView {
     // MARK: - Public Properties
 

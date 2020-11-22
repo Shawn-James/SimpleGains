@@ -3,8 +3,8 @@
 // CustomViewController.swift
 
 import UIKit
-/// Shared button configurations, used for consistent styling
 
+/// Shared ViewController configurations, used for consistent styling
 class CustomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()

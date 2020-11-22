@@ -15,7 +15,7 @@ class AutoCompleteTableView: UITableView, UITableViewDelegate, UITextFieldDelega
 
     // MARK: - Model
 
-    private var autoCompleteModel = ExercisePermanentRecordModel()
+    private var autoCompleteModel = ExercisePermanentRecordController()
     private var fetchedResultsController: NSFetchedResultsController<ExercisePermanentRecord>?
 
     // MARK: - Properties
@@ -76,12 +76,12 @@ class AutoCompleteTableView: UITableView, UITableViewDelegate, UITextFieldDelega
         update.appendSections([0])
         update.appendItems(autoCompleteModel.autoCompleteResults)
 
-        DispatchQueue.main.async {
-            self.suggestionsDataSource.apply(update, animatingDifferences: false)
+        DispatchQueue.main.async { [weak self] in
+            self?.suggestionsDataSource.apply(update, animatingDifferences: false)
 
-            self.visibleCells.first?.setSelected(true, animated: false)
+            self?.visibleCells.first?.setSelected(true, animated: false)
 
-            self.autoCompleteModel.autoCompleteResults.isEmpty ? self.hideDropDown() : self.showDropDown()
+            self?.autoCompleteModel.autoCompleteResults.isEmpty ?? true ? self?.hideDropDown() : self?.showDropDown()
         }
     }
 

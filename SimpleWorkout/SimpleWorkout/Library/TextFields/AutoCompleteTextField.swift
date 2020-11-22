@@ -4,6 +4,7 @@
 
 import UIKit
 
+/// The textfield used for autoComplete support
 final class AutoCompleteTextField: UITextField {
     /// Storyboard init
     required init?(coder: NSCoder) {

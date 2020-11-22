@@ -4,8 +4,18 @@
 
 import UIKit
 
-class AppearanceSettingCell: UITableViewCell, ReusableView {
-    typealias InjectedObject = AppearanceSettingsRow?
+/// Cells that populate the rows of the `Appearance` section. They hold color configurations. When a row is selected, the `primary` color is set to that color
+final class AppearanceSettingCell: UITableViewCell, ReusableView {
+    // MARK: - Public Properties
+
+    /// The injected row object from cellForRowAt
+    var row: AppearanceSettingsRow? {
+        didSet {
+            updateViews()
+        }
+    }
+
+    // MARK: - Lifecycle
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,10 +33,13 @@ class AppearanceSettingCell: UITableViewCell, ReusableView {
         accessoryType = selected ? .checkmark : .none
     }
 
-    public func configureCell(with object: AppearanceSettingsRow?) {
-        guard let colorForRow = object else { return }
+    // MARK: - Private Methods
 
-        textLabel?.text = colorForRow.cellTitle
-        backgroundColor = UIColor(hex: colorForRow.hex)
+    /// Configures the cell using the injected object
+    private func updateViews() {
+        guard let row = row else { return }
+
+        textLabel?.text = row.cellTitle
+        backgroundColor = UIColor(hex: row.hex)
     }
 }

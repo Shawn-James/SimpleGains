@@ -8,6 +8,7 @@ import UIKit
 final class CircleButton: CustomButton {
     // MARK: - Public Properties
 
+    /// Holds the target reps count for the exercise reps that this button represents
     var repsCount: Int16?
 
     // MARK: - Lifecycle

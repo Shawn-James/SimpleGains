@@ -4,27 +4,39 @@
 
 import UIKit
 
+/// Custom delegate used to send information to the back to the viewController
 protocol CurrentWorkoutTableViewCellDelegate {
     func incrementCompletedExercises(_ shouldIncrement: Bool)
     func shouldIncreaseWeight(_ bool: Bool, for exercise: Exercise)
 }
 
-class WorkoutCell: CustomCell, ReusableView {
-    // MARK: - Typealias
+/// A tableView cell that displays a working exercise's properties so the user can perform the exercise and record the results
+final class WorkoutCell: CustomCell, ReusableView {
+    // MARK: - Public Properties
 
-    typealias InjectedObject = Exercise
+    /// The exercise injected from cellForRowAt used to configure this cell
+    var exercise: Exercise? {
+        didSet {
+            updateViews()
+        }
+    }
 
-    // MARK: - Properties
-
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var weightLabel: UILabel!
-    @IBOutlet var repsStackView: UIStackView!
-
-    var exercise: Exercise?
-
+    /// Custom delegate used to send information to the back to the viewController
     var delegate: CurrentWorkoutTableViewCellDelegate?
 
-    var increaseWeightFlag = true {
+    // MARK: - Private Properties
+
+    /// Holds the exercise name
+    @IBOutlet private var nameLabel: UILabel!
+
+    /// Holds the exercise weight
+    @IBOutlet private var weightLabel: UILabel!
+
+    /// A stack view used to hold a dynamic number of `rep` buttons
+    @IBOutlet private var repsStackView: UIStackView!
+
+    /// A flag used to indicate whether the viewController should be told to increase the weight for this exercise when the `finish` button is pressed
+    private var increaseWeightFlag = true {
         didSet {
             if let exercise = exercise {
                 delegate?.shouldIncreaseWeight(increaseWeightFlag, for: exercise)
@@ -32,13 +44,15 @@ class WorkoutCell: CustomCell, ReusableView {
         }
     }
 
-    var completeFlag = false {
+    /// A flag used to indicate whether the viewController should be notified that this exercise has all `rep` buttons with values
+    private var completeFlag = false {
         didSet {
             delegate?.incrementCompletedExercises(completeFlag)
         }
     }
 
-    var successfulSets = 0 {
+    /// A counter used to decide wether the `increaseWeightFlag` should be raised. Count all the `reps` buttons that are set to the target rep count
+    private var successfulSets = 0 {
         didSet {
             if successfulSets == totalSets {
                 increaseWeightFlag = true
@@ -48,7 +62,8 @@ class WorkoutCell: CustomCell, ReusableView {
         }
     }
 
-    var completedSets = 0 {
+    /// A counter used to decide wether the `completeFlag` should be raised. Counts all the `reps` buttons that have values
+    private var completedSets = 0 {
         didSet {
             if completedSets == totalSets {
                 completeFlag = true
@@ -58,42 +73,19 @@ class WorkoutCell: CustomCell, ReusableView {
         }
     }
 
-    var totalSets: Int?
+    /// Holds the total number of sets of the injected exercise
+    private var totalSets: Int?
 
-    // MARK: - Methods
+    // MARK: - Lifecycle
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 
-    public func configureCell(with object: Exercise) {
-        exercise = object
-        guard let exercise = exercise else { return }
+    // MARK: - Private Methods
 
-        totalSets = Int(exercise.sets)
-
-        nameLabel.text = exercise.name
-        weightLabel.text = String(exercise.weight)
-
-        if repsStackView.arrangedSubviews.isEmpty {
-            // RepsButton(s)
-            while repsStackView.arrangedSubviews.count < exercise.sets {
-                let repsButton = CircleButton(repsCount: exercise.reps)
-                repsButton.addTarget(self, action: #selector(updateCompletedExercises(sender:)), for: .touchUpInside)
-
-                repsStackView.addArrangedSubview(repsButton)
-            }
-            // Spacer(s)
-            while repsStackView.arrangedSubviews.count < 5 {
-                let spacer = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-                spacer.image = UIImage(systemName: "xmark")
-                spacer.tintColor = UIColor.CustomColor.base
-
-                repsStackView.addArrangedSubview(spacer)
-            }
-        }
-    }
-
+    /// Updates the counters for determining whether the sets are completed and successful. Successful, as in the target reps were reached.
+    /// - Parameter sender: The circle button that was pressed
     @objc private func updateCompletedExercises(sender: CircleButton) {
         guard
             let workingReps = Int(sender.title(for: .normal) ?? "Incomplete"),
@@ -110,11 +102,33 @@ class WorkoutCell: CustomCell, ReusableView {
             successfulSets -= 1
         }
     }
+
+    /// Configures the cell using the injected exercise object
+    private func updateViews() {
+        guard let exercise = exercise else { return }
+
+        totalSets = Int(exercise.sets)
+
+        nameLabel.text = exercise.name
+        weightLabel.text = String(exercise.weight)
+
+        if repsStackView.arrangedSubviews.isEmpty {
+            // RepsButton(s)
+            while repsStackView.arrangedSubviews.count < exercise.sets {
+                let repsButton = CircleButton(repsCount: exercise.reps)
+                repsButton.addTarget(self, action: #selector(updateCompletedExercises(sender:)), for: .touchUpInside)
+
+                repsStackView.addArrangedSubview(repsButton)
+            }
+
+            // Spacer(s)
+            while repsStackView.arrangedSubviews.count < 5 {
+                let spacer = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+                spacer.image = UIImage(systemName: "xmark")
+                spacer.tintColor = UIColor.CustomColor.base
+
+                repsStackView.addArrangedSubview(spacer)
+            }
+        }
+    }
 }
-
-// Handle finish button behavior
-
-// all cells are incomplete
-
-// isComplete flag when value hits or leaves target -> True increments completionCount, False decrements.
-// When completionCount = allSets.count, enable `finish` button

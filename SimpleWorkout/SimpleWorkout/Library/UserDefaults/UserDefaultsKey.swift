@@ -2,8 +2,10 @@
 // Created by Shawn James
 // UserDefaultsKey.swift
 
+/// Name spacing for UserDefault's Keys
 enum UserDefaultsKey {
-    static let firstLaunch = "FirstLaunch"
+    static let firstLaunch = "firstLaunch"
     static let primaryColor = "PrimaryColor"
     static let lastWorkoutDate = "LastWorkoutDate"
+    static let pauseAutoWeightIncrease = "PauseAutoWeightIncrease"
 }

@@ -60,5 +60,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         CoreDataManager.shared.savePrivateChanges()
 
         UserDefaults.standard.setValue(false, forKey: UserDefaultsKey.firstLaunch)
+        UserDefaults.standard.setValue(false, forKey: UserDefaultsKey.pauseAutoWeightIncrease)
     }
 }

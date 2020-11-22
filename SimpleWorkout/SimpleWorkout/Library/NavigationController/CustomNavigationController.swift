@@ -3,8 +3,8 @@
 // CustomNavigationController.swift
 
 import UIKit
-/// Shared button configurations, used for consistent styling
 
+/// Shared NavigationController configurations, used for consistent styling
 class CustomNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -4,7 +4,8 @@
 
 import UIKit
 
-class SettingsViewController: CustomTableViewController {
+/// View Controller that allows the user to customize the app experience by being able to interact with settings options
+final class SettingsViewController: CustomTableViewController {
     // MARK: - TableView
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,12 +34,12 @@ class SettingsViewController: CustomTableViewController {
         switch section {
         case .general:
             let cell: GeneralSettingsCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.configureCell(with: GeneralSettingsRow(rawValue: indexPath.row))
+            cell.row = GeneralSettingsRow(rawValue: indexPath.row)
             return cell
 
         case .appearance:
             let cell: AppearanceSettingCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.configureCell(with: AppearanceSettingsRow(rawValue: indexPath.row))
+            cell.row = AppearanceSettingsRow(rawValue: indexPath.row)
             return cell
         }
     }
@@ -57,6 +58,8 @@ class SettingsViewController: CustomTableViewController {
 
     // MARK: - Private Methods
 
+    /// Changes the `primary` color and the global tint to match the configuration from the user selected row
+    /// - Parameter appearanceRow: The used for configuration
     private func setTheme(with appearanceRow: AppearanceSettingsRow?) {
         guard let hexCode = appearanceRow?.hex else { return }
 

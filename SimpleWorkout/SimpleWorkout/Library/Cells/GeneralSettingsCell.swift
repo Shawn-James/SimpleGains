@@ -4,18 +4,20 @@
 
 import UIKit
 
-class GeneralSettingsCell: UITableViewCell, ReusableView {
-    typealias InjectedObject = GeneralSettingsRow? // FIXME: - Only running first as associated type to satisfy protocol
+/// Cells that populate the rows of the `General` section. The can have switches.
+final class GeneralSettingsCell: UITableViewCell, ReusableView {
+    // MARK: - Public Properties
 
-    var section1Row: GeneralSettingsRow? {
+    /// The injected row object from cellForRowAt
+    var row: GeneralSettingsRow? {
         didSet {
-            guard let section1Row = section1Row else { return }
-
-            textLabel?.text = section1Row.cellTitle
-            switchControl.isHidden = !section1Row.containsSwitch
+            updateViews()
         }
     }
 
+    // MARK: - Private Properties
+
+    /// A switch control used to toggle a general setting on or off
     lazy var switchControl: UISwitch = {
         let switchControl = UISwitch()
         switchControl.onTintColor = .red
@@ -23,6 +25,8 @@ class GeneralSettingsCell: UITableViewCell, ReusableView {
         switchControl.addTarget(self, action: #selector(switchControlHandler), for: .valueChanged)
         return switchControl
     }()
+
+    // MARK: - Lifecycle
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,24 +38,26 @@ class GeneralSettingsCell: UITableViewCell, ReusableView {
         backgroundColor = UIColor.CustomColor.overlay
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+    // MARK: - Private Methods
+
+    /// Handles the value changes for the switch control. Toggles the setting in user defaults and updates the app experience according to that setting
+    @objc private func switchControlHandler(sender: UISwitch) {
+        guard let row = row else { return }
+        
+        if sender.isOn {
+            UserDefaults.standard.set(true, forKey: row.userDefaultsKey)
+        } else {
+            UserDefaults.standard.set(false, forKey: row.userDefaultsKey)
+        }
     }
 
-    func configureCell(with object: GeneralSettingsRow?) {
-        guard let row = object else { return }
+    /// Configures the cell using the injected object
+    private func updateViews() {
+        guard let row = row else { return }
 
         textLabel?.text = row.cellTitle
-    }
 
-    @objc private func switchControlHandler(sender: UISwitch) {
-        guard let section1Row = section1Row else { return }
-
-//        if sender.isOn {
-//            UserDefaults.standard.set(true, forKey: section1Row.userDefaultsKey)
-//        } else {
-//            UserDefaults.standard.set(false, forKey: section1Row.userDefaultsKey)
-//        }
+        switchControl.isHidden = !row.containsSwitch
+        switchControl.setOn(UserDefaults.standard.bool(forKey: row.userDefaultsKey), animated: true)
     }
 }

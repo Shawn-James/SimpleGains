@@ -5,43 +5,53 @@
 import CoreData
 import UIKit
 
+/// ViewController used for editing workout schedules for a given weekday
 final class ScheduleDetailViewController: CustomViewController, UITableViewDataSource, UITableViewDelegate, AutoCompleteTableViewMyDelegate, NSFetchedResultsControllerDelegate {
     typealias AutoCompleteData = UITableViewDiffableDataSource<Int, Exercise>
     typealias AutoCompleteSnapshot = NSDiffableDataSourceSnapshot<Int, Exercise>
 
     // MARK: - Public Properties
 
+    /// Weekday object injected from the ScheduleViewController
     var weekday: Weekday? {
         didSet {
             title = weekday?.name
         }
     }
 
-    var exerciseModel: ExerciseModel? {
+    // Controller used to interact with Exercise model. Injected from the ScheduleViewController
+    var exerciseController: ExerciseController? {
         didSet {
-            exerciseFRC = exerciseModel?.fetchedResultsController
+            exerciseFRC = exerciseController?.fetchedResultsController
         }
     }
 
     // MARK: - Private Properties
 
+    /// The button used to allow user sorting of the exercises
     @IBOutlet private var sortButton: UIBarButtonItem!
 
+    /// The textfield used to enter exercise names. Offers autoComplete support
     @IBOutlet private var autoCompleteTextField: AutoCompleteTextField!
 
+    /// The "drop-down" view tableView that displays autoCompleteSuggestions
     @IBOutlet private var autoCompleteTableView: AutoCompleteTableView!
 
+    /// The tableView that displays all the scheduled exercises for the given weekday
     @IBOutlet private var scheduledExercisesTableView: CustomTableView!
 
+    /// The view that displays a label to the user when a tableView's dataSource is empty
     @IBOutlet private var emptyDatasetView: UIView!
 
+    /// The fetched results controller used to populate the `scheduledExercisesTableView` for a given weekday
     private var exerciseFRC: NSFetchedResultsController<Exercise>? {
         didSet {
             exerciseFRC?.delegate = self
         }
     }
 
-    private var autoCompleteModel = ExercisePermanentRecordModel()
+    /// Controller used for interacting with the `ExercisePermanentRecord` model
+    private var permanentRecordController = ExercisePermanentRecordController()
 
     // MARK: - Lifecycle
 
@@ -52,18 +62,25 @@ final class ScheduleDetailViewController: CustomViewController, UITableViewDataS
         scheduledExercisesTableView.dataSource = self
         scheduledExercisesTableView.delegate = self
         autoCompleteTableView.myDelegate = self
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        tabBarController?.tabBar.isHidden = false
+        
+        scheduledExercisesTableView.allowsSelection = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         tabBarController?.tabBar.isHidden = true
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        tabBarController?.tabBar.isHidden = false
+
+        NotificationCenter.default.removeObserver(self)
     }
 
     // MARK: - TableView
@@ -218,8 +235,29 @@ final class ScheduleDetailViewController: CustomViewController, UITableViewDataS
         scheduledExercisesTableView.endUpdates()
     }
 
+    // MARK: - Keyboard
+
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
+            moveTableViewBottom(to: keyboardHeight)
+        }
+    }
+
+    @objc func keyboardWillHide(notification: Notification) {
+        moveTableViewBottom(to: .zero)
+    }
+
+    private func moveTableViewBottom(to value: CGFloat) {
+        let edgeInset = UIEdgeInsets(top: 0, left: 0, bottom: value, right: 0)
+
+        scheduledExercisesTableView.contentInset = edgeInset
+        scheduledExercisesTableView.scrollIndicatorInsets = edgeInset
+    }
+
     // MARK: - Private Methods
 
+    /// Handles tap events from the `sortButton`; toggles editing mode for re-arranging cells
+    /// - Parameter sender: The `sortButton`
     @IBAction private func sortButtonPressed(_ sender: UIBarButtonItem) {
         scheduledExercisesTableView.isEditing.toggle()
     }
@@ -234,9 +272,9 @@ final class ScheduleDetailViewController: CustomViewController, UITableViewDataS
 
         autoCompleteTextField.text?.removeAll(keepingCapacity: false)
 
-        autoCompleteModel.incrementAutoCompleteOccurrenceCount(for: exerciseName)
+        permanentRecordController.incrementAutoCompleteOccurrenceCount(for: exerciseName)
 
-        exerciseModel?.createNewExercise(named: exerciseName, for: weekday)
+        exerciseController?.createNewExercise(named: exerciseName, for: weekday)
     }
 
     /// Configures the tableView's appearance based on whether or not it is empty.

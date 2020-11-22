@@ -3,8 +3,8 @@
 // CustomTableView.swift
 
 import UIKit
-/// Shared button configurations, used for consistent styling
 
+/// Shared TableView configurations, used for consistent styling
 class CustomTableView: UITableView {
     override func layoutSubviews() {
         super.layoutSubviews()

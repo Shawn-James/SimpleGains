@@ -4,7 +4,8 @@
 
 import UIKit
 
-class AutoCompleteCell: UITableViewCell, ReusableView {
+/// A tableView cell used to show exercise names used for autoCompletion
+final class AutoCompleteCell: UITableViewCell, ReusableView {
     // MARK: - Public Properties
     
     /// The object injected from cellForRowAt, used to configure this cell
