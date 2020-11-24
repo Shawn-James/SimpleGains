@@ -90,7 +90,7 @@ final class TopGainsViewController: CustomViewController, UITableViewDataSource,
     private func configurationForEmptyDataSet() {
         if topGains.isEmpty {
             tableView.backgroundView = emptyDatasetView
-        } else if topGains.count == 1 {
+        } else if topGains.count > 0, tableView.backgroundView != nil {
             tableView.backgroundView = nil
         }
     }

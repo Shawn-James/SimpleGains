@@ -146,8 +146,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g65-y4-zeN" customClass="CustomTableView" customModule="SimpleGains" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="596" width="414" height="217"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g65-y4-zeN" customClass="CustomTableView" customModule="SimpleGains" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="567" width="414" height="246"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScheduleDetailCell" rowHeight="110" id="zlB-bW-gOQ" customClass="ScheduleDetailCell" customModule="SimpleGains" customModuleProvider="target">
@@ -325,7 +325,7 @@
                         <viewLayoutGuide key="safeArea" id="xJN-k8-3Nc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="g65-y4-zeN" firstAttribute="top" secondItem="4cT-t3-ZNX" secondAttribute="bottom" constant="456" id="5x4-t3-3ZK"/>
+                            <constraint firstItem="g65-y4-zeN" firstAttribute="top" secondItem="4cT-t3-ZNX" secondAttribute="bottom" constant="8" id="5x4-t3-3ZK"/>
                             <constraint firstItem="g65-y4-zeN" firstAttribute="trailing" secondItem="xJN-k8-3Nc" secondAttribute="trailing" id="86S-1k-kKn"/>
                             <constraint firstItem="Hqk-bN-7ms" firstAttribute="top" secondItem="Udp-ea-Qty" secondAttribute="bottom" constant="-4" id="Ebq-I2-WsJ"/>
                             <constraint firstItem="g65-y4-zeN" firstAttribute="bottom" secondItem="xJN-k8-3Nc" secondAttribute="bottom" id="L9g-3c-8wq"/>
