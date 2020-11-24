@@ -13,12 +13,12 @@
         <!--Settings-->
         <scene sceneID="LPN-5U-OJX">
             <objects>
-                <tableViewController id="Erd-O1-xdv" customClass="SettingsViewController" customModule="SimpleWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Erd-O1-xdv" customClass="SettingsViewController" customModule="SimpleGains" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="hNF-iY-uHJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GeneralSettingsCell" textLabel="mVQ-nf-JF6" style="IBUITableViewCellStyleDefault" id="jUu-QO-mCs" customClass="GeneralSettingsCell" customModule="SimpleWorkout" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GeneralSettingsCell" textLabel="mVQ-nf-JF6" style="IBUITableViewCellStyleDefault" id="jUu-QO-mCs" customClass="GeneralSettingsCell" customModule="SimpleGains" customModuleProvider="target">
                                 <rect key="frame" x="20" y="55.5" width="374" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jUu-QO-mCs" id="pzY-gj-riP">
@@ -35,7 +35,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AppearanceSettingCell" textLabel="Cbb-AE-gbk" style="IBUITableViewCellStyleDefault" id="6R3-yD-U67" customClass="AppearanceSettingCell" customModule="SimpleWorkout" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AppearanceSettingCell" textLabel="Cbb-AE-gbk" style="IBUITableViewCellStyleDefault" id="6R3-yD-U67" customClass="AppearanceSettingCell" customModule="SimpleGains" customModuleProvider="target">
                                 <rect key="frame" x="20" y="99" width="374" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6R3-yD-U67" id="R3U-jC-AWp">
@@ -68,12 +68,12 @@
         <!--Your Schedule-->
         <scene sceneID="53h-Px-Lpb">
             <objects>
-                <tableViewController storyboardIdentifier="ScheduleTableViewController" id="HeY-gG-eKH" customClass="ScheduleViewController" customModule="SimpleWorkout" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="g69-KK-lYs" customClass="CustomTableView" customModule="SimpleWorkout" customModuleProvider="target">
+                <tableViewController storyboardIdentifier="ScheduleTableViewController" id="HeY-gG-eKH" customClass="ScheduleViewController" customModule="SimpleGains" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="g69-KK-lYs" customClass="CustomTableView" customModule="SimpleGains" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ScheduleCell" rowHeight="81" id="DW3-eH-n3Q" customClass="ScheduleCell" customModule="SimpleWorkout" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ScheduleCell" rowHeight="81" id="DW3-eH-n3Q" customClass="ScheduleCell" customModule="SimpleGains" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DW3-eH-n3Q" id="eS5-1b-UD4">
@@ -96,7 +96,7 @@
                                                 <constraint firstAttribute="width" constant="1" id="OCq-Yl-eyz"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtM-bV-Wfb">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RtM-bV-Wfb">
                                             <rect key="frame" x="176" y="27" width="179" height="27"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
@@ -112,7 +112,7 @@
                                         <constraint firstItem="Ptn-Ze-NN8" firstAttribute="centerY" secondItem="eS5-1b-UD4" secondAttribute="centerY" id="Khi-tL-AH9"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="RtM-bV-Wfb" secondAttribute="bottom" constant="16" id="LUY-8k-MeR"/>
                                         <constraint firstItem="Ptn-Ze-NN8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="eS5-1b-UD4" secondAttribute="topMargin" id="Wof-0h-aa1"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="RtM-bV-Wfb" secondAttribute="trailing" constant="20" id="akA-h9-fQw"/>
+                                        <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="RtM-bV-Wfb" secondAttribute="trailing" constant="20" id="akA-h9-fQw"/>
                                         <constraint firstItem="jKy-Nc-Q5f" firstAttribute="top" secondItem="eS5-1b-UD4" secondAttribute="top" constant="7" id="koc-9l-52o"/>
                                         <constraint firstItem="Ptn-Ze-NN8" firstAttribute="leading" secondItem="eS5-1b-UD4" secondAttribute="leading" constant="23.5" id="my4-9z-tOH"/>
                                         <constraint firstItem="jKy-Nc-Q5f" firstAttribute="leading" secondItem="Ptn-Ze-NN8" secondAttribute="trailing" constant="18" id="yUu-5x-aDe"/>
@@ -141,16 +141,16 @@
         <!--Schedule Detail View Controller-->
         <scene sceneID="dpb-SE-q3H">
             <objects>
-                <viewController id="7DS-0G-p52" customClass="ScheduleDetailViewController" customModule="SimpleWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7DS-0G-p52" customClass="ScheduleDetailViewController" customModule="SimpleGains" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Svc-gF-zgv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g65-y4-zeN" customClass="CustomTableView" customModule="SimpleWorkout" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g65-y4-zeN" customClass="CustomTableView" customModule="SimpleGains" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="596" width="414" height="217"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScheduleDetailCell" rowHeight="110" id="zlB-bW-gOQ" customClass="ScheduleDetailCell" customModule="SimpleWorkout" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScheduleDetailCell" rowHeight="110" id="zlB-bW-gOQ" customClass="ScheduleDetailCell" customModule="SimpleGains" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zlB-bW-gOQ" id="KkL-9H-cYz">
@@ -169,18 +169,20 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8el-uR-2lU">
                                                             <rect key="frame" x="0.0" y="0.0" width="121.5" height="40"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdA-OH-YAY">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="GdA-OH-YAY">
                                                                     <rect key="frame" x="0.0" y="0.0" width="58.5" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="58.5" id="PhZ-Sz-vM3"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="nzL-Yh-5aV"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGm-z6-imT" customClass="NumberTextField" customModule="SimpleWorkout" customModuleProvider="target">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="?" textAlignment="center" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="bGm-z6-imT" customClass="NumberTextField" customModule="SimpleGains" customModuleProvider="target">
                                                                     <rect key="frame" x="66.5" y="0.0" width="55" height="40"/>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="height" constant="40" id="6Pm-qg-dbQ"/>
                                                                         <constraint firstAttribute="width" constant="55" id="cgC-VZ-qNJ"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -194,16 +196,17 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iPA-CE-GmK">
                                                             <rect key="frame" x="162.5" y="0.0" width="86.5" height="40"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9C-x9-anQ">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="U9C-x9-anQ">
                                                                     <rect key="frame" x="0.0" y="0.0" width="38.5" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="38.5" id="2Gw-xW-wf4"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="CX7-Mx-UTY"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36K-xc-v1S" customClass="CircleButton" customModule="SimpleWorkout" customModuleProvider="target">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36K-xc-v1S" customClass="CircleButton" customModule="SimpleGains" customModuleProvider="target">
                                                                     <rect key="frame" x="46.5" y="0.0" width="40" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="36K-xc-v1S" secondAttribute="height" multiplier="1:1" id="rDF-qm-qwb"/>
@@ -218,16 +221,17 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Xkg-2H-RFz">
                                                             <rect key="frame" x="290" y="0.0" width="92" height="40"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwI-aV-d6g">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="cwI-aV-d6g">
                                                                     <rect key="frame" x="0.0" y="0.0" width="43" height="40"/>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="height" constant="40" id="0LM-GM-8Du"/>
                                                                         <constraint firstAttribute="width" constant="43" id="dVT-ds-SW4"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0l-pn-RI0" customClass="CircleButton" customModule="SimpleWorkout" customModuleProvider="target">
+                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0l-pn-RI0" customClass="CircleButton" customModule="SimpleGains" customModuleProvider="target">
                                                                     <rect key="frame" x="52" y="0.0" width="40" height="40"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="E0l-pn-RI0" secondAttribute="height" multiplier="1:1" id="bza-C2-03j"/>
@@ -270,12 +274,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4cT-t3-ZNX">
                                 <rect key="frame" x="8" y="96" width="398" height="44"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Exercise..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Udp-ea-Qty" customClass="AutoCompleteTextField" customModule="SimpleWorkout" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Exercise..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Udp-ea-Qty" customClass="AutoCompleteTextField" customModule="SimpleGains" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="285" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ra2-Sv-cvo" customClass="StandardButton" customModule="SimpleWorkout" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ra2-Sv-cvo" customClass="StandardButton" customModule="SimpleGains" customModuleProvider="target">
                                         <rect key="frame" x="293" y="0.0" width="105" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="105" id="4Nt-jG-Ojk"/>
@@ -294,11 +298,11 @@
                                     <constraint firstAttribute="height" constant="44" id="oSj-VD-GaY"/>
                                 </constraints>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="317" placeholderIntrinsicHeight="400" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hqk-bN-7ms" customClass="AutoCompleteTableView" customModule="SimpleWorkout" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="317" placeholderIntrinsicHeight="400" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hqk-bN-7ms" customClass="AutoCompleteTableView" customModule="SimpleGains" customModuleProvider="target">
                                 <rect key="frame" x="8.5" y="136" width="284" height="400"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AutoCompleteCell" textLabel="1YP-px-x7N" rowHeight="40" style="IBUITableViewCellStyleDefault" id="S4S-1W-6U2" customClass="AutoCompleteCell" customModule="SimpleWorkout" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AutoCompleteCell" textLabel="1YP-px-x7N" rowHeight="40" style="IBUITableViewCellStyleDefault" id="S4S-1W-6U2" customClass="AutoCompleteCell" customModule="SimpleGains" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="284" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S4S-1W-6U2" id="HRV-MI-Zt3">
@@ -321,7 +325,7 @@
                         <viewLayoutGuide key="safeArea" id="xJN-k8-3Nc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="g65-y4-zeN" firstAttribute="top" secondItem="4cT-t3-ZNX" secondAttribute="bottom" constant="8" id="5x4-t3-3ZK"/>
+                            <constraint firstItem="g65-y4-zeN" firstAttribute="top" secondItem="4cT-t3-ZNX" secondAttribute="bottom" constant="456" id="5x4-t3-3ZK"/>
                             <constraint firstItem="g65-y4-zeN" firstAttribute="trailing" secondItem="xJN-k8-3Nc" secondAttribute="trailing" id="86S-1k-kKn"/>
                             <constraint firstItem="Hqk-bN-7ms" firstAttribute="top" secondItem="Udp-ea-Qty" secondAttribute="bottom" constant="-4" id="Ebq-I2-WsJ"/>
                             <constraint firstItem="g65-y4-zeN" firstAttribute="bottom" secondItem="xJN-k8-3Nc" secondAttribute="bottom" id="L9g-3c-8wq"/>
@@ -380,7 +384,7 @@ Schedule, It Will Appear Here.</string>
         <!--Custom Tab Bar-->
         <scene sceneID="6NZ-pL-WHr">
             <objects>
-                <tabBarController id="qJe-VB-al2" customClass="CustomTabBar" customModule="SimpleWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="qJe-VB-al2" customClass="CustomTabBar" customModule="SimpleGains" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Yx9-gU-2Lq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -398,7 +402,7 @@ Schedule, It Will Appear Here.</string>
         <!--Workout-->
         <scene sceneID="wbV-Y1-o4p">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SJU-6j-NdI" customClass="CustomNavigationController" customModule="SimpleWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SJU-6j-NdI" customClass="CustomNavigationController" customModule="SimpleGains" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Workout" image="book.closed.fill" catalog="system" id="1n9-2e-kHr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xhe-cq-H6r">
@@ -417,12 +421,12 @@ Schedule, It Will Appear Here.</string>
         <!--Top Gains-->
         <scene sceneID="VWg-Ct-T83">
             <objects>
-                <viewController id="Z9Q-lI-9nB" customClass="TopGainsViewController" customModule="SimpleWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Z9Q-lI-9nB" customClass="TopGainsViewController" customModule="SimpleGains" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h0N-j6-col">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yaq-XI-2iZ" customClass="StandardButton" customModule="SimpleWorkout" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yaq-XI-2iZ" customClass="StandardButton" customModule="SimpleGains" customModuleProvider="target">
                                 <rect key="frame" x="1" y="741" width="412" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="aFd-aQ-xtl"/>
@@ -432,11 +436,11 @@ Schedule, It Will Appear Here.</string>
                                     <segue destination="Zs8-5r-YhX" kind="show" identifier="StartWorkout" id="fPJ-bl-AKE"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4dP-3n-XVp" customClass="CustomTableView" customModule="SimpleWorkout" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4dP-3n-XVp" customClass="CustomTableView" customModule="SimpleGains" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="653"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopGainsCell" textLabel="eNt-rB-SJ4" detailTextLabel="za7-ZA-DzO" style="IBUITableViewCellStyleValue1" id="KVX-SG-7NS" customClass="TopGainsCell" customModule="SimpleWorkout" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopGainsCell" textLabel="eNt-rB-SJ4" detailTextLabel="za7-ZA-DzO" style="IBUITableViewCellStyleValue1" id="KVX-SG-7NS" customClass="TopGainsCell" customModule="SimpleGains" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KVX-SG-7NS" id="7YB-j4-xaS">
@@ -512,13 +516,13 @@ Schedule, It Will Appear Here.</string>
         <!--Current Workout-->
         <scene sceneID="K3j-sg-JJe">
             <objects>
-                <tableViewController id="Zs8-5r-YhX" customClass="WorkoutViewController" customModule="SimpleWorkout" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ICu-5f-PQX" customClass="CustomTableView" customModule="SimpleWorkout" customModuleProvider="target">
+                <tableViewController id="Zs8-5r-YhX" customClass="WorkoutViewController" customModule="SimpleGains" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ICu-5f-PQX" customClass="CustomTableView" customModule="SimpleGains" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutCell" rowHeight="110" id="bei-iu-pMd" customClass="WorkoutCell" customModule="SimpleWorkout" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutCell" rowHeight="110" id="bei-iu-pMd" customClass="WorkoutCell" customModule="SimpleGains" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bei-iu-pMd" id="27F-55-ofL">
@@ -540,20 +544,22 @@ Schedule, It Will Appear Here.</string>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="LOk-uE-Kqs">
                                             <rect key="frame" x="360.5" y="36.5" width="49" height="37"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="830-Lw-ah4">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="830-Lw-ah4">
                                                     <rect key="frame" x="0.0" y="0.0" width="49" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="04D-2M-8Kk"/>
                                                         <constraint firstAttribute="width" constant="49" id="OFh-BQ-zog"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="kRj-gg-DaD"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ra-TX-f4Z">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="3Ra-TX-f4Z">
                                                     <rect key="frame" x="0.0" y="20" width="49" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="49" id="8FV-UZ-XnU"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="En0-60-jbH"/>
                                                         <constraint firstAttribute="height" constant="17" id="zuQ-k7-zDq"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -619,7 +625,7 @@ Schedule, It Will Appear Here.</string>
         <!--Settings-->
         <scene sceneID="W1F-hW-A3l">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MGL-g0-mEQ" customClass="CustomNavigationController" customModule="SimpleWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MGL-g0-mEQ" customClass="CustomNavigationController" customModule="SimpleGains" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="gearshape.2.fill" catalog="system" id="L34-u4-V51"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cs8-BA-CVI">
@@ -638,7 +644,7 @@ Schedule, It Will Appear Here.</string>
         <!--Schedule-->
         <scene sceneID="0y3-9d-nd3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pFx-lK-1rt" customClass="CustomNavigationController" customModule="SimpleWorkout" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pFx-lK-1rt" customClass="CustomNavigationController" customModule="SimpleGains" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" id="IZ6-eq-Frj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wpI-Er-WxG">
