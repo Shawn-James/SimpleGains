@@ -63,7 +63,10 @@ final class ExercisePermanentRecordController {
     /// Updates the permanent record matching the exercise name by increasing it's `totalGains` by 5
     /// - Parameter exercise: The exercise use for permanent record lookup
     func updateTotalGains(for exercise: Exercise, by increaseAmount: Int16) {
-        guard let exerciseName = exercise.name else { return }
+        guard
+            UserDefaults.standard.bool(forKey: UserDefaultsKey.smartWeightIncreasing),
+            let exerciseName = exercise.name
+        else { return }
 
         let fetchRequest: PermanentRecordFetchRequest = ExercisePermanentRecord.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "text MATCHES %@", exerciseName)

@@ -7,5 +7,6 @@ enum UserDefaultsKey {
     static let firstLaunch = "firstLaunch"
     static let primaryColor = "PrimaryColor"
     static let lastWorkoutDate = "LastWorkoutDate"
-    static let pauseAutoWeightIncrease = "PauseAutoWeightIncrease"
+    static let smartWeightIncreasing = "SmartWeightIncreasing"
+    static let syncExercisesByName = "SyncExercisesByName"
 }

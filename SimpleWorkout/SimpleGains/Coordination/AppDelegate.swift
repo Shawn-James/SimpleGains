@@ -58,6 +58,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         CoreDataManager.shared.savePrivateChanges()
 
         UserDefaults.standard.setValue(false, forKey: UserDefaultsKey.firstLaunch)
-        UserDefaults.standard.setValue(false, forKey: UserDefaultsKey.pauseAutoWeightIncrease)
+        
+        // Default Settings
+        UserDefaults.standard.setValue(true, forKey: UserDefaultsKey.smartWeightIncreasing)
+        UserDefaults.standard.setValue(true, forKey: UserDefaultsKey.syncExercisesByName)
     }
 }

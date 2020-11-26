@@ -81,6 +81,7 @@ final class TopGainsViewController: CustomViewController, UITableViewDataSource,
             }
 
             destinationVC.permanentRecordController = permanentRecordController
+            destinationVC.exerciseController = exerciseController
         }
     }
 

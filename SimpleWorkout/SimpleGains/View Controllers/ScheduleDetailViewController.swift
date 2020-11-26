@@ -6,7 +6,7 @@ import CoreData
 import UIKit
 
 /// ViewController used for editing workout schedules for a given weekday
-final class ScheduleDetailViewController: CustomViewController, UITableViewDataSource, UITableViewDelegate, AutoCompleteTableViewMyDelegate, NSFetchedResultsControllerDelegate {
+final class ScheduleDetailViewController: CustomViewController, UITableViewDataSource, UITableViewDelegate, AutoCompleteTableViewMyDelegate, NSFetchedResultsControllerDelegate, ScheduleDetailCellDelegate {
     typealias AutoCompleteData = UITableViewDiffableDataSource<Int, Exercise>
     typealias AutoCompleteSnapshot = NSDiffableDataSourceSnapshot<Int, Exercise>
 
@@ -62,7 +62,7 @@ final class ScheduleDetailViewController: CustomViewController, UITableViewDataS
         scheduledExercisesTableView.dataSource = self
         scheduledExercisesTableView.delegate = self
         autoCompleteTableView.myDelegate = self
-        
+
         scheduledExercisesTableView.allowsSelection = false
     }
 
@@ -94,6 +94,7 @@ final class ScheduleDetailViewController: CustomViewController, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ScheduleDetailCell = tableView.dequeueReusableCell(for: indexPath)
         cell.exercise = exerciseFRC?.object(at: indexPath)
+        cell.delegate = self
         return cell
     }
 
@@ -233,6 +234,13 @@ final class ScheduleDetailViewController: CustomViewController, UITableViewDataS
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         scheduledExercisesTableView.endUpdates()
+    }
+
+    // MARK: - ScheduleDetailCell Delegate
+
+    /// Calls the syncExercisesWithSameName method
+    func syncAllMatchingExercises(_ exercise: Exercise) {
+        exerciseController?.syncExercisesWithSameName(exercise: exercise)
     }
 
     // MARK: - Keyboard

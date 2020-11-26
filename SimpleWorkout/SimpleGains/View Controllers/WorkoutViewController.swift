@@ -15,6 +15,9 @@ final class WorkoutViewController: CustomTableViewController, CurrentWorkoutTabl
         }
     }
 
+    /// Controller used for interacting with the `Exercise` model
+    var exerciseController: ExerciseController?
+
     /// Controller used for interacting with the `ExercisePermanentRecord` model. Injected from TopGainsViewController
     var permanentRecordController: ExercisePermanentRecordController?
 
@@ -32,7 +35,7 @@ final class WorkoutViewController: CustomTableViewController, CurrentWorkoutTabl
             configurationForFinishButton()
         }
     }
-    
+
     /// A constant for how much the weight of exercises should increase by upon successful completion
     let increaseAmount: Int16 = 10
 
@@ -116,7 +119,7 @@ final class WorkoutViewController: CustomTableViewController, CurrentWorkoutTabl
     /// - Parameter completion: Completion handler; called after the updates have been performed
     private func incrementWeightForExercises(completion: () -> Void) {
         guard
-            !UserDefaults.standard.bool(forKey: UserDefaultsKey.pauseAutoWeightIncrease),
+            UserDefaults.standard.bool(forKey: UserDefaultsKey.smartWeightIncreasing),
             !exercisesToIncreaseWeight.isEmpty
         else {
             return completion()
@@ -127,10 +130,9 @@ final class WorkoutViewController: CustomTableViewController, CurrentWorkoutTabl
                 $0.weight += increaseAmount
 
                 permanentRecordController?.updateTotalGains(for: $0, by: increaseAmount)
+                exerciseController?.syncExercisesWithSameName(exercise: $0)
             }
         }
-
-        CoreDataManager.shared.saveViewChanges()
 
         completion()
     }

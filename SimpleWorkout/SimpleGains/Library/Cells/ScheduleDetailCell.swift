@@ -4,6 +4,10 @@
 
 import UIKit
 
+protocol ScheduleDetailCellDelegate {
+    func syncAllMatchingExercises(_ exercise: Exercise)
+}
+
 /// TableView cell that shows a scheduled exercise for the selected weekday
 final class ScheduleDetailCell: CustomCell, ReusableView {
     // MARK: - Public Properties
@@ -14,6 +18,9 @@ final class ScheduleDetailCell: CustomCell, ReusableView {
             updateViews()
         }
     }
+
+    /// Used to call the delegate methods on the parent view controller
+    var delegate: ScheduleDetailCellDelegate?
 
     // MARK: - Private Properties
 
@@ -76,7 +83,7 @@ final class ScheduleDetailCell: CustomCell, ReusableView {
             fatalError("Programmer error, missing case in textFieldEditingDidEnd for ScheduleDetailCell")
         }
 
-        CoreDataManager.shared.saveViewChanges()
+        delegate?.syncAllMatchingExercises(exercise)
     }
 
     /// Handles button taps, sets the respective property to be the amount found on the button title
@@ -98,7 +105,7 @@ final class ScheduleDetailCell: CustomCell, ReusableView {
             fatalError("Programmer error, missing case in buttonValueChanged for ScheduleDetailCell")
         }
 
-        CoreDataManager.shared.saveViewChanges()
+        delegate?.syncAllMatchingExercises(exercise)
     }
 
     /// Configures the cell using the injected object

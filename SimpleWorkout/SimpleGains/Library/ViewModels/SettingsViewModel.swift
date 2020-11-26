@@ -24,23 +24,26 @@ enum SettingsSection: Int, SectionType {
 }
 
 enum GeneralSettingsRow: Int, RowType {
-    case autoIncreaseWeight
+    case smartWeightIncreasing, syncExercisesByName
 
     var cellTitle: String {
         switch self {
-        case .autoIncreaseWeight: return "Pause Auto Weight Increasing"
+        case .smartWeightIncreasing: return "Smart Weight Increasing"
+        case .syncExercisesByName: return "Sync Exercises by Name Matches"
         }
     }
 
     var containsSwitch: Bool {
         switch self {
-        case .autoIncreaseWeight: return true
+        case .smartWeightIncreasing: return true
+        case .syncExercisesByName: return true
         }
     }
 
     var userDefaultsKey: String {
         switch self {
-        case .autoIncreaseWeight: return UserDefaultsKey.pauseAutoWeightIncrease
+        case .smartWeightIncreasing: return UserDefaultsKey.smartWeightIncreasing
+        case .syncExercisesByName: return UserDefaultsKey.syncExercisesByName
         }
     }
 }

@@ -20,7 +20,7 @@ final class GeneralSettingsCell: UITableViewCell, ReusableView {
     /// A switch control used to toggle a general setting on or off
     lazy var switchControl: UISwitch = {
         let switchControl = UISwitch()
-        switchControl.onTintColor = .red
+        switchControl.onTintColor = .green
         switchControl.translatesAutoresizingMaskIntoConstraints = false
         switchControl.addTarget(self, action: #selector(switchControlHandler), for: .valueChanged)
         return switchControl
