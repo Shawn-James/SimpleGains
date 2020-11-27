@@ -103,8 +103,6 @@ final class SettingsViewController: CustomTableViewController {
                 }
             }
         }
-
-        didSelectInitialRow = true
     }
 
     /// Changes the `primary` color and the global tint to match the configuration from the user selected row
