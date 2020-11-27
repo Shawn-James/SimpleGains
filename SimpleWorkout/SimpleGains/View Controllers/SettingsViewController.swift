@@ -6,6 +6,19 @@ import UIKit
 
 /// View Controller that allows the user to customize the app experience by being able to interact with settings options
 final class SettingsViewController: CustomTableViewController {
+    // MARK: - Private Properties
+    
+    /// A flag for only running selectCurrentAppearanceRow when necessary
+    var didSelectInitialRow = false
+
+    // MARK: - Lifecycle
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        selectCurrentAppearanceRow()
+    }
+
     // MARK: - TableView
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -45,7 +58,10 @@ final class SettingsViewController: CustomTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let section = SettingsSection(rawValue: indexPath.section) else { return }
+        guard
+            let section = SettingsSection(rawValue: indexPath.section),
+            let cell = tableView.cellForRow(at: indexPath)
+        else { return }
 
         switch section {
         case .general:
@@ -53,10 +69,42 @@ final class SettingsViewController: CustomTableViewController {
 
         case .appearance:
             setTheme(with: AppearanceSettingsRow(rawValue: indexPath.row))
+            cell.accessoryType = .checkmark
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard
+            let section = SettingsSection(rawValue: indexPath.section),
+            let cell = tableView.cellForRow(at: indexPath)
+        else { return }
+
+        switch section {
+        case .general:
+            break // Do nothing
+
+        case .appearance:
+            cell.accessoryType = .none
         }
     }
 
     // MARK: - Private Methods
+    
+    /// Selects the row that represents the current appearance in the tableView
+    private func selectCurrentAppearanceRow() {
+        guard !didSelectInitialRow else { return }
+
+        for i in 0..<AppearanceSettingsRow.allCases.count {
+            if let cell = tableView.cellForRow(at: IndexPath(row: i, section: SettingsSection.appearance.rawValue)) as? AppearanceSettingCell {
+                if cell.backgroundColor == UIColor.CustomColor.primary {
+                    tableView.selectRow(at: tableView.indexPath(for: cell), animated: true, scrollPosition: .none)
+                    cell.accessoryType = .checkmark
+                }
+            }
+        }
+        
+        didSelectInitialRow = true
+    }
 
     /// Changes the `primary` color and the global tint to match the configuration from the user selected row
     /// - Parameter appearanceRow: The used for configuration

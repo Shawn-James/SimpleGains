@@ -27,12 +27,6 @@ final class AppearanceSettingCell: UITableViewCell, ReusableView {
         layer.borderWidth = 2
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        accessoryType = selected ? .checkmark : .none
-    }
-
     // MARK: - Private Methods
 
     /// Configures the cell using the injected object
