@@ -6,12 +6,13 @@ import UIKit
 
 /// View Controller that allows the user to customize the app experience by being able to interact with settings options
 final class SettingsViewController: CustomTableViewController {
-    // MARK: - Private Properties
-    
-    /// A flag for only running selectCurrentAppearanceRow when necessary
-    var didSelectInitialRow = false
-
     // MARK: - Lifecycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        tableView.allowsMultipleSelection = false
+    }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -89,20 +90,20 @@ final class SettingsViewController: CustomTableViewController {
     }
 
     // MARK: - Private Methods
-    
+
     /// Selects the row that represents the current appearance in the tableView
     private func selectCurrentAppearanceRow() {
-        guard !didSelectInitialRow else { return }
-
         for i in 0..<AppearanceSettingsRow.allCases.count {
             if let cell = tableView.cellForRow(at: IndexPath(row: i, section: SettingsSection.appearance.rawValue)) as? AppearanceSettingCell {
                 if cell.backgroundColor == UIColor.CustomColor.primary {
-                    tableView.selectRow(at: tableView.indexPath(for: cell), animated: true, scrollPosition: .none)
-                    cell.accessoryType = .checkmark
+                    if !cell.isSelected {
+                        tableView.selectRow(at: tableView.indexPath(for: cell), animated: true, scrollPosition: .none)
+                        cell.accessoryType = .checkmark
+                    }
                 }
             }
         }
-        
+
         didSelectInitialRow = true
     }
 
