@@ -82,6 +82,31 @@ final class ExerciseController {
             }
         }
     }
+    
+    func updateNewExerciseWithExistingValues(exercise: Exercise) {
+        guard
+            UserDefaults.standard.bool(forKey: UserDefaultsKey.syncExercisesByName),
+            let name = exercise.name
+        else { return }
+        
+        let fetchRequest: ExerciseFetchRequest = Exercise.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+
+        CoreDataManager.shared.persistentContainer.performBackgroundTask { temporaryContext in
+            do {
+                if let matchingExercise = try temporaryContext.fetch(fetchRequest).first {
+                    exercise.reps = matchingExercise.reps
+                    exercise.sets = matchingExercise.sets
+                    exercise.weight = matchingExercise.weight
+                }
+                
+                try temporaryContext.save()
+
+            } catch {
+                print("Error updating new exercise with existing values: \(error)")
+            }
+        }
+    }
 
     /// Configures the fetchedResultsController for a given weekday
     /// - Parameters:
@@ -110,6 +135,7 @@ final class ExerciseController {
         guard let exerciseCount = weekday.exercises?.count else { return }
 
         let newExercise = Exercise(name: name, numberOfExercises: exerciseCount)
+        updateNewExerciseWithExistingValues(exercise: newExercise)
         weekday.addToExercises(newExercise)
 
         CoreDataManager.shared.saveViewChanges()
